@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prabin</title>
     <link rel="shortcut icon" href="logoPrabin.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,7 +16,7 @@
             </ul>
         </nav>
     </div>
-    <img src="prabin.png" class="picture" height="300" width="250" >
+    <img src="prabin.png" class="picture" height="300" width="250">
     <main>
         <section class="profileBody">
             <img class="mobile" src="mobMock.png" height="100%" width="50%" />
@@ -29,7 +30,8 @@
             <div class="social-media">
                 <a href="https://www.facebook.com/paccharya/" target="_blank" class="fa fa-facebook"></a>
                 <a href="https://github.com/mprabs" target="_blank" class="fa fa-github"></a>
-                <a href="https://www.linkedin.com/in/prabin-acharya-199a4b147/" target="_blank" class="fa fa-linkedIn"></a>
+                <a href="https://www.linkedin.com/in/prabin-acharya-199a4b147/" target="_blank"
+                    class="fa fa-linkedIn"></a>
                 <a href="https://www.instagram.com/m_prabs/" target="_blank" class="fa fa-instagram"></a>
             </div>
         </section>
@@ -39,7 +41,11 @@
 </html>
 
 <script>
-    function aFunction () {
+
+var percent =1;
+    var myWidth = Math.round( screen.width * percent);
+    var myHeight = Math.round( screen.height * percent);
+    function aFunction() {
         alert('Coming soon...!')
     }
 </script>
@@ -86,6 +92,7 @@
         z-index: -1;
         opacity: 0.4;
         background-image: url("prabin.jpg");
+        background-size: cover;
     }
 
     .mobile {
@@ -144,6 +151,7 @@
         text-decoration: none;
         /* border-radius: 50%; */
     }
+
     .social-media {
         position: absolute;
         bottom: 30;
@@ -154,22 +162,56 @@
         background-color: rgb(25, 0, 255);
         color: rgb(228, 228, 228);
     }
-    
+
     .fa-github {
         background-color: rgb(8, 8, 8);
         color: rgb(247, 241, 241);
     }
-    
+
     .fa-linkedIn {
         background-color: rgb(25, 0, 255);
         color: rgb(228, 228, 228);
     }
-    
+
     .fa-instagram {
         background-color: rgb(157, 156, 165);
         /* color: rgb(228, 228, 228); */
     }
 
-    
+    @media only screen and (max-width: 1080px) {
+        .mobile {
+            display: none;
+        }
 
+        .picture {
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 420px) and (min-width: 0px) {
+        .intro {
+            margin: 0 auto;
+            justify-content: center;
+        }
+
+        .logo {
+            margin-left: 60px;
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .body::before {
+            background-image: url("cover.jpeg");
+            height: 100vmax;
+            width: 100vmax;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+    }
 </style>
