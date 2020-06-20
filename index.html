@@ -8,6 +8,9 @@
 </head>
 
 <body class="body">
+    <div class="nameHead">
+    <h5 > Personal website of Prabin Acharya </h5>
+    </div>
     <div class="header">
         <img class="logo" src="logoPrabin.png">
         <nav>
@@ -16,10 +19,9 @@
             </ul>
         </nav>
     </div>
-    <img src="prabin.png" class="picture" height="300" width="250">
     <main>
         <section class="profileBody">
-            <img class="mobile" src="mobMock.png" height="100%" width="50%" />
+            <img class="mobile" src="prabin.png" height="90%" width="50%" />
             <div class="headerName">
                 <h1>front end developer</h1>
                 <hr />
@@ -42,15 +44,20 @@
 
 <script>
 
-var percent =1;
-    var myWidth = Math.round( screen.width * percent);
-    var myHeight = Math.round( screen.height * percent);
+    var percent = 1;
+    var myWidth = Math.round(screen.width * percent);
+    var myHeight = Math.round(screen.height * percent);
     function aFunction() {
         alert('Coming soon...!')
     }
 </script>
 
 <style>
+
+    .nameHead {
+        display: none;
+    }
+
     .headerName {
         width: 400px;
         height: 100px;
@@ -98,7 +105,7 @@ var percent =1;
     .mobile {
         position: absolute;
         right: 0;
-        top: 0;
+        bottom: 0;
     }
 
     .header {
@@ -178,16 +185,6 @@ var percent =1;
         /* color: rgb(228, 228, 228); */
     }
 
-    @media only screen and (max-width: 1080px) {
-        .mobile {
-            display: none;
-        }
-
-        .picture {
-            display: none;
-        }
-    }
-
     @media only screen and (max-width: 420px) and (min-width: 0px) {
         .intro {
             margin: 0 auto;
@@ -195,22 +192,40 @@ var percent =1;
         }
 
         .logo {
-            margin-left: 60px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         nav {
             position: absolute;
-            top: 0;
+            top: 30;
             left: 0;
         }
 
+        .headerName {
+            font-size: 30px;
+        }
+
         .body::before {
-            background-image: url("cover.jpeg");
-            height: 100vmax;
-            width: 100vmax;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+            background: none;
+        }
+
+        .mobile {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 70%;
+            width: 100%;
+            opacity: 0.3;
+        }
+
+        .nameHead {
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 20px;
         }
 
     }
