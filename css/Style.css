@@ -597,13 +597,13 @@ footer.footer .move-up span:hover{
     }
 
     .nav .social {
-        display: flex;
-        margin: 0 auto;
         flex-wrap: wrap;
+        width: 100%;
+        margin: 0 auto;
     }
 
     .nav .social a{
-        margin: 1rem;
+        margin: 0.2rem;
         padding: 1rem;
         border: 1px solid black;
         border-radius: 4rem;
@@ -634,9 +634,19 @@ footer.footer .move-up span:hover{
     .nav .nav-menu{    
         align-items: flex-start;
     }
+
+    .nav .nav-items .nav-link:hover{
+        border: none;
+        background: none;
+    }
+
+    .nav .nav-items .nav-link:hover a{
+        color: rgb(14, 37, 247);
+    }
     
-    .nav-items{    
-        align-items: center;
+    .nav-link{
+        width: 50%;
+        margin: 0 auto;
     }
 
     .presentation {
