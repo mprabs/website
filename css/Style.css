@@ -307,13 +307,6 @@ section .container .owl-nav{
     width: 100%;
 }
 
-section .container .title{
-    position: absolute;
-    bottom: 0%;
-    margin: 0 auto;
-    width: 100%;
-}
-
 .owl-nav .owl-prev .owl-nav-prev,
 .owl-nav .owl-next .owl-nav-next{
     color: var(--text-gray);
@@ -647,10 +640,12 @@ footer.footer .move-up span:hover{
     }
 
     .presentation {
+        flex: 1;
         flex-direction: column;
     }
 
     .introduction {
+        flex: 1;
         margin-top: 5vh;
         text-align: center;
     }
@@ -663,9 +658,9 @@ footer.footer .move-up span:hover{
         font-size: 18px;
     }
 
-    /* .comp {
+    .comp {
         display: none;
-    } */
+    }
 
 }
 
