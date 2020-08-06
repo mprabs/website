@@ -26,6 +26,8 @@ html, body{
     --Josefin : 'Josefin', cursive;
     --Lexend: 'Lexend', cursive;
     --Livvic : 'Livvic', cursive;
+    --Caveat: 'Caveat', cursive;
+    
 }
 
 
@@ -219,6 +221,7 @@ main .site-title .btn:hover{
 
 .intro-text h1{
     font-size: 45px;
+    font-family: var(--Caveat);
     font-weight: 500;
     background: linear-gradient(to right, #494964, #6f6f69);
     -webkit-background-clip: text;
