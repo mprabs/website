@@ -1,232 +1,206 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prabin</title>
-    <link rel="shortcut icon" href="logoPrabin.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blooger</title>
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./css/aos.css">
+    <link rel="stylesheet" href="./css/Style.css">
+
 </head>
 
-<body class="body">
-    <div class="nameHead">
-    <h5 > Personal website of Prabin Acharya </h5>
-    </div>
-    <div class="header">
-        <img class="logo" src="logoPrabin.png">
-        <nav>
-            <ul class="nav">
-                <label onclick="aFunction()" class="nav-link"><u>Portfolio</u></label>
-            </ul>
-        </nav>
-    </div>
-    <main>
-        <section class="profileBody">
-            <img class="mobile" src="prabin.png" height="90%" width="50%" />
-            <div class="headerName">
-                <h1>front end developer</h1>
-                <hr />
-                <p class="intro">
-                    "development is art & javascript is its paint"
-                </p>
+<body>
+    <nav class="nav">
+        <div class="nav-menu flex-row">
+            <div class="nav-brand">
+                <a href="#" class="text-gray">Prabin</a>
             </div>
-            <div class="social-media">
-                <a href="https://www.facebook.com/paccharya/" target="_blank" class="fa fa-facebook"></a>
-                <a href="https://github.com/mprabs" target="_blank" class="fa fa-github"></a>
-                <a href="https://www.linkedin.com/in/prabin-acharya-199a4b147/" target="_blank"
-                    class="fa fa-linkedIn"></a>
-                <a href="https://www.instagram.com/m_prabs/" target="_blank" class="fa fa-instagram"></a>
+            <div class="toggle-collapse">
+                <div class="toggle-icons">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <div class="nav-links">
+                <ul class="nav-items">
+                    <li class="nav-link">
+                        <a href="#presentation">Home</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#footer">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="social text-gray">
+                <a href="https://www.facebook.com/paccharya" target="_black"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/in/prabin-acharya-199a4b147/" target="_black"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/m_prabs/" target="_black"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.github.com/mprabs" target="_black"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </nav>
+    <hr />
+    <main>
+        <section class="presentation" id="presentation">
+            <div class="introduction container">
+                <div class="intro-text" data-aos="zoom-in" data-aos-delay="200">
+                    <h1>Prabin Acharya</h1>
+                    <p> Front End Web/Mobile Developer.Vue, React, React Native. </p>
+                </div>
+            </div>
+            <div class="cover" data-aos="zoom-in" data-aos-delay="200">
+                <img src="./assets/profilePNG.png" alt="prabin acharya" />
             </div>
         </section>
+        
+        <div class="comp">
+            <img src="./assets/comp.png" alt="comp" height="1000" width="1000" />
+        </div>
+        <section>
+            <div class="blog">
+                <div class="container">
+                    <div class="title">
+                        <h2>Some projects</h2>
+                        <P> Here are listed some projects of mine.. </P>
+                        <hr class="half-hr" />
+                    </div>
+                    <div class="owl-carousel owl-theme blog-post">
+                        <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
+                            <img src="./assets/reqres.jpg" alt="reqres">
+                            <div class="blog-title">
+                                <h3>Reqres Users App</h3>
+                                <button class="btn btn-blog">React Native</button>
+                                <span>Github</span>
+                            </div>
+                        </div>
+                        <div class="blog-content" data-aos="fade-in" data-aos-delay="200">
+                            <img src="./assets/canteen.jpg" alt="canteen">
+                            <div class="blog-title">
+                                <h3>Canteen App</h3>
+                                <button class="btn btn-blog">VueJs</button>
+                                <span>Github</span>
+                            </div>
+                        </div>
+                        <div class="blog-content" data-aos="fade-left" data-aos-delay="200">
+                            <img src="./assets/pokemon.jpeg" alt="pokemon">
+                            <div class="blog-title">
+                                <h3>Pokemon</h3>
+                                <button class="btn btn-blog">ReactJs</button>
+                                <span>Github</span>
+                            </div>
+                        </div>
+                        <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
+                            <img src="./assets/evolution.jpg" alt="evolution">
+                            <div class="blog-title">
+                                <h3>Evolution Simulator</h3>
+                                <button class="btn btn-blog">Javascript</button>
+                                <span>Github</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="owl-navigation">
+                        <span class="owl-nav-prev"><i class="fas fa-long-arrow-alt-left"></i></span>
+                        <span class="owl-nav-next"><i class="fas fa-long-arrow-alt-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container">
+            <div class="site-content">
+                <div class="posts">
+                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="post-image">
+                            <div>
+                                <img src="./assets/instagram/about-me.jpg"  class="img" alt="blog1">
+                            </div>
+                            <div class="post-info flex-row">
+                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Programmer</span>
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;Since 1997</span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <!-- <div class="post-title">
+                            <a href="#">MORE ABOUT ME</a>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas deserunt beatae
+                                adipisci iusto totam placeat corrupti ipsum, tempora magnam incidunt aperiam tenetur a
+                                nobis, voluptate, numquam architecto fugit. Eligendi quidem ipsam ducimus minus magni
+                                illum similique veniam tempore unde?
+                            </p>
+                        </div> -->
+                    </div>
+                </div>
+                <aside class="sidebar">
+                    <div class="popular-tags">
+                        <h2>My skills</h2>
+                        <div class="tags flex-row">
+                            <span class="tag" data-aos="flip-up" data-aos-delay="100">Javascript</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="200">VueJs</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="300">ReactJs</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="400">React Native</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="500">HTML</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="600">CSS</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="700">Git</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="800">Agile(Scrum)</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <br /><br />
+        </section>
     </main>
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="about-us" data-aos="fade-right" data-aos-delay="200">
+                <h2>About Me</h2>
+                <p>Front End Web/Mobile Developer.Vue, React, React Native.</p>
+            </div>
+            <div class="newsletter" data-aos="fade-right" data-aos-delay="200">
+                <h2>Email me</h2>
+                <p>You can contact me at</p>
+                <span><a href="mailto:acharyaprabin03@gmail.com">acharyaprabin03@gmail.com</a></span>
+            </div>
+            <div class="instagram" data-aos="fade-left" data-aos-delay="200">
+                <h2>Instagram</h2>
+                <div class="flex-row">
+                    <img src="./assets/instagram/prabin1.jpg" alt="insta1">
+                    <img src="./assets/instagram/prabin2.jpg" alt="insta2">
+                    <img src="./assets/instagram/prabin3.jpg" alt="insta3">
+                </div>
+                <div class="flex-row">
+                    <img src="./assets/instagram/prabin4.jpg" alt="insta4">
+                    <img src="./assets/instagram/prabin5.jpg" alt="insta5">
+                    <img src="./assets/instagram/prabin6.jpg" alt="insta6">
+                </div>
+            </div>
+            <div class="follow" data-aos="fade-left" data-aos-delay="200">
+                <h2>Follow Me</h2>
+                <p>Let us be Social</p>
+                <div>
+                    <a href="https://www.facebook.com/paccharya" target="_black"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/prabin-acharya-199a4b147/" target="_black"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/m_prabs/" target="_black"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.github.com/mprabs" target="_black"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="rights flex-row">
+            <h4 class="text-gray">
+                Copyright ©2019 All rights reserved | made by
+                <a href="https://www.acharyaprabin.com.np" target="_black">Prabin Acharya </a>
+            </h4>
+        </div> -->
+        <div class="move-up">
+            <span><i class="fas fa-arrow-circle-up fa-2x"></i></span>
+        </div>
+    </footer>
+    <script src="./js/Jquery3.4.1.min.js"></script>
+    <script src="./js/owl.carousel.min.js"></script>
+    <script src="./js/aos.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
-
-<script>
-
-    var percent = 1;
-    var myWidth = Math.round(screen.width * percent);
-    var myHeight = Math.round(screen.height * percent);
-    function aFunction() {
-        alert('Coming soon...!')
-    }
-</script>
-
-<style>
-
-    .nameHead {
-        display: none;
-    }
-
-    .headerName {
-        width: 400px;
-        height: 100px;
-        position: absolute;
-        top: 0;
-        bottom: 200;
-        left: 0;
-        right: 500;
-        color: rgb(17, 7, 78);
-        margin: auto;
-        font-weight: 300;
-        font-size: 50;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
-    }
-
-    .intro {
-        font-size: 20;
-        color: rgb(0, 0, 0);
-    }
-
-    .body {
-        background-color: rgba(253, 241, 241, 0.747);
-    }
-
-    .picture {
-        position: absolute;
-        right: 230;
-        top: 220;
-        transform: rotate(-12deg);
-    }
-
-    .body:before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        z-index: -1;
-        opacity: 0.4;
-        background-image: url("prabin.jpg");
-        background-size: cover;
-    }
-
-    .mobile {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-    }
-
-    .header {
-        display: flex;
-        width: 90%;
-        height: 10vh;
-        margin: auto;
-        align-items: center;
-    }
-
-    .logo {
-        color: rgb(248, 4, 4);
-        font-size: 20;
-        font-style: italic;
-        flex: 0.5;
-        margin-top: 120px;
-        margin-left: -60px;
-    }
-
-    .logo,
-    .nav {
-        display: flex;
-    }
-
-    nav {
-        flex: 3;
-    }
-
-    .nav {
-        justify-content: space-evenly;
-        list-style: none;
-        margin-right: 200px;
-    }
-
-    .nav-link {
-        color: maroon;
-        font-style: italic;
-    }
-
-    .nav-link:hover {
-        color: rgb(156, 156, 132);
-    }
-
-    .fa {
-        padding: 5px;
-        font-size: 20px;
-        width: 30px;
-        margin-right: 10px;
-        text-align: center;
-        text-decoration: none;
-        /* border-radius: 50%; */
-    }
-
-    .social-media {
-        position: absolute;
-        bottom: 30;
-        right: 30;
-    }
-
-    .fa-facebook {
-        background-color: rgb(25, 0, 255);
-        color: rgb(228, 228, 228);
-    }
-
-    .fa-github {
-        background-color: rgb(8, 8, 8);
-        color: rgb(247, 241, 241);
-    }
-
-    .fa-linkedIn {
-        background-color: rgb(25, 0, 255);
-        color: rgb(228, 228, 228);
-    }
-
-    .fa-instagram {
-        background-color: rgb(157, 156, 165);
-        /* color: rgb(228, 228, 228); */
-    }
-
-    @media only screen and (max-width: 420px) and (min-width: 0px) {
-        .intro {
-            margin: 0 auto;
-            justify-content: center;
-        }
-
-        .logo {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        nav {
-            position: absolute;
-            top: 30;
-            left: 0;
-        }
-
-        .headerName {
-            font-size: 30px;
-        }
-
-        .body::before {
-            background: none;
-        }
-
-        .mobile {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            height: 70%;
-            width: 100%;
-            opacity: 0.3;
-        }
-
-        .nameHead {
-            display: block;
-            text-align: center;
-            font-weight: bold;
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-
-    }
-</style>
