@@ -300,8 +300,8 @@ main .blog-content .btn-blog{
 }
 
 .blog-content img {
-    object-fit: contain;
-    height: 200px;
+    height: 12rem;
+    width: 18rem;
 }
 
 main .blog-content span{
