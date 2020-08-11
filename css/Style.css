@@ -93,7 +93,7 @@ p{
 /* --------------- navbar ----------------- */
 
 .nav{
-    background: rgb(255, 255, 255);
+    background: var(--sky);
     padding: 0 2rem;
     height: 0rem;
     min-height: 10vh;
@@ -259,6 +259,15 @@ main .site-title .btn:hover{
     box-shadow: 2px 3px 2px 3px;
 }
 
+.divider {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.divider  span {
+    width: 100vw;
+    font-size: 4rem;
+}
 
 /* --------x------ Site title --------x------- */
 
@@ -274,7 +283,7 @@ main .blog{
 }
 
 main .blog .blog-post{
-    padding-top: 6rem;
+    padding-top: 3rem;
 }
 
 main .blog-post .blog-content{
@@ -310,10 +319,10 @@ main .blog-content span{
 
 section .container .owl-nav{
     position: absolute;
-    top: 0%;
     margin: 0 auto;
     width: 100%;
 }
+
 
 .owl-nav .owl-prev .owl-nav-prev,
 .owl-nav .owl-next .owl-nav-next{
@@ -337,13 +346,13 @@ section .container .owl-nav{
 /* ---------------- Site Content ----------------*/
 
 main .site-content{
+    padding-top: 4rem;
     display: grid;
     grid-template-columns: 70% 30%;
 }
 
 main .post-content{
     width: 100%;
-    
 }
 
 main .site-content .post-content > .post-image, .post-title{
@@ -678,6 +687,10 @@ footer.footer .move-up span:hover{
 
     .comp {
         display: none;
+    }
+
+    main .site-content{
+        padding-top: 0;
     }
 
 }
