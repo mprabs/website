@@ -93,7 +93,7 @@ p{
 /* --------------- navbar ----------------- */
 
 .nav{
-    background: white;
+    background: rgb(255, 255, 255);
     padding: 0 2rem;
     height: 0rem;
     min-height: 10vh;
@@ -297,6 +297,11 @@ main .blog-content .btn-blog{
     padding: .7rem 2rem;
     background: var(--sky);
     margin: .5rem;
+}
+
+.blog-content img {
+    object-fit: contain;
+    height: 200px;
 }
 
 main .blog-content span{
