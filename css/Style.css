@@ -129,25 +129,31 @@ p{
     height: 18rem;
 }
 
+.nav .nav-links {
+    flex: 0.5;
+}
+
 .nav .nav-items{
     display: flex;
     margin: 0;
+    justify-content: space-evenly;
 }
 
 .nav .nav-items .nav-link{
     padding: 0.6rem;
     font-family: var(--Abel);
     font-size: 1.1rem;
-    transition: 200ms color ease-in;
+    transition: all 300ms ease-in-out;
+    border: 1px solid transparent;
 }
 
 .nav .nav-items .nav-link:hover{
-    border: 2px solid black;
-    border-radius: 10px;
-    background-color: var(--midnight);
+    border: 1px solid var(--text-light);
+    border-radius: 15px;
+    background-color: var(--text-light);
 }
 
-.nav .nav-items .nav-link:hover a{
+.nav .nav-items .nav-link:hover{
     color: var(--white);
 }
 
