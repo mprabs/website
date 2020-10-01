@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=PT+Sans&display=swap');
 
 html { 
-    background: url('../img/alexandra-vozvyshaeva-lHbeKXVLWS8-unsplash.jpg') no-repeat center center fixed; 
+    background: url(../img/main-back.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
