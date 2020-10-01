@@ -261,6 +261,8 @@ main .site-title .btn:hover{
 
 .cover img {
     height: 50vh;
+    padding-top: 20px;
+    background-position: center;
     border-radius: 50%;
     box-shadow: 2px 3px 2px 3px;
 }
@@ -619,7 +621,6 @@ footer.footer .move-up span:hover{
         display: flex;
         flex-direction: row;
         width: 70vw;
-        margin: 0 auto;
     }
 
     .nav .toggle-collapse{
@@ -628,7 +629,6 @@ footer.footer .move-up span:hover{
 
     .nav .social {
         display: flex;
-        flex-wrap: wrap;
         align-items: center;
         justify-content: center;
         margin: 0 auto;
@@ -645,7 +645,7 @@ footer.footer .move-up span:hover{
 
 
     .cover img {
-        height: 30vh;
+        height: 40vh;
     }
 
 
@@ -662,11 +662,15 @@ footer.footer .move-up span:hover{
     }
 
     .nav .nav-items .nav-link:hover{
+        padding: 5px;
+        margin: 0;
         background: var(--text-gray);
     }
 
     .nav .nav-items .nav-link {
-        border: 1px solid black;
+        border-bottom: 1px solid black;
+        padding: 0px;
+        margin: 5px 0;
     }
 
     .presentation {
@@ -724,6 +728,11 @@ footer.footer .move-up span:hover{
 
     nav .toggle-collapse{
         width: 80% !important;
+    }
+
+    .social {
+        flex-wrap: nowrap;
+        margin-left: -90px;
     }
 
 }
