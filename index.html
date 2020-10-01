@@ -1,207 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/afterContent.css">
+    <script src="https://kit.fontawesome.com/49130f567b.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <title>Prabin</title>
-    <link rel="shortcut icon" href="./assets/logoPrabin.png" />
-    <link rel="stylesheet" href="./css/all.css">
-    <link rel="stylesheet" href="./css/owl.carousel.min.css">
-    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="./css/aos.css">
-    <link rel="stylesheet" href="./css/Style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <nav class="nav">
-        <div class="nav-menu flex-row">
-            <div class="nav-brand">
-                <a href="./Index.html" class="text-gray">Prabin</a>
-            </div>
-            <div class="toggle-collapse">
-                <div class="toggle-icons">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </div>
-            <div class="nav-links">
-                <ul class="nav-items">
-                    <a href="./portfolio.html"  class="nav-link">
-                        <li>
-                            Resume
-                        </li>
+    <div class="main__container"  id="front__details">
+        <div class="front__details">
+            <div id="description">
+                <div>Hi, <br> I am <span>Prabin Acharya</span>. I'm a passionate young javascript developer from Nepal. I believe in constant learning and applying to develop skills and explore more of myself in life. On a constantly evolving journey of life and very optimistic and confident, that i will succeed in this journey of mine. :)</div>
+                <p>Visit my <a id="toTimeline">Timeline</a> or the <a id="toWorks">Works</a>, contributed by me.</p>
+                <div class="social__links">
+                    <a href="https://www.facebook.com/paccharya" target="__blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook"></i>
                     </a>
-                </ul>
-            </div>
-            <div class="social text-gray">
-                <a href="https://www.facebook.com/paccharya" target="_black"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.linkedin.com/in/prabin-acharya-199a4b147/" target="_black"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/m_prabs/" target="_black"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.github.com/mprabs" target="_black"><i class="fab fa-github"></i></a>
-            </div>
-        </div>
-    </nav>
-    <main>
-        <section class="presentation" id="home">
-            <div class="introduction container">
-                <div class="intro-text" data-aos="zoom-in" data-aos-delay="200">
-                    <h1>Prabin Acharya</h1>
-                    <p> Front End Web/Mobile Developer.<br /> <small><i>Vue, React, React Native</i></small> </p>
+                    <a href="http://www.github.com/mprabs" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:acharyaprabin03@gmail.com" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
             </div>
-            <div class="cover" data-aos="zoom-in" data-aos-delay="200">
-                <img src="./assets/profilePNG.png" alt="prabin acharya" />
-            </div>
-        </section>
-        
-        <div class="comp">
-            <img src="./assets/comp.png" alt="comp" height="1000" width="1000" />
+            <img id="main-image" class="main-image" src="./img/prabin4.jpg" alt="">
         </div>
+    </div>
+    <div class="wrapper">
+        <div class="parallax__images" id="scene">
+            <img src="./img/parallax/1.png" data-depth="-5" class="layer" alt="">
+            <img src="./img/parallax/2.png" data-depth="5" class="layer" alt="">
+            <img src="./img/parallax/3.png" data-depth="2" class="layer" alt="">
+            <img src="./img/parallax/4.png" data-depth="6" class="layer" alt="">
+            <img src="./img/parallax/5.png" data-depth="8" class="layer" alt="">
+            <img src="./img/parallax/6.png" data-depth="-2" class="layer" alt="">
+            <img src="./img/parallax/7.png" data-depth="4" class="layer" alt="">
+            <img src="./img/parallax/8.png" data-depth="-9" class="layer" alt="">
+            <img src="./img/parallax/9.png" data-depth="6" class="layer" alt="">
+            <img src="./img/parallax/10.png" data-depth="-7" class="layer" alt="">
+            <img src="./img/parallax/11.png" data-depth="5" class="layer" alt="">
+            <img src="./img/parallax/11.png" data-depth="2" class="layer" alt="">
+        </div>
+    </div>
 
-        <div class="divider">
-            <span>...</span>
-        </div>
-        <section>
-            <div class="blog">
-                <div class="container">
-                    <div class="title">
-                        <h2>Some projects</h2>
-                        <P> Here are listed some projects of mine.. </P>
-                        <hr class="half-hr" />
-                    </div>
-                    <div class="owl-carousel owl-theme blog-post">
-                        <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
-                            <img src="./assets/reqres.jpg" alt="reqres">
-                            <div class="blog-title">
-                                <h3>Reqres Users App</h3>
-                                <button class="btn btn-blog">React Native</button>
-                                <span><a href="https://github.com/mprabs" target="_blank">Github</a></span>
-                            </div>
-                        </div>
-                        <div class="blog-content" data-aos="fade-in" data-aos-delay="200">
-                            <img src="./assets/canteen.jpg" alt="canteen">
-                            <div class="blog-title">
-                                <h3>Canteen App</h3>
-                                <button class="btn btn-blog">VueJs</button>
-                                <span><a href="https://github.com/mprabs" target="_blank">Github</a></span>
-                            </div>
-                        </div>
-                        <div class="blog-content" data-aos="fade-left" data-aos-delay="200">
-                            <img src="./assets/pokemon.jpeg" alt="pokemon">
-                            <div class="blog-title">
-                                <h3>Pokemon</h3>
-                                <button class="btn btn-blog">ReactJs</button>
-                                <span><a href="https://github.com/mprabs" target="_blank">Github</a></span>
-                            </div>
-                        </div>
-                        <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
-                            <img src="./assets/evolution.jpg" alt="evolution">
-                            <div class="blog-title">
-                                <h3>Evolution Simulator</h3>
-                                <button class="btn btn-blog">Javascript</button>
-                                <span><a href="https://github.com/mprabs" target="_blank">Github</a></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owl-navigation">
-                        <span class="owl-nav-prev"><i class="fas fa-long-arrow-alt-left"></i></span>
-                        <span class="owl-nav-next"><i class="fas fa-long-arrow-alt-right"></i></span>
-                    </div>
+    <div class="after__content" id="after_content">
+        <div class="header">
+            <div class="navigation">
+                <a href="">Timeline</a>
+                <a href="">Works</a>
+            </div>
+            <div class="social">
+                <div class="icons">
+                    <a href="https://www.facebook.com/paccharya" target="__blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="http://www.github.com/mprabs" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:acharyaprabin03@gmail.com" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
-            </div>
-        </section>
-        <section class="container">
-            <div class="site-content">
-                <div class="posts">
-                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="post-image">
-                            <div>
-                                <img src="./assets/instagram/about-me.jpg"  class="img" alt="blog1">
-                            </div>
-                            <div class="post-info flex-row">
-                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Programmer</span>
-                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;Since 1997</span>
-                                <span></span>
-                            </div>
-                        </div>
-                        <div class="post-title">
-                            <a href="#">MORE ABOUT ME</a>
-                            <p>I'm a passionate young javascript developer from Nepal. I believe in constant learning and applying to develop skills and explore more of myself in life. On a constantly evolving journey of life and very optimistic and confident, that i will succeed in this journey of mine. :)
-                            </p>
-                        </div>
+                <div class="bar">
+                    <div class="icon" id="bar">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
-                </div>
-                <aside class="sidebar">
-                    <div class="popular-tags">
-                        <h2>My skills</h2>
-                        <div class="tags flex-row">
-                            <span class="tag" data-aos="flip-up" data-aos-delay="100">Javascript</span>
-                            <span class="tag" data-aos="flip-up" data-aos-delay="200">VueJs</span>
-                            <span class="tag" data-aos="flip-up" data-aos-delay="300">ReactJs</span>
-                            <span class="tag" data-aos="flip-up" data-aos-delay="400">React Native</span>
-                            <span class="tag" data-aos="flip-up" data-aos-delay="500">HTML</span>
-                            <span class="tag" data-aos="flip-up" data-aos-delay="600">CSS</span>
-                            <span class="tag" data-aos="flip-up" data-aos-delay="800">NodeJs</span>
-                            <span class="tag" data-aos="flip-up" data-aos-delay="700">Git</span>
-                            <span class="tag" data-aos="flip-up" data-aos-delay="800">Agile(Scrum)</span>
-                        </div>
+                    <div class="menu" id="menu">
+                        <a href="https://www.facebook.com/paccharya" target="__blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="http://www.github.com/mprabs" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:acharyaprabin03@gmail.com" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
-                </aside>
-            </div>
-            <br /><br />
-        </section>
-    </main>
-    <footer class="footer" id="contact">
-        <div class="container">
-            <div class="about-us" data-aos="fade-right" data-aos-delay="200">
-                <h2>About Me</h2>
-                <p>Front End Web/Mobile Developer.Vue, React, React Native.</p>
-            </div>
-            <div class="newsletter" data-aos="fade-right" data-aos-delay="200">
-                <h2>Email me</h2>
-                <p>You can contact me at</p>
-                <span><a href="mailto:acharyaprabin03@gmail.com">acharyaprabin03@gmail.com</a></span>
-            </div>
-            <div class="instagram" data-aos="fade-left" data-aos-delay="200">
-                <h2>Instagram</h2>
-                <div class="flex-row">
-                    <img src="./assets/instagram/prabin1.jpg" alt="insta1">
-                    <img src="./assets/instagram/prabin2.jpg" alt="insta2">
-                    <img src="./assets/instagram/prabin3.jpg" alt="insta3">
-                </div>
-                <div class="flex-row">
-                    <img src="./assets/instagram/prabin4.jpg" alt="insta4">
-                    <img src="./assets/instagram/prabin5.jpg" alt="insta5">
-                    <img src="./assets/instagram/prabin6.jpg" alt="insta6">
-                </div>
-            </div>
-            <div class="follow" data-aos="fade-left" data-aos-delay="200">
-                <h2>Follow Me</h2>
-                <p>Let us be Social</p>
-                <div>
-                    <a href="https://www.facebook.com/paccharya" target="_black"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.linkedin.com/in/prabin-acharya-199a4b147/" target="_black"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/m_prabs/" target="_black"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.github.com/mprabs" target="_black"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </div>
-        <!-- <div class="rights flex-row">
-            <h4 class="text-gray">
-                Copyright ©2019 All rights reserved | made by
-                <a href="https://www.acharyaprabin.com.np" target="_black">Prabin Acharya </a>
-            </h4>
-        </div> -->
-        <div class="move-up">
-            <span><i class="fas fa-arrow-circle-up fa-2x"></i></span>
-        </div>
-    </footer>
-    <script src="./js/Jquery3.4.1.min.js"></script>
-    <script src="./js/owl.carousel.min.js"></script>
-    <script src="./js/aos.js"></script>
-    <script src="./js/main.js"></script>
+    </div>
 </body>
-
+<script src="./js/parallax.js"></script>
+<script src="./js//index.js"></script>
 </html>
