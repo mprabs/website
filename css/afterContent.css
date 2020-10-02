@@ -70,6 +70,16 @@
     display: none;
 }
 
+.main_content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    color: rgb(43, 40, 14);
+
+}
+
+
 @media screen and (max-width: 700px) {
     .after__content .header .social .icons {
         display: none;
