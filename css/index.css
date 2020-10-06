@@ -65,7 +65,7 @@ body {
 }
 
 .main__container .image__expand {
-    transform: translate(calc(-50vw + 50px), calc(50vh - 690px)) scale(0.2);
+    transform: translate(calc(-50vw + 50px), calc(-53vh + 2em)) scale(0.2);
 }
 
 .main__container .front__details #description {
@@ -168,12 +168,19 @@ body {
 
 @media screen and (max-width: 650px) {
     .main__container {
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -70%);
         max-width: 100%;
         border-radius: 0px;
     }
 
     .main__container .front__details {
         border-radius: 0px;
+    }
+
+    .main__container .image__expand {
+        transform: translate(calc(-50vw + 50px), calc(-70vh - 20px)) scale(0.2);
     }
 
 }
