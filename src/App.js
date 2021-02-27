@@ -1,54 +1,84 @@
-import React, { useState } from "react";
-import { DateRangePicker } from "rsuite";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
-import Logo from "./assets/logo.png";
-import SearchIcon from "./assets/icon_search.svg";
-import ResultTable from "./Table";
+import Sidebar from "./components/Sidebar";
+import Body from "./components/Body";
 
-function App() {
-  const [date, setDate] = useState(null);
-  const [numberOfEmails, setNumberOfEmails] = useState(0);
+export default function App() {
+  const [mobileView, setmobileView] = useState(false);
+  const [mousecursor, setmousecursor] = useState(null);
 
-  // ON USER SELECT DATE RANGE FROM THE DATE PICKER
-  const handleTime = (value) => {
-    setDate(value);
-  };
+  useEffect(() => {
+    const pushContentToLeft = (e) => {
+      const body = document.getElementById("bodyContent");
+      if (mobileView) {
+        body.scrollTop += e.deltaY / 5;
+      } else {
+        body.scrollLeft += e.deltaY / 5;
+      }
+    };
 
-  // PUT NUMBER OF EMAILS FOUND ON DATE SELECT
-  const handleNumberOfResults = (value) => {
-    setNumberOfEmails(value);
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.add("hide-sidebar");
+
+    document.addEventListener("wheel", (e) => {
+      pushContentToLeft(e);
+    });
+
+    const handleResize = () => {
+      if (window.innerWidth < 600) {
+        setmobileView(true);
+      } else {
+        setmobileView(false);
+      }
+    };
+    const handleCursor = (e) => {
+      const mousecursor = document.querySelector(".mousecursor");
+      mousecursor.style.top = e.pageY + "px";
+      mousecursor.style.left = e.pageX + "px";
+      setmousecursor(mousecursor);
+    };
+
+    handleResize();
+    window.addEventListener("mousemove", handleCursor);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("mousemove", handleCursor);
+    };
+  }, []);
+
+  const toggleHamIcon = () => {
+    console.log("Toggle Ham Icon");
+    const hamIcon = document.getElementById("hamIcon");
+    const sidebar = document.getElementById("sidebar");
+    hamIcon.style.transitionDelay = 1000;
+    if (hamIcon.classList.contains("open")) {
+      hamIcon.classList.remove("open");
+      sidebar.classList.remove("show-sidebar");
+      sidebar.classList.add("hide-sidebar");
+    } else {
+      sidebar.classList.remove("hide-sidebar");
+      hamIcon.classList.add("open");
+      sidebar.classList.add("show-sidebar");
+    }
+    return;
   };
 
   return (
-    <div className="App">
-      <div className="input-container">
-        <DateRangePicker onChange={handleTime} format="YYYY-MM-DD" />
-
-        <div className="search-container">
-          <img src={SearchIcon} />
-        </div>
+    <div className="App" id="bodyContent">
+      <div className="mousecursor"></div>
+      <div className="hamburger" id="hamIcon" onClick={() => toggleHamIcon()}>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-
-      <div className="result-section">
-        <div className="result-title">
-          Results:<span>{numberOfEmails}</span>mails(s)
-        </div>
-
-        {(!date || numberOfEmails === 0) && (
-          <div className="result-main">
-            <img src={Logo} />
-          </div>
-        )}
-
-        {date && (
-          <div className="table-container">
-            <ResultTable dateInput={date} onDataSize={handleNumberOfResults} />
-          </div>
-        )}
+      <div className="sidebar-main" id="sidebar">
+        <Sidebar mousecursor={mousecursor} />
+      </div>
+      <div className="body">
+        <Body mousecursor={mousecursor} />
       </div>
     </div>
   );
 }
-
-export default App;

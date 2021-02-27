@@ -1,120 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
+  width: 100vw;
   height: 100vh;
-  width: 1265px;
-  margin: 0 auto;
-  padding: 5vh;
-  background-color: rgb(255, 255, 255);
   display: flex;
-  flex-direction: column;
-  overflow: auto;
+  overflow-y: hidden;
+  flex-direction: row;
+  font-family: "Akaya Telivigala", cursive;
+  cursor: none;
 }
 
-.input-container .rs-picker-toggle-caret {
-  position: absolute;
-  left: 10px;
-  transform: translateY(-2px);
+.App .sidebar-main {
+  position: fixed;
+  width: 17rem;
+  z-index: 99999;
 }
 
-.input-container .rs-picker-toggle-value {
-  margin-left: 27px;
-  color: #333333 !important;
-  font-weight: 600;
-  margin-right: 10px;
+.App .body {
+  flex: 1;
+  margin-left: 18.5rem;
 }
 
-.input-container .rs-picker-toggle-clean {
+.App {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.App::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+/* .App::-webkit-scrollbar {
+  width: 0.1em;
+  height: 10px;
+}
+
+.App::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+.App::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #451ae0;
+}
+
+.App::-webkit-scrollbar:vertical {
   display: none;
-}
+} */
 
-.input-container .rs-picker-toggle-placeholder {
-  font-size: 12px;
-  margin-left: 25px;
-  margin-right: 15px;
-}
-
-.input-container {
-  display: flex;
-}
-
-.input-container .search-container {
-  height: 34px;
-  width: 40px;
-  display: grid;
-  place-items: center;
-  transform: translate(-41px, 1px);
-  z-index: 9999;
-  background-color: #f5f5f5;
-  border-bottom-right-radius: 5px;
-  border-top-right-radius: 5px;
+.hamburger {
+  display: none;
   cursor: pointer;
-}
-
-.search-container img {
-  height: 15px;
-  width: 15px;
-}
-
-.result-section {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  flex: 1;
-}
-
-.result-section .result-title {
-  width: 100%;
-  position: relative;
-  font-weight: 600;
-}
-
-.result-title span {
-  margin: 0 3px;
-  font-size: 20px;
-}
-
-.result-section .result-title::after {
-  content: "";
-  height: 1px;
-  width: 100%;
   position: absolute;
-  bottom: -10px;
-  transform: translateX(-110px);
-  background-color: #dcdcdc;
+  top: 1rem;
 }
 
-.result-section .result-main {
-  margin-top: 30px;
-  flex: 1;
-  display: grid;
-  place-items: center;
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  transition: all 0.3s ease-in-out;
+  transform-origin: 0px 1px;
 }
 
-.result-section .table-container {
-  margin-top: 30px;
+.hamburger span:not(:last-child) {
+  margin-bottom: 0.35rem;
 }
 
-@media (max-width: 760px) {
-  .input-container,
-  .result-title {
-    margin-left: 20px;
-  }
+.open span {
+  background-color: black;
+}
 
-  .result-section .result-title::after {
-    height: 0;
-  }
+.open span:first-child {
+  transform: rotate(45deg);
+}
 
-  .result-section .table-container {
-    margin-top: 0;
-  }
+.open span:nth-child(2) {
+  opacity: 0;
+}
 
+.open span:last-child {
+  transform: rotate(-45deg);
+}
+
+.mousecursor {
+  height: 30px;
+  width: 30px;
+  background: rgb(93, 93, 226, 0.6);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 99999999;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+  transition-property: height, width;
+}
+
+.grow {
+  height: 50px;
+  width: 50px;
+}
+
+@media (max-width: 600px) {
   .App {
-    padding: 0;
-    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
     overflow-x: hidden;
+    cursor: auto;
   }
 
-  .input-container {
-    padding-top: 5vh;
+  .mousecursor {
+    display: none;
+  }
+
+  .App .body {
+    flex: 1;
+    margin-left: 0;
+  }
+
+  .App .sidebar-main {
+    position: fixed;
+    width: 100vw;
+  }
+
+  .hide-sidebar {
+    display: none;
+    width: 0px;
+  }
+
+  .show-sidebar {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 9999999;
+    left: 1rem;
   }
 }
