@@ -86,9 +86,9 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .about {
-    height: 100vh;
+    height: 105vh;
     width: 100vw;
   }
 
@@ -97,6 +97,10 @@
     position: fixed;
     background-color: rgb(61, 61, 189);
     z-index: 999999;
+  }
+
+  .background-image img {
+    object-position: left;
   }
 
   .info img,

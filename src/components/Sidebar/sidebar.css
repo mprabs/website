@@ -93,7 +93,7 @@
   color: rgb(172, 42, 42);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .sidebar_item {
     margin-bottom: 5rem;
     font-size: 1rem;

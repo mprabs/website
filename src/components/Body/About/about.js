@@ -3,10 +3,11 @@ import "./about.css";
 
 import ProfilePNG from "../../../assets/profile.jpg";
 import Background from "../../../assets/background.jpg";
+import Swivel from "../../../assets/swivel.png";
 
 export default function about() {
   return (
-    <div className="about">
+    <div className="about" id="about">
       <div className="background-image">
         <img src={Background} />
       </div>

@@ -91,9 +91,10 @@
 }
 
 .mousecursor {
-  height: 30px;
-  width: 30px;
-  background: rgb(93, 93, 226, 0.6);
+  height: 20px;
+  width: 20px;
+  background: linear-gradient(rgb(41, 44, 207), rgb(19, 219, 46)) 0 0,
+    linear-gradient(cyan, cyan) 33vw 0, linear-gradient(blue, blue) 66vw 0;
   border-radius: 50%;
   position: absolute;
   z-index: 99999999;
@@ -103,12 +104,28 @@
   transition-property: height, width;
 }
 
+:root {
+  --afterContent: "Scroll";
+}
+
+.mousecursor::after {
+  content: var(--afterContent);
+  border: 1px solid rgb(216, 215, 215);
+  color: black;
+  position: absolute;
+  border-radius: 1rem;
+  padding: 0 1rem;
+  left: 0;
+  margin-left: 1.5rem;
+  background: white;
+}
+
 .grow {
   height: 50px;
   width: 50px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .App {
     display: flex;
     flex-direction: column;

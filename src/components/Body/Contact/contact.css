@@ -1,11 +1,13 @@
 .contact {
-  width: 100vw;
+  width: 80vw;
   height: 100%;
   background-color: rgb(60, 114, 121);
+  position: relative;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .contact {
-    height: 1000px;
+    height: 90vh;
+    width: 100vw;
   }
 }

@@ -1,32 +1,20 @@
 import React from "react";
 import "./sidebar.css";
 
-import WorkIcon from "../../assets/work.svg";
-import AboutIcon from "../../assets/about.svg";
-import ContactIcon from "../../assets/letter.svg";
+import { NAV, NAVIGATIONDATA } from "../../constants";
 
-export default function sidebar({ mousecursor }) {
-  const items = [
-    {
-      title: "About",
-      subtitle: "Who I am",
-      image: AboutIcon,
-    },
-    {
-      title: "Work",
-      subtitle: "watch my work",
-      image: WorkIcon,
-    },
-    {
-      title: "Contact",
-      subtitle: "contact me",
-      image: ContactIcon,
-    },
-  ];
+export default function sidebar({ mousecursor, onNavigation }) {
+  const handleNavigation = (type) => {
+    onNavigation(type);
+  };
+
   return (
     <div className="sidebar">
-      {items.map((item) => (
-        <div className="sidebar_container">
+      {NAVIGATIONDATA.map((item) => (
+        <div
+          className="sidebar_container"
+          onClick={() => handleNavigation(item.title)}
+        >
           <div className="sidebar_item">
             <div className="left">
               <img src={item.image} />
