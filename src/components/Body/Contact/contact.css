@@ -1,13 +1,276 @@
 .contact {
   width: 80vw;
   height: 100%;
-  background-color: rgb(60, 114, 121);
   position: relative;
 }
 
+.container {
+  position: absolute;
+  top: 5vh;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  color: rgb(90, 88, 42);
+}
+
+.contact .background-image img {
+  transform: rotate(0);
+}
+
+.container .title {
+  width: 30%;
+  height: 20%;
+  background: rgba(220, 223, 218, 0.473);
+  font-size: 30px;
+  font-weight: bold;
+  display: grid;
+  place-items: end left;
+  clip-path: polygon(
+    95% 54%,
+    35% 55%,
+    100% 100%,
+    53% 100%,
+    0 100%,
+    0 69%,
+    0 35%,
+    0 0
+  );
+  margin-left: 30vw;
+  position: relative;
+}
+
+.container .title .star {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  background: rgb(36, 112, 46);
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  top: 20px;
+  left: 50px;
+  animation: rotate 5s ease-in-out infinite;
+}
+
+.icons {
+  display: flex;
+  width: 80%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.contact_icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all ease-in-out 0.3s;
+}
+
+.contact_icon:hover {
+  transform: translateY(-10px);
+}
+
+.contact_icon img {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+}
+
+a {
+  text-decoration: none;
+}
+
+.contact .mail a {
+  color: rgb(0, 0, 0);
+}
+
+.contact .icons a {
+  position: relative;
+}
+
+.contact .icons a span {
+  position: absolute;
+  color: rgb(0, 0, 0);
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.788);
+  border-radius: 1rem;
+  margin-top: -4rem;
+  transform-origin: 0 0;
+  animation: pendulum 4s ease-in-out alternate infinite;
+}
+
+.contact .icons img {
+  position: absolute;
+  object-fit: cover;
+}
+
+.everest {
+  position: relative;
+  overflow: hidden;
+  border-radius: 3rem;
+  opacity: 0.7;
+}
+
+.info_personal {
+  margin-bottom: 3rem;
+}
+
+.circle {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background: rgba(18, 88, 48, 0.521);
+  top: -30%;
+  right: -7%;
+  box-shadow: 2px 3px 2px 2px inset black;
+}
+
+.circle .circle_info {
+  position: absolute;
+  left: 20%;
+  bottom: 25%;
+  color: rgb(255, 255, 255);
+}
+
+.everest .address {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.address .mail {
+  position: absolute;
+  bottom: 10px;
+}
+
+.everest .address span {
+  font-size: 2.5rem;
+  color: rgb(12, 61, 12);
+  text-align: center;
+  font-family: "Indie Flower", cursive;
+  font-weight: 900;
+}
+
+.everest .address {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(184, 175, 175, 0.603);
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  background: rgb(14, 94, 25);
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+
+@keyframes pendulum {
+  0% {
+    transform: rotate(60deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(60deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* .myInfo .address,
+.myInfo .mail {
+  transform: rotate(-45deg);
+} */
+
 @media (max-width: 750px) {
   .contact {
-    height: 90vh;
+    height: 100vh;
     width: 100vw;
+    margin-left: 0;
+  }
+
+  .container {
+    top: -4rem;
+  }
+
+  .container .title {
+    width: 90vw;
+    height: 20vh;
+    clip-path: none;
+    background: none;
+    font-size: 3rem;
+    color: black;
+    margin-bottom: 2rem;
+  }
+
+  .everest img {
+    width: 100vw;
+    height: 50vh;
+    object-fit: cover;
+  }
+
+  .everest .circle {
+    top: -20%;
+    right: -20%;
+  }
+
+  .title .star {
+    display: none;
+  }
+
+  .icons .contact_icon img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .everest {
+    border-radius: 0;
+  }
+
+  .address .mail {
+    font-size: 20px;
+  }
+
+  .contact .icons a span {
+    animation: none;
+    bottom: -70px;
+  }
+
+  .contact .icons {
+    width: 100%;
+    transform: translateY(3rem);
   }
 }

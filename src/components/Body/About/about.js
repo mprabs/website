@@ -1,19 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./about.css";
 
 import ProfilePNG from "../../../assets/profile.jpg";
 import Background from "../../../assets/background.jpg";
-import Swivel from "../../../assets/swivel.png";
 
-export default function about() {
+export default function About() {
+  const [quote, setquote] = useState(null);
+
+  useEffect(() => {
+    fetch("https://freequote.herokuapp.com/")
+      .then((res) => res.json())
+      .then((data) => setquote(data));
+  }, []);
+
   return (
     <div className="about" id="about">
       <div className="background-image">
         <img src={Background} />
       </div>
       <div className="top">
-        <q>Do good, be good. Live the healthy way !</q>{" "}
+        {quote && quote.quote} - {quote && quote.author}
       </div>
+
       <div className="info">
         <div className="left">
           <div className="image">
@@ -27,7 +35,7 @@ export default function about() {
         <div className="right">
           <div className="quote">
             {" "}
-            <q>Do good, be good. Live the healthy way !</q>{" "}
+            <q>Do good, be good. Live the healthy way ! </q>{" "}
           </div>
           <div className="myInfo">
             <p>
@@ -36,7 +44,7 @@ export default function about() {
               developer from Nepal. I believe in constant learning and applying
               to develop skills and explore more of myself in life. On a
               constantly evolving journey of life and hence am very optimistic
-              and confident that i will succeed in this journey of mine. :)
+              and confident that i will succeed in this journey of mine.
             </p>
           </div>
         </div>

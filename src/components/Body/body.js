@@ -15,7 +15,7 @@ export default function body({ navigation }) {
         <img src={Swivel} />
       </div>
       <Work />
-      {/* <Contact /> */}
+      <Contact />
     </div>
   );
 }

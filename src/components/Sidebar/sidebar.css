@@ -34,7 +34,7 @@
 }
 
 .sidebar_item:hover {
-  color: brown;
+  color: rgb(54, 42, 165);
 }
 
 .sidebar_item h1::before {
@@ -65,7 +65,7 @@
   left: 150%;
   height: 20px;
   width: 5px;
-  background-color: rgb(165, 42, 42);
+  background-color: rgb(42, 44, 165);
   transform: skew(60deg);
 }
 
@@ -73,24 +73,23 @@
   left: 150%;
   height: 20px;
   width: 5px;
-  background-color: rgb(165, 42, 42);
+  background-color: #452aa5;
   bottom: -50%;
   transform: skew(-60deg);
 }
 
 .sidebar_item:hover img {
-  filter: invert(26%) sepia(17%) saturate(7000%) hue-rotate(339deg)
-    brightness(85%) contrast(91%);
+  filter: invert(12%) sepia(85%) saturate(3670%) hue-rotate(252deg)
+    brightness(92%) contrast(91%);
 }
 
 .sidebar_footer {
   position: absolute;
-  left: 25%;
   bottom: 10px;
 }
 
 .sidebar_footer span {
-  color: rgb(172, 42, 42);
+  color: rgb(28, 13, 80);
 }
 
 @media (max-width: 750px) {

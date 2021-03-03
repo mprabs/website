@@ -1,12 +1,39 @@
 import WorkIcon from "../assets/work.svg";
 import AboutIcon from "../assets/about.svg";
 import ContactIcon from "../assets/letter.svg";
+import InstagramIcon from "../assets/instagram.png";
+import GithubIcon from "../assets/github.png";
+import LinkedinIcon from "../assets/linkedin.png";
+import FacebookIcon from "../assets/facebook.png";
 
 export const NAV = {
   ABOUT: "About",
   WORK: "Work",
   CONTACT: "Contact",
 };
+
+export const CONTACT_ICONS = [
+  {
+    name: "Facebook",
+    icon: FacebookIcon,
+    link: "https://www.fb.com/paccharya",
+  },
+  {
+    name: "Github",
+    icon: GithubIcon,
+    link: "https://www.github.com/mprabs",
+  },
+  {
+    name: "Linkedin",
+    icon: LinkedinIcon,
+    link: "https://www.linkedin.com/in/paccharya",
+  },
+  {
+    name: "Instagram",
+    icon: InstagramIcon,
+    link: "https://www.instagram.com/m_prabs",
+  },
+];
 
 export const NAVIGATIONDATA = [
   {
@@ -19,11 +46,11 @@ export const NAVIGATIONDATA = [
     subtitle: "watch my work",
     image: WorkIcon,
   },
-  // {
-  //   title: NAV.CONTACT,
-  //   subtitle: "contact me",
-  //   image: ContactIcon,
-  // },
+  {
+    title: NAV.CONTACT,
+    subtitle: "contact me",
+    image: ContactIcon,
+  },
 ];
 
 export const TOOLS = [

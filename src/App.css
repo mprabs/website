@@ -74,10 +74,6 @@
   margin-bottom: 0.35rem;
 }
 
-.open span {
-  background-color: black;
-}
-
 .open span:first-child {
   transform: rotate(45deg);
 }

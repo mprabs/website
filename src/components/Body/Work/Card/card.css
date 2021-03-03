@@ -79,3 +79,22 @@
   text-decoration: none;
   color: rgb(255, 255, 255);
 }
+
+@media (max-width: 600px) {
+  .flip-card {
+    width: 60vw;
+    height: 60vw;
+  }
+
+  .flip-card h3 {
+    font-size: 2rem;
+  }
+
+  .flip-card h4 {
+    font-size: 1.2rem;
+  }
+
+  .flip-card .skills {
+    font-size: 1rem;
+  }
+}

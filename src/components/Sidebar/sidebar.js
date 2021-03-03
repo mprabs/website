@@ -27,7 +27,7 @@ export default function sidebar({ mousecursor, onNavigation }) {
         </div>
       ))}
       <div className="sidebar_footer">
-        Made by <span>Prabin Acharya</span>
+        Made with 💜 by <span>Prabin Acharya</span>
       </div>
     </div>
   );
