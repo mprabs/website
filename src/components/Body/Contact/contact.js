@@ -13,10 +13,7 @@ export default function contact() {
         <img src={ConnectBackground} />
       </div>
       <div className="container">
-        <div className="title">
-          Contact Me
-          <div className="star"></div>
-        </div>
+        <div className="title">Lets Connect</div>
         <div className="info_personal">
           <div className="everest">
             <div className="address">

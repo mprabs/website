@@ -35,10 +35,15 @@ export default function work() {
           </h2>
           <div className="personal_works">
             {PERSONAL_WORKS.map((item) => (
-              <div key={item.id} className="work_item">
+              <a
+                key={item.id}
+                target="_blank"
+                className="work_item"
+                href={item.link}
+              >
                 <h3>{item.title}</h3>
                 <div className="p-skills">{`(${item.tags.join(",")})`}</div>
-              </div>
+              </a>
             ))}
           </div>
           etc..

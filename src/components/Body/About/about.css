@@ -88,15 +88,24 @@
 
 @media (max-width: 750px) {
   .about {
-    height: 105vh;
+    height: 50rem;
     width: 100vw;
   }
 
   .about .top {
-    height: 50px;
+    min-height: 50px;
     position: fixed;
     background-color: rgb(61, 61, 189);
     z-index: 999999;
+    padding-left: 50px;
+  }
+
+  .about .top_quote {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
   }
 
   .background-image img {

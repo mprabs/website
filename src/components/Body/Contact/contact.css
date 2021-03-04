@@ -23,45 +23,14 @@
 .container .title {
   width: 30%;
   height: 20%;
-  background: rgba(220, 223, 218, 0.473);
-  font-size: 30px;
+  font-size: 3rem;
   font-weight: bold;
   display: grid;
   place-items: end left;
-  clip-path: polygon(
-    95% 54%,
-    35% 55%,
-    100% 100%,
-    53% 100%,
-    0 100%,
-    0 69%,
-    0 35%,
-    0 0
-  );
-  margin-left: 30vw;
   position: relative;
-}
-
-.container .title .star {
-  position: absolute;
-  height: 30px;
-  width: 30px;
-  background: rgb(36, 112, 46);
-  clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  );
-  top: 20px;
-  left: 50px;
-  animation: rotate 5s ease-in-out infinite;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px rgb(0, 0, 0);
+  font-family: serif;
 }
 
 .icons {
@@ -133,7 +102,7 @@ a {
   height: 200px;
   width: 200px;
   border-radius: 50%;
-  background: rgba(18, 88, 48, 0.521);
+  background: rgba(4, 73, 34, 0.685);
   top: -30%;
   right: -7%;
   box-shadow: 2px 3px 2px 2px inset black;
@@ -161,10 +130,11 @@ a {
 
 .everest .address span {
   font-size: 2.5rem;
-  color: rgb(12, 61, 12);
+  color: rgb(255, 255, 255);
   text-align: center;
   font-family: "Indie Flower", cursive;
   font-weight: 900;
+  text-shadow: 2px 2px green;
 }
 
 .everest .address {
@@ -174,7 +144,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgba(184, 175, 175, 0.603);
+  background: rgba(218, 215, 215, 0.603);
 }
 
 .footer {
@@ -200,45 +170,30 @@ a {
   }
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* .myInfo .address,
-.myInfo .mail {
-  transform: rotate(-45deg);
-} */
-
 @media (max-width: 750px) {
   .contact {
-    height: 100vh;
+    height: 55rem;
     width: 100vw;
     margin-left: 0;
+    background: rgb(93, 111, 114);
   }
 
   .container {
-    top: -4rem;
+    top: 2rem;
   }
 
   .container .title {
-    width: 90vw;
-    height: 20vh;
-    clip-path: none;
-    background: none;
+    width: 100vw;
+    height: 10rem;
     font-size: 3rem;
-    color: black;
-    margin-bottom: 2rem;
+    display: grid;
+    place-items: center;
+    font-family: cursive;
   }
 
   .everest img {
     width: 100vw;
-    height: 50vh;
+    height: 80vh;
     object-fit: cover;
   }
 
@@ -258,19 +213,37 @@ a {
 
   .everest {
     border-radius: 0;
+    opacity: 1;
+  }
+
+  .address span {
+    padding: 1rem;
   }
 
   .address .mail {
     font-size: 20px;
+    text-align: center;
   }
 
   .contact .icons a span {
     animation: none;
     bottom: -70px;
+    font-size: smaller;
   }
 
   .contact .icons {
     width: 100%;
+    flex-wrap: wrap;
     transform: translateY(3rem);
+    margin-bottom: 4rem;
+  }
+
+  .contact .background-image img {
+    display: none;
+  }
+
+  .everest .address span {
+    color: rgb(47, 82, 36);
+    text-shadow: 2px 2px rgb(255, 255, 255);
   }
 }

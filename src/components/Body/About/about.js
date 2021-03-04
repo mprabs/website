@@ -19,7 +19,9 @@ export default function About() {
         <img src={Background} />
       </div>
       <div className="top">
-        {quote && quote.quote} - {quote && quote.author}
+        <div className="top_quote">
+          {quote && quote.quote} - {quote && quote.author}
+        </div>
       </div>
 
       <div className="info">
@@ -35,7 +37,7 @@ export default function About() {
         <div className="right">
           <div className="quote">
             {" "}
-            <q>Do good, be good. Live the healthy way ! </q>{" "}
+            <q>Do good, be good. Live the healthy way!</q>{" "}
           </div>
           <div className="myInfo">
             <p>

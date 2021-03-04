@@ -72,7 +72,7 @@ export const WORKS = [
   {
     id: 1,
     title: "Sharelook App",
-    tags: ["React", "Redux", "Git"],
+    tags: ["React", "Redux"],
     about:
       "Web application that allows course building with integrated video broadcasting",
     contribution: `
@@ -85,7 +85,7 @@ data formatting and many more features.
   {
     id: 2,
     title: "RealHRSoft",
-    tags: ["Vue", "Vuex", "Scrum", "Git"],
+    tags: ["Vue", "Vuex", "Scrum"],
     about: "A human resource management web application",
     contribution: `Exposure to real life application. Applied vuejs functionalities, stylings,
     addition of features and many more. Worked in scrum.`,
@@ -94,7 +94,7 @@ data formatting and many more features.
   {
     id: 3,
     title: "Swanned",
-    tags: ["React Native", "Redux", "Git"],
+    tags: ["React Native", "Redux"],
     about: "Real life online dating platform where users swipe to match",
     contribution: `Exposure to React native with expo. Applied multiple functionalities like handling
     local notifications, different features and design with react native and
@@ -109,31 +109,37 @@ export const PERSONAL_WORKS = [
     id: 1,
     title: "Hotels App",
     tags: ["Vue", "Express", "Mongodb"],
+    link: "https://github.com/mprabs/Hotels-App",
   },
   {
     id: 2,
     title: "Reddit Clone",
     tags: ["Vue", "CSS"],
+    link: "https://github.com/mprabs/Reddit-Clone",
   },
   {
     id: 3,
     title: "IP Tracker",
     tags: ["JavaScript"],
+    link: "https://github.com/mprabs/IP-Tracker",
   },
   {
     id: 4,
     title: "Custom Codepen",
     tags: ["ReactJs"],
+    link: "https://github.com/mprabs/Codepen-clone",
   },
   {
     id: 5,
     title: "Canteen App",
     tags: ["Vue", "Vuex"],
+    link: "https://github.com/mprabs/Canteen-Management",
   },
   {
     id: 6,
     title: "Reqres Users App",
     tags: ["React Native"],
+    link: "https://github.com/mprabs/Reqres-Users-App",
   },
 ];
 

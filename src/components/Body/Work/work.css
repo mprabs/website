@@ -65,10 +65,25 @@
   color: rgb(28, 28, 59);
 }
 
+.work_item {
+  position: relative;
+}
+
+.work_item:hover::after {
+  content: "---Click to explore--->";
+  position: absolute;
+  left: -70%;
+  color: green;
+}
+
 @media (max-width: 750px) {
   .work {
-    height: 210vh;
+    height: max-content;
     width: 100vw;
+  }
+
+  .work_item:hover::after {
+    content: "";
   }
 
   .work .works {
@@ -84,21 +99,16 @@
     place-items: center;
   }
 
-  .works-top .skills {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
-  }
-
   .skills .skill {
     text-align: center;
     border-radius: 10px;
+    margin: 0.25rem;
     background: linear-gradient(
       to right,
-      rgb(113, 112, 190),
-      rgb(138, 130, 130)
+      rgb(216, 215, 215),
+      rgb(196, 196, 197)
     );
-    color: rgb(228, 228, 228);
+    box-shadow: 0 1px 1px 1px rgb(88, 77, 77);
   }
 
   .work .background-image img {
@@ -121,18 +131,31 @@
   }
 
   .personal {
-    margin: 4rem auto 0 auto;
+    margin: 4rem auto;
     text-align: center;
   }
 
+  .personal_works {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
   .personal .work_item {
-    flex-direction: column;
     margin-top: 1rem;
     font-size: 1.5rem;
     color: rgb(34, 8, 8);
+    background: rgba(255, 255, 255, 0.555);
+    box-shadow: inset 1px 2px 0 2px rgb(97, 93, 93);
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    border-radius: 0 50%;
   }
 
   .work_item .p-skills {
     font-size: 1.1rem;
+    word-wrap: break-word;
   }
 }
