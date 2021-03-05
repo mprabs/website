@@ -1,12 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./sidebar.css";
 
 import { NAV, NAVIGATIONDATA } from "../../constants";
 
-export default function sidebar({ mousecursor, onNavigation }) {
+export default function Sidebar({ mousecursor, onNavigation }) {
   const handleNavigation = (type) => {
     onNavigation(type);
   };
+
+  useEffect(() => {
+    const sidebarItem = document.querySelectorAll(".sidebar_container");
+    sidebarItem.forEach((item) => {
+      item.addEventListener("mouseover", () => {
+        if (mousecursor) {
+          mousecursor.style.opacity = 0.5;
+          mousecursor.style.transform = "scale(2)";
+        }
+      });
+      item.addEventListener("mouseleave", () => {
+        if (mousecursor) {
+          mousecursor.style.opacity = 1;
+          mousecursor.style.transform = "scale(1)";
+        }
+      });
+    });
+  });
 
   return (
     <div className="sidebar">

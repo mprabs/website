@@ -7,15 +7,15 @@ import Work from "./Work";
 
 import Swivel from "../../assets/swivel.png";
 
-export default function body({ navigation }) {
+export default function body({ mousecursor }) {
   return (
     <div className="content">
-      <About />
+      <About mousecursor={mousecursor} />
       <div className="swivel">
         <img src={Swivel} />
       </div>
-      <Work />
-      <Contact />
+      <Work mousecursor={mousecursor} />
+      <Contact mousecursor={mousecursor} />
     </div>
   );
 }

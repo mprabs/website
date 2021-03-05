@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./work.css";
 
 import WorkBackground from "../../../assets/workBackground.jpg";
@@ -6,7 +6,23 @@ import Card from "./Card";
 
 import { TOOLS, WORKS, PERSONAL_WORKS } from "../../../constants";
 
-export default function work() {
+export default function Work({ mousecursor }) {
+  useEffect(() => {
+    const workItem = document.querySelectorAll(".work_item");
+    workItem.forEach((item) => {
+      item.addEventListener("mouseover", () => {
+        if (mousecursor) {
+          mousecursor.style.opacity = 0.5;
+        }
+      });
+      item.addEventListener("mouseleave", () => {
+        if (mousecursor) {
+          mousecursor.style.opacity = 1;
+        }
+      });
+    });
+  });
+
   return (
     <div className="work" id="work">
       <div className="background-image">

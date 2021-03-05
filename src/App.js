@@ -4,8 +4,6 @@ import "./App.css";
 import Sidebar from "./components/Sidebar";
 import Body from "./components/Body";
 
-import { NAV } from "./constants";
-
 export default function App() {
   const [mobileView, setmobileView] = useState(false);
   const [mousecursor, setmousecursor] = useState(null);
@@ -18,38 +16,32 @@ export default function App() {
       body.scrollLeft += e.deltaY / 2;
     }
   };
+
   useEffect(() => {
     const sidebar = document.getElementById("sidebar");
     sidebar.classList.add("hide-sidebar");
 
     document.addEventListener("wheel", (e) => {
+      document.body.style.setProperty("--afterContent", " ");
       pushContentToLeft(e);
     });
 
     const handleResize = () => {
-      if (window.innerWidth < 750) {
-        setmobileView(true);
-      } else {
-        setmobileView(false);
-      }
+      setmobileView(window.innerWidth < 750);
     };
+
     const handleCursor = (e) => {
-      const mousecursor = document.querySelector(".mousecursor");
+      const mousecursor = document.getElementById("cursor");
       mousecursor.style.top = e.pageY + "px";
       mousecursor.style.left = e.pageX + "px";
       setmousecursor(mousecursor);
     };
 
-    const handleScroll = (e) => {
-      document.body.style.setProperty("--afterContent", "");
-    };
-
     handleResize();
-    document.addEventListener("scroll", handleScroll);
     window.addEventListener("mousemove", handleCursor);
     window.addEventListener("resize", handleResize);
+
     return () => {
-      document.addEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("mousemove", handleCursor);
     };

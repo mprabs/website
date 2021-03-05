@@ -4,7 +4,7 @@ import "./about.css";
 import ProfilePNG from "../../../assets/profile.jpg";
 import Background from "../../../assets/background.jpg";
 
-export default function About() {
+export default function About({ mousecursor }) {
   const [quote, setquote] = useState(null);
 
   useEffect(() => {
@@ -12,6 +12,22 @@ export default function About() {
       .then((res) => res.json())
       .then((data) => setquote(data));
   }, []);
+
+  useEffect(() => {
+    const profileImage = document.getElementById("profileImage");
+    profileImage.addEventListener("mouseover", () => {
+      if (mousecursor) {
+        mousecursor.style.opacity = 0.5;
+        mousecursor.style.transform = "scale(4)";
+      }
+    });
+    profileImage.addEventListener("mouseleave", () => {
+      if (mousecursor) {
+        mousecursor.style.opacity = 1;
+        mousecursor.style.transform = "scale(1)";
+      }
+    });
+  });
 
   return (
     <div className="about" id="about">
@@ -27,7 +43,7 @@ export default function About() {
       <div className="info">
         <div className="left">
           <div className="image">
-            <img src={ProfilePNG} />
+            <img src={ProfilePNG} id="profileImage" />
           </div>
           <div className="intro">
             <h2>Prabin Acharya</h2>
