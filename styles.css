@@ -154,16 +154,17 @@ header .left .mail {
   right: 30vw;
   height: 50vw;
   z-index: -1;
-  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.95) 100%);
-  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.95) 100%);
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 1) 100%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 1) 100%);
 }
 
 .body .right .peace {
-  position: absolute;
-  top: -6rem;
-  right: 10rem;
-  font-size: 5rem;
+  position: fixed;
+  bottom: -1050px;
+  font-size: 100rem;
   color: red;
+  z-index: -1;
+  opacity: 0.4;
 }
 
 .footer {
@@ -220,11 +221,16 @@ footer .link {
     flex-direction: column;
     margin: 3rem 0;
   }
-
   header .left {
     flex-direction: column;
     gap: 0;
     margin-bottom: 1rem;
+  }
+
+  header .right {
+    position: absolute;
+    right: 30px;
+    top: 30px;
   }
 
   .body .left,
@@ -243,6 +249,8 @@ footer .link {
     right: 10px;
     margin-bottom: 3rem;
     border: 2px dotted var(--red-text);
+    mask-image: none;
+    -webkit-mask-image: none;
   }
 
   .body .left .main-text {
@@ -255,6 +263,14 @@ footer .link {
 
   .body .right {
     max-width: 90vw;
+  }
+
+  .body .right .peace {
+    position: relative;
+    top: -0;
+    right: 0;
+    font-size: 5rem;
+    color: red;
   }
 
   .body button {
@@ -274,5 +290,9 @@ footer .link {
     flex-direction: row;
     gap: 2rem;
     margin-bottom: 1rem;
+  }
+
+  footer .right {
+    margin-bottom: 3rem;
   }
 }
