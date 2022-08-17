@@ -1,0 +1,278 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --red-text: #eb4a4a;
+  --info-title: #a5a5a5;
+  --info-text: #7b7b7b;
+  --button-text: #ef6c6c;
+}
+
+body {
+  background: black;
+  color: white;
+  padding: 2rem 5rem;
+  font-family: "Ubuntu", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 10vh;
+}
+
+header .left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+header .left .name {
+  font-size: 3rem;
+  position: relative;
+}
+
+header .left .name span {
+  position: absolute;
+  bottom: 33px;
+  right: 25px;
+  font-size: 1rem;
+  color: #eb4a4a;
+}
+
+header .left .mail {
+  margin-top: 1rem;
+}
+
+.body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100vh - (4rem + 23vh));
+}
+
+.body .left .main-text {
+  font-size: 4rem;
+  font-family: serif;
+}
+
+.body .left .main-text span {
+  font-weight: bold;
+  color: var(--red-text);
+}
+
+.body .left .sub-text {
+  color: var(--info-text);
+  font-size: 2rem;
+}
+
+.body .left button {
+  margin-top: 2rem;
+  background: var(--red-text);
+  padding: 0.75rem;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.body .left button:hover {
+  opacity: 0.8;
+}
+
+.body .left button a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(233, 231, 231);
+}
+
+.body .left button a span {
+  padding: 10px 1rem;
+  background: #ef6c6c;
+  border-radius: 5px;
+  margin-left: 1rem;
+}
+
+.body .right {
+  max-width: 30vw;
+  position: relative;
+}
+
+.body .right .title-text {
+  color: var(--red-text);
+  font-size: 1rem;
+}
+
+.body .right .info-title {
+  color: rgb(233, 231, 231);
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.body .right .info-text {
+  color: var(--info-title);
+  margin: 2rem 0;
+}
+
+.body .right a {
+  text-decoration: none;
+  color: #eb4a4a;
+  position: relative;
+  cursor: pointer;
+}
+
+.body .right a:hover {
+  opacity: 0.8;
+}
+
+.body .right a::after {
+  content: "";
+  width: 97px;
+  height: 1px;
+  background: #eb4a4a;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.body .right a span {
+  margin-left: 0.5rem;
+}
+
+.body img {
+  position: absolute;
+  bottom: 0;
+  right: 30vw;
+  height: 50vw;
+  z-index: -1;
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.95) 100%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.95) 100%);
+}
+
+.body .right .peace {
+  position: absolute;
+  top: -6rem;
+  right: 10rem;
+  font-size: 5rem;
+  color: red;
+}
+
+.footer {
+  height: 13vh;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+footer .left {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 5rem;
+}
+
+footer .icons ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+footer .icons ul li {
+  text-decoration: none;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+footer .icons ul li a svg {
+  fill: white;
+}
+
+footer .icons ul li:hover > a svg {
+  fill: #eb4a4a;
+}
+
+footer .link {
+  z-index: 999;
+}
+
+@media screen and (max-width: 650px) {
+  .body {
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  header {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 3rem 0;
+  }
+
+  header .left {
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 1rem;
+  }
+
+  .body .left,
+  .body .right {
+    text-align: center;
+  }
+
+  .body img {
+    position: relative;
+    min-height: 150px;
+    min-width: 150px;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    right: 10px;
+    margin-bottom: 3rem;
+    border: 2px dotted var(--red-text);
+  }
+
+  .body .left .main-text {
+    font-size: 2rem;
+  }
+
+  .body .left .sub-text {
+    font-size: 1.5rem;
+  }
+
+  .body .right {
+    max-width: 90vw;
+  }
+
+  .body button {
+    margin-bottom: 3rem;
+  }
+
+  footer,
+  footer .left {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin: 1rem 0;
+  }
+
+  footer .left .icons ul {
+    flex-direction: row;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+}
