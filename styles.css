@@ -71,7 +71,7 @@ header .left .mail {
 
 .body .left .sub-text {
   color: var(--info-text);
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .body .left button {
@@ -154,8 +154,6 @@ header .left .mail {
   right: 30vw;
   height: 50vw;
   z-index: -1;
-  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 1) 100%);
-  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 1) 100%);
 }
 
 .body .right .peace {
@@ -209,6 +207,9 @@ footer .link {
 }
 
 @media screen and (max-width: 650px) {
+  body {
+    padding: 2rem 3rem;
+  }
   .body {
     height: auto;
     flex-direction: column;
@@ -249,8 +250,6 @@ footer .link {
     right: 10px;
     margin-bottom: 3rem;
     border: 2px dotted var(--red-text);
-    mask-image: none;
-    -webkit-mask-image: none;
   }
 
   .body .left .main-text {
