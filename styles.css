@@ -327,7 +327,7 @@ footer .right img {
     margin-bottom: 3rem;
     border: 2px dotted var(--red-text);
     mask-image: none;
-    -webkit-mask: none;
+    -webkit-mask-image: none;
   }
 
   .body .left .main-text {
