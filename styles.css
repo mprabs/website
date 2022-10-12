@@ -180,6 +180,8 @@ header .right .bar:nth-child(3) {
   right: 30%;
   height: 50vw;
   z-index: -1;
+  -webkit-mask-image: radial-gradient(circle, black 30%, rgba(0, 0, 0, 0.1) 80%);
+  mask-image: radial-gradient(circle, black 30%, rgba(0, 0, 0, 0.1) 80%);
 }
 
 .body .right .peace {
@@ -324,6 +326,8 @@ footer .right img {
     right: 10px;
     margin-bottom: 3rem;
     border: 2px dotted var(--red-text);
+    mask-image: none;
+    -webkit-mask: none;
   }
 
   .body .left .main-text {
@@ -365,7 +369,7 @@ footer .right img {
   footer .left .icons ul {
     flex-direction: row;
     gap: 2rem;
-    margin: 3rem 0;
+    margin: 1rem 0;
   }
 
   footer .right {
