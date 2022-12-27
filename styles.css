@@ -180,8 +180,8 @@ header .right .bar:nth-child(3) {
   right: 30%;
   height: 50vw;
   z-index: -1;
-  -webkit-mask-image: radial-gradient(circle, black 30%, rgba(0, 0, 0, 0.1) 80%);
-  mask-image: radial-gradient(circle, black 30%, rgba(0, 0, 0, 0.1) 80%);
+  -webkit-mask-image: radial-gradient(circle, black 40%, rgba(0, 0, 0, 0.1) 80%);
+  mask-image: radial-gradient(circle, black 40%, rgba(0, 0, 0, 0.1) 80%);
 }
 
 .body .right .peace {
