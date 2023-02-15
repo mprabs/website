@@ -162,7 +162,7 @@ header .right .bar:nth-child(3) {
 
 .body .right a::after {
   content: "";
-  width: 97px;
+  width: 100%;
   height: 1px;
   background: #eb4a4a;
   position: absolute;
