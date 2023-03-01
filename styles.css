@@ -83,7 +83,7 @@ header .right .bar:nth-child(3) {
 }
 
 .body .left .main-text {
-  font-size: 3rem;
+  font-size: 5rem;
   font-family: serif;
 }
 
@@ -134,7 +134,7 @@ header .right .bar:nth-child(3) {
 
 .body .right .title-text {
   color: var(--red-text);
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   opacity: 0.9;
 }
 
@@ -176,9 +176,10 @@ header .right .bar:nth-child(3) {
 
 .body img {
   position: absolute;
+  object-fit: cover;
   bottom: 0;
   right: 30%;
-  height: 50vw;
+  height: 100vh;
   z-index: -1;
   -webkit-mask-image: radial-gradient(circle, black 40%, rgba(0, 0, 0, 0.1) 80%);
   mask-image: radial-gradient(circle, black 40%, rgba(0, 0, 0, 0.1) 80%);
