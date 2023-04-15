@@ -7,7 +7,6 @@ import Header from "./components/Header";
 import Blogs from "./views/Blogs";
 import Setup from "./views/Setup";
 import About from "./views/About";
-import Footer from "./views/Footer";
 
 import ErrorPage from "./ErrorPage";
 
@@ -22,7 +21,12 @@ function App() {
     };
   }, []);
 
-  const [theme, setTheme] = useState(themesJSON.dayMode);
+  const [theme, setTheme] = useState(() => {
+    const localTheme = localStorage.getItem("theme");
+    if (localTheme) return localTheme;
+    return themesJSON.dayMode;
+  });
+
   const [mobileView, setMobileView] = useState(window.innerWidth < 750);
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
 
@@ -40,15 +44,11 @@ function App() {
   };
 
   useEffect(() => {
-    const mainDocument = document.body;
+    const mainDocument = document.documentElement;
     const textContent = document.getElementById("text-content");
 
     if (theme === themesJSON.dayMode) {
-      mainDocument.style.setProperty("--background", "#fff");
-      mainDocument.style.setProperty("--black-background", "#121212");
-      mainDocument.style.setProperty("--alternate-background", "#121212");
-      mainDocument.style.setProperty("--text-color", "#121212");
-      mainDocument.style.setProperty("--alternate-text-color", "#c1c1c1");
+      mainDocument.setAttribute("data-theme", "light");
       if (textContent) {
         textContent.style.backgroundImage = "none";
       }
@@ -56,12 +56,10 @@ function App() {
       if (textContent) {
         textContent.style.backgroundImage = `url(${marbleBackground})`;
       }
-      mainDocument.style.setProperty("--background", "#121212");
-      mainDocument.style.setProperty("--black-background", "#d8d8d8");
-      mainDocument.style.setProperty("--alternate-background", "#c1c1c1");
-      mainDocument.style.setProperty("--text-color", "#c1c1c1");
-      mainDocument.style.setProperty("--alternate-text-color", "#121212");
+      mainDocument.setAttribute("data-theme", "dark");
     }
+
+    localStorage.setItem("theme", theme);
   }, [theme, themesJSON]);
 
   useEffect(() => {
