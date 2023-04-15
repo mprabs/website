@@ -1,0 +1,76 @@
+.content {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+  grid-template-rows: 1.5fr 0.5fr;
+  &-image {
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/prabin.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &-text {
+    background-color: var(--black-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding-left: 2rem;
+    border-right: 3px solid var(--background);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+
+    p {
+      color: var(--alternate-text-color);
+      font-size: 4vh;
+      font-family: var(--header-font);
+      padding-right: 5vw;
+    }
+
+    span {
+      opacity: 0.6;
+      font-family: var(--text-font);
+      position: relative;
+      cursor: pointer;
+      &::after {
+        content: "";
+        background: var(--text-color);
+        height: 1px;
+        width: 60px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  &-description {
+    background: var(--alternate-background);
+    color: var(--alternate-text-color);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: inherit;
+    border-top: 2px solid var(--background);
+    grid-column: 1 / -1;
+
+    p {
+      font-family: var(--text-font);
+      font-weight: bold;
+    }
+
+    span {
+      font-family: var(--header-font);
+      text-align: center;
+      font-size: 0.75rem;
+      width: 1005;
+    }
+  }
+}

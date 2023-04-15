@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap");
+
+:root {
+  --header-font: "Merriweather", serif;
+  --text-font: "Open Sans", sans-serif;
+}
+
+$mobile: 750px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-color);
+  max-width: 1000px;
+  height: 100%;
+  overflow: auto;
+  margin: 0 auto;
+  position: relative;
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.app-items {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#error-page {
+  width: 100%;
+  height: 100vh;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+  background: var(--alternate-background);
+  color: var(--alternate-text-color);
+}
