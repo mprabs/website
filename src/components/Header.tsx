@@ -56,6 +56,8 @@ function Header({ theme, themesJSON, onThemeChange, mobileView, toggleMobileMenu
       </div>
       <div className="header-right">
         <img
+          height="40px"
+          width="40px"
           onClick={handleHeaderImageClick}
           src={mobileView ? (theme === themesJSON.dayMode ? barBlack : barWhite) : themeIcon}
           alt="sun for toggling themes"
@@ -85,7 +87,7 @@ function Header({ theme, themesJSON, onThemeChange, mobileView, toggleMobileMenu
               <Link to="/works">Works</Link>
             </li>
             <li id="mob-theme" onClick={handleThemeChange}>
-              <img src={themeIcon} alt="sun for toggling themes" />
+              <img src={themeIcon} height="40px" width="40px" alt="sun for toggling themes" />
               {theme === themesJSON.dayMode ? "Dark Mode : OFF" : "Dark Mode : ON"}
             </li>
           </ul>

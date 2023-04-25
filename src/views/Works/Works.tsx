@@ -9,43 +9,13 @@ import CodeImage from "../../assets/codewriter.png";
 import CanteenImage from "../../assets/canteen-management.png";
 import HotelsImage from "../../assets/hotels-app.png";
 import Footer from "../Footer";
+import WorkExperience from "./WorkExperience";
 
 function Works() {
   return (
     <>
       <div className="works-container">
-        <div className="experience">
-          <h2 className="experience-title">Work Experience</h2>
-          <ul>
-            <li>
-              <a target="__blank" href="https://sharelookapp.com/">
-                Sharelook
-              </a>
-              <span>2020 October - Present</span>
-              <p>
-                Front End Web Developer <span>ReactJs</span>
-              </p>
-            </li>
-            <li>
-              <a target="__blank" href="https://www.getswanned.com/">
-                Swanned
-              </a>
-              <span>2020 June - August</span>
-              <p>
-                Freelance <span>React Native</span>
-              </p>
-            </li>
-            <li>
-              <a target="__blank" href="https://aayulogic.com/">
-                Aayulogic - RealHRSoft
-              </a>
-              <span>2020 Jan - April</span>
-              <p>
-                Internship - Front End Developer <span>VueJs</span>
-              </p>
-            </li>
-          </ul>
-        </div>
+        <WorkExperience />
         <h2 className="experience-title works-title">Personal Projects</h2>
         <div className="works">
           <div className="work-item">
@@ -85,7 +55,9 @@ function Works() {
                 </ul>
               </div>
               <div className="work-buttons">
-                <a className="visit-site disabled">Visit</a>
+                <a className="visit-site disabled" title="visit hotels application">
+                  Visit
+                </a>
                 <a className="view-code" target="__blank" role="button" href="https://github.com/mprabs/Hotels-App">
                   View Source Code
                 </a>
@@ -147,7 +119,9 @@ function Works() {
                 </ul>
               </div>
               <div className="work-buttons">
-                <a className="visit-site">Visit</a>
+                <a className="visit-site disabled" title="visit tetris game">
+                  Visit
+                </a>
                 <a className="view-code" target="__blank" role="button" href="https://github.com/mprabs/Tetris">
                   View Source Code
                 </a>
@@ -167,7 +141,9 @@ function Works() {
                 </ul>
               </div>
               <div className="work-buttons">
-                <a className="visit-site disabled">Visit</a>
+                <a className="visit-site disabled" title="visit canteen management system">
+                  Visit
+                </a>
                 <a className="view-code" target="__blank" role="button" href="https://github.com/mprabs/Canteen-Management">
                   View Source Code
                 </a>
