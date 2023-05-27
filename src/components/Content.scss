@@ -6,7 +6,7 @@
   grid-template-rows: 1.5fr 0.5fr;
 
   @media screen and (max-width: 500px) {
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: 1fr;
   }
 
   &-image {
@@ -16,6 +16,12 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+    @media (max-width: 500px) {
+      height: 50vh;
+      order: -1;
+      box-shadow: 0 0 1px 1px var(--text-color);
+    }
   }
 
   &-text {
@@ -31,7 +37,10 @@
     background-size: cover;
 
     @media screen and (max-width: 500px) {
-      padding-left: 1rem;
+      padding-left: 0;
+      width: calc(100% + 3px);
+      height: 3rem;
+      margin-top: 1rem;
     }
 
     p {
@@ -39,9 +48,16 @@
       font-size: 4vh;
       font-family: var(--header-font);
       padding-right: 5vw;
+      white-space: break-spaces;
 
       @media screen and (max-width: 500px) {
-        font-size: 3vh;
+        font-size: 1rem;
+        white-space: normal;
+        text-align: center;
+        width: 100%;
+        margin-left: 3px;
+        text-transform: uppercase;
+        font-weight: bold;
       }
     }
 
@@ -74,8 +90,9 @@
     border-top: 2px solid var(--background);
     grid-column: 1 / -1;
 
-    @media screen and (max-width: 500px) {
-      text-align: center;
+    @media (max-width: 500px) {
+      margin-bottom: 3rem;
+      padding: 0 2rem;
     }
 
     p {

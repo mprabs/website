@@ -6,10 +6,12 @@ function WorkExperience() {
       <h2 className="experience-title">Work Experience</h2>
       <ul>
         <li>
-          <a target="__blank" href="https://sharelookapp.com/">
-            Sharelook PTE. LTD
-          </a>
-          <span>2020 October - *Present</span>
+          <div className="experience-item">
+            <a target="__blank" href="https://sharelookapp.com/">
+              Sharelook PTE. LTD
+            </a>
+            <span>2020 October - *Present</span>
+          </div>
           <p>
             Front End Web Developer <span>ReactJs</span>
           </p>
@@ -34,10 +36,12 @@ function WorkExperience() {
           </ul>
         </li>
         <li>
-          <a target="__blank" href="https://getswanned.com/">
-            Swanned Pty. Ltd
-          </a>
-          <span>2020 June - 2020 August</span>
+          <div className="experience-item">
+            <a target="__blank" href="https://getswanned.com/">
+              Swanned Pty. Ltd
+            </a>
+            <span>2020 June - 2020 August</span>
+          </div>
           <p>
             Freelance <span>React Native</span>
           </p>
@@ -48,10 +52,12 @@ function WorkExperience() {
           </ul>
         </li>
         <li>
-          <a target="__blank" href="https://aayulogic.com/">
-            Aayulogic Pvt Ltd - RealHRSoft
-          </a>
-          <span>2020 January - 2020 April</span>
+          <div className="experience-item">
+            <a target="__blank" href="https://aayulogic.com/">
+              Aayulogic Pvt Ltd - RealHRSoft
+            </a>
+            <span>2020 January - 2020 April</span>
+          </div>
           <p>
             Internship - Front End Developer <span>VueJs</span>
           </p>

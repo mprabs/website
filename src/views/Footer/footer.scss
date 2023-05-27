@@ -8,6 +8,12 @@ footer {
   justify-content: space-between;
   padding: 5rem 0;
 
+  @media (max-width: 490px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+  }
+
   p {
     text-decoration: underline;
   }

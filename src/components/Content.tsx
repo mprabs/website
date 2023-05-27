@@ -7,9 +7,7 @@ function Content() {
     <>
       <div className="content">
         <div className="content-text" id="text-content">
-          <p>
-            Front <br /> End <br /> ReactJs <br /> Developer
-          </p>
+          <p>Front End ReactJs Developer</p>
         </div>
         <div className="content-image"></div>
         <div className="content-description">
