@@ -5,8 +5,8 @@ import "./footer.scss";
 function Footer() {
   return (
     <footer>
-      <span>© Prabin Acharya 2023</span>
-      <p>Made with ReactJs Powered by Vite</p>
+      <h3>© Prabin Acharya 2023</h3>
+      <h4>Made with ReactJs Powered by Vite</h4>
     </footer>
   );
 }
