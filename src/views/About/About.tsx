@@ -30,22 +30,22 @@ function About() {
           <ul>
             <li>
               <a target="_blank" href="https://www.github.com/mprabs">
-                <img src={githubLogo} alt="social icon" />
+                <img src={githubLogo} alt="prabin acharya github icon" />
               </a>
             </li>
             <li>
               <a target="_blank" href="https://www.fb.com/paccharya">
-                <img src={fbLogo} alt="social icon" />
+                <img src={fbLogo} alt="prabin acharya facebook icon" />
               </a>
             </li>
             <li>
               <a target="_blank" href="https://www.linkedin.com/in/paccharya">
-                <img src={linkedinLogo} alt="social icon" />
+                <img src={linkedinLogo} alt="prabin acharya linkedin icon" />
               </a>
             </li>
             <li>
               <a target="_blank" href="https://www.instagram.com/m_prabs">
-                <img src={instaLogo} alt="social icon" />
+                <img src={instaLogo} alt="prabin acharya instagram icon" />
               </a>
             </li>
           </ul>

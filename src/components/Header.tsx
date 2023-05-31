@@ -36,9 +36,9 @@ function Header({ theme, themesJSON, onThemeChange, mobileView, toggleMobileMenu
   return (
     <header id="header">
       <div className="header-left">
-        <div className="name">
+        <h1 className="name">
           <Link to="/">Prabin</Link>
-        </div>
+        </h1>
         <ul className="menu">
           {/* <li id="blog">
             <Link to="/blogs">Blogs</Link>

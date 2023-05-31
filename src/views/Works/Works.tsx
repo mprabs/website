@@ -19,7 +19,7 @@ function Works() {
         <h2 className="experience-title works-title">Personal Projects</h2>
         <div className="works">
           <div className="work-item">
-            <img src={EvolutionImage} alt="" />
+            <img src={EvolutionImage} alt="prabin-acharya-experience-item-preview" />
             <div className="work-about">
               <div className="work-description">
                 <h3 className="work-title">Evolution Simulator</h3>
@@ -42,7 +42,7 @@ function Works() {
             </div>
           </div>
           <div className="work-item">
-            <img src={HotelsImage} alt="" />
+            <img src={HotelsImage} alt="prabin-acharya-experience-item-preview" />
             <div className="work-about">
               <div className="work-description">
                 <h3 className="work-title">Hotels Application</h3>
@@ -65,7 +65,7 @@ function Works() {
             </div>
           </div>
           <div className="work-item">
-            <img src={CodeImage} alt="" />
+            <img src={CodeImage} alt="prabin-acharya-experience-item-preview" />
             <div className="work-about">
               <div className="work-description">
                 <h3 className="work-title">CodeWriter</h3>
@@ -86,7 +86,7 @@ function Works() {
             </div>
           </div>
           <div className="work-item">
-            <img src={IpTrackerImage} alt="" />
+            <img src={IpTrackerImage} alt="prabin-acharya-experience-item-preview" />
             <div className="work-about">
               <div className="work-description">
                 <h3 className="work-title">IP Tracker</h3>
@@ -107,7 +107,7 @@ function Works() {
             </div>
           </div>
           <div className="work-item">
-            <img src={TetrisImage} alt="" />
+            <img src={TetrisImage} alt="prabin-acharya-experience-item-preview" />
             <div className="work-about">
               <div className="work-description">
                 <h3 className="work-title">Tetris</h3>
@@ -129,7 +129,7 @@ function Works() {
             </div>
           </div>
           <div className="work-item">
-            <img src={CanteenImage} alt="" />
+            <img src={CanteenImage} alt="prabin-acharya-experience-item-preview" />
             <div className="work-about">
               <div className="work-description">
                 <h3 className="work-title">Canteen Management System</h3>
