@@ -2,6 +2,11 @@
   border-top: 2px solid var(--text-color);
   width: 100%;
   height: auto;
+
+  animation: border-color-change 1s infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+
   ul {
     display: flex;
     flex-direction: column;

@@ -53,9 +53,6 @@ function App() {
         textContent.style.backgroundImage = "none";
       }
     } else {
-      if (textContent) {
-        textContent.style.backgroundImage = `url(${marbleBackground})`;
-      }
       mainDocument.setAttribute("data-theme", "dark");
     }
 

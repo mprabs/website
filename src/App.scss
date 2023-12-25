@@ -3,19 +3,21 @@
 html {
   --header-font: "Merriweather", serif;
   --text-font: "Open Sans", sans-serif;
-  --background: #fff;
-  --black-background: #121212;
-  --text-color: #121212;
-  --alternate-background: #121212;
-  --alternate-text-color: #c1c1c1;
+  --background: rgb(255, 255, 255);
+  --black-background: rgb(18, 18, 18);
+  --text-color: rgb(18, 18, 18);
+  --alternate-background: rgb(18, 18, 18);
+  --alternate-text-color: rgb(32, 188, 199);
+  --header-color: rgb(0, 0, 0);
 }
 
 html[data-theme="dark"] {
-  --background: #121212;
-  --text-color: #c1c1c1;
-  --alternate-background: #c1c1c1;
-  --alternate-text-color: #121212;
-  --black-background: #d8d8d8;
+  --background: rgb(18, 18, 18);
+  --text-color: rgb(32, 188, 199);
+  --alternate-background: rgb(193, 193, 193);
+  --alternate-text-color: rgb(18, 18, 18);
+  --black-background: rgb(24, 18, 18);
+  --header-color: rgb(255, 255, 255);
 }
 
 $mobile: 750px;

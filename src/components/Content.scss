@@ -16,6 +16,12 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    border: 3px solid var(--text-color);
+    border-left: none;
+
+    animation: border-color-change 1s infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
 
     @media (max-width: 500px) {
       height: 50vh;
@@ -25,16 +31,19 @@
   }
 
   &-text {
-    background-color: var(--black-background);
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
     padding-left: 2rem;
-    border-right: 3px solid var(--background);
+    border: 3px solid var(--text-color);
     background-repeat: no-repeat;
     background-position: left;
     background-size: cover;
+
+    animation: border-color-change 1s infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
 
     @media screen and (max-width: 500px) {
       padding-left: 0;
@@ -44,7 +53,7 @@
     }
 
     h1 {
-      color: var(--alternate-text-color);
+      color: var(--text-color);
       font-size: 4vh;
       font-family: var(--header-font);
       padding-right: 5vw;
@@ -79,16 +88,21 @@
   }
 
   &-description {
-    background: var(--alternate-background);
-    color: var(--alternate-text-color);
+    background: var(--background);
+    color: var(--text-color);
     padding: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     width: inherit;
-    border-top: 2px solid var(--background);
+    border: 2px solid var(--text-color);
+    border-top: none;
     grid-column: 1 / -1;
+
+    animation: border-color-change 1s infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
 
     @media (max-width: 500px) {
       margin-bottom: 3rem;
@@ -106,5 +120,47 @@
       font-size: 0.75rem;
       width: 100%;
     }
+  }
+}
+
+.flipX {
+  animation: 2s anim-popoutin ease infinite;
+}
+
+/* flipping class and key frames*/
+@keyframes anim-popoutin {
+  0% {
+    color: green;
+    transform: scale(0);
+    opacity: 0;
+    text-shadow: 0 0 0 var(--text-color);
+  }
+  25% {
+    color: green;
+    transform: scale(1.2);
+    opacity: 1;
+    text-shadow: 3px 10px 5px var(--text-color);
+  }
+  50% {
+    color: green;
+    transform: scale(1);
+    opacity: 1;
+    text-shadow: 1px 0 0 var(--text-color);
+  }
+  100% {
+    /* animate nothing to add pause at the end of animation */
+    transform: scale(1);
+    opacity: 1;
+    text-shadow: 1px 0 0 var(--text-color);
+  }
+}
+
+@keyframes border-color-change {
+  0% {
+    border-color: var(--text-color);
+  }
+
+  100% {
+    border-color: var(--alternate-text-color);
   }
 }

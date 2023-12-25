@@ -10,6 +10,7 @@ header {
     font-size: 3rem;
     text-transform: uppercase;
     cursor: pointer;
+    min-width: 200px;
 
     a {
       all: unset;
@@ -25,7 +26,6 @@ header {
       all: unset;
       font-family: var(--text-font);
       font-weight: bold;
-      margin-bottom: 0.54rem;
       text-transform: uppercase;
       cursor: pointer;
       transition: text-decoration 0.4s ease-in-out;
@@ -45,12 +45,22 @@ header {
     justify-content: flex-start;
     align-items: flex-end;
     gap: 2rem;
+    position: relative;
+    .menu {
+      position: absolute;
+      left: 250px;
+      bottom: -20px;
+    }
   }
 
   .header-right {
     img {
       height: 40px;
       cursor: pointer;
+    }
+
+    .header-image-night {
+      filter: invert(63%) sepia(219%) saturate(670%) hue-rotate(135deg) brightness(94%) contrast(370%);
     }
   }
 }
@@ -115,5 +125,46 @@ header {
       display: flex;
       align-self: center;
     }
+  }
+}
+
+.content {
+  position: relative;
+}
+
+.content h2 {
+  display: inline-block;
+  font-size: 3rem;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-family: var(--header-font);
+  text-transform: uppercase;
+  cursor: pointer;
+
+  a {
+    all: unset;
+  }
+}
+
+.content h2:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-color);
+}
+
+.content h2:nth-child(2) {
+  color: var(--text-color);
+  animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    clip-path: polygon(0% 45%, 16% 44%, 33% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+  }
+
+  50% {
+    clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
   }
 }

@@ -6,8 +6,8 @@ function Content() {
   return (
     <>
       <div className="content">
-        <div className="content-text" id="text-content">
-          <h1>Front End ReactJs Developer</h1>
+        <div className="content-text line" id="text-content">
+          <h1 className="flipX">Front End ReactJs Developer</h1>
         </div>
         <div className="content-image" role="img" aria-label="prabin-acharya-profile-image"></div>
         <div className="content-description">

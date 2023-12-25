@@ -1,11 +1,14 @@
 .about-container {
   width: 100%;
-  -webkit-box-shadow: 0 0 5px var(--text-color);
-  box-shadow: 0 0 5px var(--text-color);
+  border: 2px solid var(--text-color);
   border-radius: 10px;
   background: var(--background);
   height: auto;
   margin: 2rem 0;
+
+  animation: border-color-change 1s infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
 
   > h3 {
     font-size: 2rem;
@@ -28,6 +31,12 @@
 
   hr {
     margin: 4rem 0;
+
+    // animate color change
+    animation: border-color-change 1s infinite;
+
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
   }
 
   .socials {

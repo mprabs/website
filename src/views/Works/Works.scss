@@ -19,7 +19,11 @@
         align-self: 4/3;
       }
       position: relative;
-      border: 1px solid #81818194;
+      border: 2px solid #81818194;
+
+      animation: border-color-change 1s infinite;
+      animation-direction: alternate;
+      animation-timing-function: ease-in-out;
     }
 
     &-about {
@@ -32,7 +36,10 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      border-top: 1px solid #81818194;
+      border-top: 2px solid #81818194;
+      animation: border-color-change 1s infinite;
+      animation-direction: alternate;
+      animation-timing-function: ease-in-out;
     }
 
     &-description {
@@ -101,6 +108,10 @@
 
   &-container {
     border-top: 2px solid var(--text-color);
+
+    animation: border-color-change 1s infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
 
     .other-works {
       margin-top: 4rem;

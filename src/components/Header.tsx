@@ -37,7 +37,12 @@ function Header({ theme, themesJSON, onThemeChange, mobileView, toggleMobileMenu
     <header id="header">
       <div className="header-left">
         <h1 className="name">
-          <Link to="/">Prabin</Link>
+          <Link to="/">
+            <div class="content">
+              <h2>Prabin</h2>
+              <h2>Prabin</h2>
+            </div>
+          </Link>
         </h1>
         <ul className="menu">
           {/* <li id="blog">
@@ -58,6 +63,7 @@ function Header({ theme, themesJSON, onThemeChange, mobileView, toggleMobileMenu
         <img
           height="40px"
           width="40px"
+          className={theme === themesJSON.dayMode ? "header-image" : "header-image header-image-night"}
           onClick={handleHeaderImageClick}
           src={mobileView ? (theme === themesJSON.dayMode ? barBlack : barWhite) : themeIcon}
           alt="sun for toggling themes"
