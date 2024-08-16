@@ -3,21 +3,21 @@
 html {
   --header-font: "Merriweather", serif;
   --text-font: "Open Sans", sans-serif;
-  --background: rgb(255, 255, 255);
-  --black-background: rgb(18, 18, 18);
-  --text-color: rgb(18, 18, 18);
-  --alternate-background: rgb(18, 18, 18);
-  --alternate-text-color: rgb(32, 188, 199);
-  --header-color: rgb(0, 0, 0);
+  --background: #fff;
+  --black-background: #121212;
+  --text-color: #121212;
+  --alternate-background: #121212;
+  --alternate-text-color: #c1c1c1;
+  --gradient-bg: #ffffffb4;
 }
 
 html[data-theme="dark"] {
-  --background: rgb(18, 18, 18);
-  --text-color: rgb(32, 188, 199);
-  --alternate-background: rgb(193, 193, 193);
-  --alternate-text-color: rgb(18, 18, 18);
-  --black-background: rgb(24, 18, 18);
-  --header-color: rgb(255, 255, 255);
+  --background: #121212;
+  --text-color: #c1c1c1;
+  --alternate-background: #c1c1c1;
+  --alternate-text-color: #121212;
+  --black-background: #d8d8d8;
+  --gradient-bg: #000000b4;
 }
 
 $mobile: 750px;
@@ -31,19 +31,29 @@ $mobile: 750px;
 body {
   background-color: var(--background);
   color: var(--text-color);
-  max-width: 1000px;
   height: 100%;
+  width: 100%;
   overflow: auto;
   margin: 0 auto;
   position: relative;
+  background-image: url("./assets/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .App {
-  height: 100vh;
+  min-height: 100vh;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
+  padding: 4rem;
+  margin: 0 auto;
+  background: var(--gradient-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .app-items {

@@ -17,7 +17,7 @@ interface Theme {
   openMobileMenu: Boolean;
 }
 
-function Header({ theme, themesJSON, onThemeChange, mobileView, toggleMobileMenu, openMobileMenu }: Theme) {
+const Header: React.FC<Theme> = ({ theme, themesJSON, onThemeChange, mobileView, toggleMobileMenu, openMobileMenu }) => {
   const themeIcon = useMemo(() => {
     const icon = theme === themesJSON.dayMode ? blackSun : whiteSun;
     return icon;
@@ -38,7 +38,7 @@ function Header({ theme, themesJSON, onThemeChange, mobileView, toggleMobileMenu
       <div className="header-left">
         <h1 className="name">
           <Link to="/">
-            <div class="content">
+            <div className="content">
               <h2>Prabin</h2>
               <h2>Prabin</h2>
             </div>
@@ -101,6 +101,6 @@ function Header({ theme, themesJSON, onThemeChange, mobileView, toggleMobileMenu
       )}
     </header>
   );
-}
+};
 
 export default Header;

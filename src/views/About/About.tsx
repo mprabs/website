@@ -50,7 +50,7 @@ function About() {
             </li>
           </ul>
           <p className="email-text">
-            You can also contact me via mail, <a href="mailto:acharyaprabin.gmail.com">here</a>.
+            You can also contact me via mail - <a href="mailto:acharyaprabin03.gmail.com">acharyaprabin03.gmail.com</a>.
           </p>
         </div>
       </div>
