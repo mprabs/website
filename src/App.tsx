@@ -10,7 +10,6 @@ import About from "./views/About";
 
 import ErrorPage from "./ErrorPage";
 
-import marbleBackground from "./assets/white-marble.jpg";
 import Works from "./views/Works";
 
 function App() {
