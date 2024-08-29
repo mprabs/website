@@ -12,12 +12,11 @@ const Content: React.FC = () => {
           <div className="pa-profile-content">
             <img src={profilePhoto} alt="Prabin Acharya" className="pa-profile-photo" />
             <div className="pa-profile-text">
-              <h2>Hello, I'm Prabin Acharya</h2>
+              <h2>Hello, I'm Prabin Acharya !</h2>
               <p>I'm a passionate React developer based in Nepal, with a knack for creating seamless user experiences and robust front-end solutions.</p>
               <p className="pa-tagline">
                 <span>Front-End Specialist</span>
                 <span>React Expert</span>
-                <span>API Integration Pro</span>
               </p>
             </div>
           </div>
