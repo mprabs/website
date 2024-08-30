@@ -23,7 +23,9 @@
     font-family: var(--text-font);
     font-size: 0.85rem;
 
-    h3 {
+    span {
+      font-weight: bold;
+      opacity: 0.8;
       &::after {
         content: " :";
       }
@@ -33,7 +35,7 @@
       grid-template-columns: 1fr;
       gap: 0;
 
-      h3 {
+      span {
         &::after {
           content: "";
         }

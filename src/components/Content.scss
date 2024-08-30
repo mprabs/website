@@ -1,5 +1,5 @@
 .pa-content {
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--text-font);
   line-height: 1.6;
   color: var(--text-color);
   border-top: 2px solid var(--text-color);
@@ -20,6 +20,7 @@
     h1 {
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
+      font-family: var(--header-font);
     }
   }
 
@@ -29,7 +30,7 @@
     color: var(--text-color);
     border-radius: 10px;
     backdrop-filter: blur(-5px);
-    overflow: hidden; /* Ensure pseudo-element doesn't overflow */
+    overflow: hidden;
     .pa-profile-content {
       display: flex;
       align-items: center;
@@ -50,13 +51,18 @@
       justify-content: space-between;
       gap: 0.5rem;
 
+      @media (max-width: 768px) {
+        justify-content: center;
+        width: 100%;
+      }
+
       span {
         background-color: var(--text-color);
         color: var(--background);
         padding: 0.25rem 0.5rem;
         border-radius: 5px;
         font-size: 12px;
-        opacity: 0.8;
+        font-weight: 600;
       }
     }
 
@@ -90,6 +96,7 @@
         font-size: 2rem;
         color: var(--black-background);
         margin-bottom: 1rem;
+        font-family: var(--header-font);
       }
 
       .pa-cta-button {
@@ -115,6 +122,7 @@
         font-size: 1.5rem;
         color: var(--black-background);
         margin-bottom: 1rem;
+        font-family: var(--header-font);
 
         a {
           text-decoration: none;
@@ -144,10 +152,21 @@
       }
     }
 
+    .pa-skills h3 {
+      font-family: var(--header-font);
+      @media (max-width: 600px) {
+        text-align: center;
+      }
+    }
+
     .pa-skills-list {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
+
+      @media (max-width: 600px) {
+        justify-content: center;
+      }
 
       li {
         background-color: var(--text-color);
@@ -155,6 +174,7 @@
         padding: 0.5rem 1rem;
         border-radius: 20px;
         font-size: 0.9rem;
+        font-weight: 600;
 
         &::before {
           content: none;
@@ -164,11 +184,15 @@
   }
 
   .pa-footer {
-    background-color: #f4f5fa;
-    color: #000000b7;
-    text-align: center;
+    background-color: var(--text-color);
+    color: var(--background);
     padding: 1rem 2rem;
     font-size: 0.9rem;
     font-weight: 600;
+    border-radius: 20px 10px 10px 0;
+    p {
+      width: 100%;
+      text-align: center;
+    }
   }
 }

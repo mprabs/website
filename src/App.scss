@@ -20,7 +20,7 @@ html[data-theme="dark"] {
   --gradient-bg: #000000b4;
 }
 
-$mobile: 750px;
+$mobile: 500px;
 
 * {
   margin: 0;
@@ -54,6 +54,10 @@ body {
   background: var(--gradient-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+
+  @media (max-width: $mobile) {
+    padding: 3rem;
+  }
 }
 
 .app-items {
@@ -62,6 +66,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex: 1;
 }
 
 #error-page {

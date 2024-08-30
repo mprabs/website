@@ -23,7 +23,7 @@ function App() {
   const [theme, setTheme] = useState(() => {
     const localTheme = localStorage.getItem("theme");
     if (localTheme) return localTheme;
-    return themesJSON.dayMode;
+    return themesJSON.nightMode;
   });
 
   const [mobileView, setMobileView] = useState(window.innerWidth < 750);

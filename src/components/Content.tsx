@@ -56,7 +56,7 @@ const Content: React.FC = () => {
             </p>
           </section>
 
-          <section className="pa-section">
+          <section className="pa-section pa-skills">
             <h3>Skills Snapshot</h3>
             <ul className="pa-skills-list">
               <li>ReactJS / HTML5 / CSS3 / JavaScript</li>

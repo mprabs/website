@@ -10,85 +10,89 @@ function Setup() {
         <h2 className="setup-title">Hardware</h2>
         <ul>
           <li>
-            <h3>Laptop</h3>
-            <span>Acer Nitro 5 (2020 Edition)</span>
+            <span>Laptop</span>
+            <h3>Acer Nitro 5 (2020 Edition)</h3>
           </li>
           <li>
-            <h3>Processor</h3>
-            <span>AMD Ryzen 4500H</span>
+            <span>Processor</span>
+            <h3>AMD Ryzen 4500H</h3>
           </li>
           <li>
-            <h3>GPU</h3>
-            <span>GTX 1650</span>
+            <span>GPU</span>
+            <h3>GTX 1650</h3>
           </li>
           <li>
-            <h3>Monitor II</h3>
-            <span>DELL 27" FHD 60fps</span>
+            <span>Monitor II</span>
+            <h3>KOORUI 27" 2K 144Hz</h3>
           </li>
           <li>
-            <h3>Keyboard</h3>
-            <span>AiTNT Mechanical Keyboard</span>
+            <span>Keyboard</span>
+            <h3>AiTNT Mechanical Keyboard</h3>
           </li>
           <li>
-            <h3>Mouse</h3>
-            <span>Digicom Wired Optical Mouse</span>
+            <span>Mouse</span>
+            <h3>Logitech M90</h3>
           </li>
           <li>
-            <h3>HeadPhone</h3>
-            <span>Fantech HG11</span>
+            <span>HeadPhone</span>
+            <h3>Fantech MH90</h3>
           </li>
           <li>
-            <h3>Multi Port USB</h3>
-            <span>USB 3.0 SuperSpeed</span>
+            <span>Multi Port USB</span>
+            <h3>USB 3.0 SuperSpeed</h3>
           </li>
           <li>
-            <h3>PowerBank</h3>
-            <span>Remax 50,000W</span>
+            <span>PowerBank</span>
+            <h3>Remax 50,000W</h3>
+          </li>
+          <li>
+            <span>Mobile PC</span>
+            <h3>Samsung S24 Ultra</h3>
           </li>
         </ul>
         <h2 className="setup-title">Software</h2>
         <ul>
           <li>
-            <h3>Operating System</h3>
-            <span>Windows 10</span>
+            <span>Operating System</span>
+            <h3>Windows 10</h3>
           </li>
           <li>
-            <h3>Web Browser</h3>
-            <span>Brave, Google Chrome, Mozilla Firefox</span>
+            <span>Web Browser</span>
+            <h3>Brave, Google Chrome, Mozilla Firefox</h3>
           </li>
         </ul>
         <h2 className="setup-title">Development Tools</h2>
         <ul>
           <li>
-            <h3>Code Editor</h3>
-            <span>Visual Studio Code</span>
+            <span>Code Editor</span>
+            <h3>VS Code, Sublime</h3>
           </li>
           <li>
-            <h3>Version Control</h3>
-            <span>Git</span>
+            <span>Version Control</span>
+            <h3>Git</h3>
           </li>
           <li>
-            <h3>Package Manager</h3>
-            <span>npm</span>
+            <span>Package Manager</span>
+            <h3>npm, yarn</h3>
           </li>
         </ul>
         <h2 className="setup-title">Others</h2>
         <ul>
           <li>
-            <h3>Image Manipulation</h3>
-            <span>Adobe Photoshop </span>
+            <span>Image Manipulation</span>
+            <h3>Adobe Photoshop, Canva</h3>
           </li>
           <li>
-            <h3>Video Player</h3>
-            <span>VLC Media </span>
+            <span>Video Player</span>
+            <h3>VLC Media</h3>
           </li>
           <li>
-            <h3>E-Mail</h3>
-            <span>Gmail</span>
+            <span>E-Mail</span>
+            <h3>Gmail</h3>
           </li>
           <li>
-            <h3>Games</h3>
-            <span>PUBG, Chess</span>
+            <span>Games</span>
+            <h3>PUBG, Chess</h3>
           </li>
         </ul>
       </div>
