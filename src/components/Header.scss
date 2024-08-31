@@ -32,17 +32,18 @@ header {
 
       a {
         all: unset;
-      }
-
-      &:hover:not(.active) {
-        text-decoration: underline;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       &.active {
-        background: #830808;
-        color: #fff;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
+        a {
+          background: #830808;
+          color: #fff;
+          padding: 0.5rem 1rem;
+          border-radius: 5px;
+        }
       }
     }
   }
@@ -112,6 +113,11 @@ header {
 
     ul {
       width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
     }
 
     li {
@@ -120,7 +126,12 @@ header {
       justify-content: center;
       flex-direction: row;
       width: 100%;
-      height: 60px;
+    }
+    li a,
+    #mob-theme {
+      width: 100%;
+      height: 100%;
+      padding: 0.5rem 1rem;
 
       &:hover {
         outline: 1px solid var(--text-color);
