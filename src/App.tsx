@@ -1,10 +1,10 @@
 import React, { useEffect, useCallback, useMemo, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import Content from "./components/Content";
 import Header from "./components/Header";
 
-import Blogs from "./views/Blogs";
 import Setup from "./views/Setup";
 import About from "./views/About";
 
@@ -28,6 +28,8 @@ function App() {
 
   const [mobileView, setMobileView] = useState(window.innerWidth < 750);
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
+
+  const location = useLocation();
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
@@ -80,15 +82,19 @@ function App() {
         toggleMobileMenu={toggleMobileMenu}
         openMobileMenu={openMobileMenu}
       />
-      <div className="app-items">
-        <Routes>
-          <Route path="/" element={<Content />} />
-          {/* <Route path="/blogs" element={<Blogs />} /> */}
-          <Route path="/about" element={<About />} />
-          <Route path="/setup" element={<Setup />} />
-          <Route path="/works" element={<Works />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
+      <div className="app-items page-wrapper">
+        <TransitionGroup>
+          <CSSTransition key={location.pathname} classNames="page" timeout={500}>
+            <Routes location={location}>
+              <Route path="/" element={<Content />} />
+              {/* <Route path="/blogs" element={<Blogs />} /> */}
+              <Route path="/about" element={<About />} />
+              <Route path="/setup" element={<Setup />} />
+              <Route path="/works" element={<Works />} />
+              <Route path="*" element={<ErrorPage />} />
+            </Routes>
+          </CSSTransition>
+        </TransitionGroup>
       </div>
     </div>
   );

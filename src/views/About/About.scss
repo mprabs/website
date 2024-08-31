@@ -1,27 +1,30 @@
 .about-container {
+  border-top: 2px solid var(--text-color);
   width: 100%;
-  border: 2px solid var(--text-color);
-  border-radius: 10px;
   height: auto;
-  margin: 2rem 0;
 
   animation: border-color-change 1s infinite;
   animation-direction: alternate;
   animation-timing-function: ease-in-out;
-
+  padding-top: 3rem;
   > h3 {
     font-size: 2rem;
     font-family: var(--header-font);
     margin-bottom: 1rem;
   }
 
-  padding: 2rem;
   .about-info {
     width: 100%;
 
     color: var(--text-color);
     font-family: var(--text-font);
     font-size: 0.95rem;
+
+    img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 2rem;
+    }
 
     @media (max-width: 500px) {
       text-align: justify;

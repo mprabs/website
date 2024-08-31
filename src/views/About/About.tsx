@@ -8,6 +8,8 @@ import githubLogo from "../../assets/github.png";
 import linkedinLogo from "../../assets/linkedin.png";
 import Footer from "../Footer";
 
+import prabinLandscape from "../../assets/prabin_landscapee.jpg";
+
 function About() {
   return (
     <>
@@ -22,7 +24,8 @@ function About() {
           In my leisure time, I like to watch sports. I mostly watch football and cricket. I sometimes like to play video games like PUBG, and CSGO, etc; mobile
           games like Clash of Clans, etc. It's not been long but I've also started playing Chess.
           <br /> <br />
-          On weekends, I like to travel, hangout with friends and family, and have fun.{" "}
+          <img src={prabinLandscape} alt="prabin acharya" />
+          On weekends, I like to travel, hangout with friends and family, and have fun.
         </div>
         <hr />
         <div className="socials">

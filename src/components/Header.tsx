@@ -1,12 +1,11 @@
 import React, { useMemo, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Header.scss";
 
 import blackSun from "../assets/sun-black.svg";
 import whiteSun from "../assets/sun-white.svg";
 import barBlack from "../assets/menu.svg";
 import barWhite from "../assets/menu-white.svg";
-
-import { Link } from "react-router-dom";
 
 interface Theme {
   theme: string;
@@ -18,6 +17,7 @@ interface Theme {
 }
 
 const Header: React.FC<Theme> = ({ theme, themesJSON, onThemeChange, mobileView, toggleMobileMenu, openMobileMenu }) => {
+  const location = useLocation(); // Get current route
   const themeIcon = useMemo(() => {
     const icon = theme === themesJSON.dayMode ? blackSun : whiteSun;
     return icon;
@@ -33,10 +33,14 @@ const Header: React.FC<Theme> = ({ theme, themesJSON, onThemeChange, mobileView,
 
   const handleThemeChange = () => onThemeChange(theme === themesJSON.dayMode ? themesJSON.nightMode : themesJSON.dayMode);
 
+  const getMenuItemClassName = (path: string) => {
+    return location.pathname === path ? "active" : "";
+  };
+
   return (
     <header id="header">
       <div className="header-left">
-        <h1 className="name">
+        <h1 className={getMenuItemClassName("/") + " name"}>
           <Link to="/">
             <div className="content">
               <h2>Prabin</h2>
@@ -48,13 +52,13 @@ const Header: React.FC<Theme> = ({ theme, themesJSON, onThemeChange, mobileView,
           {/* <li id="blog">
             <Link to="/blogs">Blogs</Link>
           </li> */}
-          <li id="about">
+          <li id="about" className={getMenuItemClassName("/about")}>
             <Link to="/about">About</Link>
           </li>
-          <li id="setup">
+          <li id="setup" className={getMenuItemClassName("/setup")}>
             <Link to="/setup">Setup</Link>
           </li>
-          <li id="works">
+          <li id="works" className={getMenuItemClassName("/works")}>
             <Link to="/works">Works</Link>
           </li>
         </ul>
@@ -77,19 +81,19 @@ const Header: React.FC<Theme> = ({ theme, themesJSON, onThemeChange, mobileView,
           <h3>Menus</h3>
           <hr />
           <ul className="menu" id="mobile-menu">
-            <li id="home" onClick={toggleMobileMenu}>
+            <li id="home" className={getMenuItemClassName("/")} onClick={toggleMobileMenu}>
               <Link to="/">Home</Link>
             </li>
             {/* <li onClick={toggleMobileMenu} id="blog">
               <Link to="/blogs">Blogs</Link>
             </li> */}
-            <li onClick={toggleMobileMenu} id="about">
+            <li onClick={toggleMobileMenu} id="about" className={getMenuItemClassName("/about")}>
               <Link to="/about">About</Link>
             </li>
-            <li onClick={toggleMobileMenu} id="setup">
+            <li onClick={toggleMobileMenu} id="setup" className={getMenuItemClassName("/setup")}>
               <Link to="/setup">Setup</Link>
             </li>
-            <li onClick={toggleMobileMenu} id="works">
+            <li onClick={toggleMobileMenu} id="works" className={getMenuItemClassName("/works")}>
               <Link to="/works">Works</Link>
             </li>
             <li id="mob-theme" onClick={handleThemeChange}>
