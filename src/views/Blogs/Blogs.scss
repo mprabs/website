@@ -2,6 +2,7 @@
 
 .blog-list-container {
   font-family: var(--text-font);
+  min-height: calc(100vh - 10rem);
 
   .file-list {
     list-style: none;
