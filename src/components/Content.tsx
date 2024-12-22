@@ -16,7 +16,7 @@ const Content: React.FC = () => {
               <p>I'm a passionate React developer based in Nepal, with a knack for creating seamless user experiences and robust front-end solutions.</p>
               <p className="pa-tagline">
                 <span>Front-End Specialist</span>
-                <span>React Expert</span>
+                <span>Hands on React Developer</span>
               </p>
             </div>
           </div>
@@ -25,13 +25,6 @@ const Content: React.FC = () => {
 
       <main className="pa-main">
         <div className="pa-container">
-          <section className="pa-hero">
-            <h2>Transforming Ideas into Seamless User Experiences</h2>
-            <Link to="/works" className="pa-cta-button">
-              View My Portfolio
-            </Link>
-          </section>
-
           <section className="pa-section">
             <h3>Key Highlights</h3>
             <ul>
@@ -44,7 +37,7 @@ const Content: React.FC = () => {
 
           <section className="pa-section">
             <h3>
-              Featured Project:{" "}
+              Senior React Developer:{" "}
               <a target="__blank" href="https://sharelookapp.com/">
                 Sharelook
               </a>{" "}
@@ -54,6 +47,12 @@ const Content: React.FC = () => {
               Led the design and development of multiple services using the latest ReactJs technologies, including patented features and in-app video
               conferencing.
             </p>
+          </section>
+          <section className="pa-hero">
+            <h2>Transforming Ideas into Seamless User Experiences</h2>
+            <Link to="/works" className="pa-cta-button">
+              View My Portfolio
+            </Link>
           </section>
 
           <section className="pa-section pa-skills">

@@ -119,7 +119,7 @@ function Works() {
                 </ul>
               </div>
               <div className="work-buttons">
-                <a className="visit-site disabled" title="visit tetris game">
+                <a href="https://mprabs.github.io/Tetris/" className="visit-site" title="visit tetris game">
                   Visit
                 </a>
                 <a className="view-code" target="__blank" role="button" href="https://github.com/mprabs/Tetris">

@@ -42,16 +42,13 @@ const Header: React.FC<Theme> = ({ theme, themesJSON, onThemeChange, mobileView,
       <div className="header-left">
         <h1 className={getMenuItemClassName("/") + " name"}>
           <Link to="/">
-            <div className="content">
+            <div className="content-header">
               <h2>Prabin</h2>
               <h2>Prabin</h2>
             </div>
           </Link>
         </h1>
         <ul className="menu">
-          {/* <li id="blog">
-            <Link to="/blogs">Blogs</Link>
-          </li> */}
           <li id="about" className={getMenuItemClassName("/about")}>
             <Link to="/about">About</Link>
           </li>
@@ -60,6 +57,9 @@ const Header: React.FC<Theme> = ({ theme, themesJSON, onThemeChange, mobileView,
           </li>
           <li id="works" className={getMenuItemClassName("/works")}>
             <Link to="/works">Works</Link>
+          </li>
+          <li id="blog">
+            <Link to="/blogs">Blogs</Link>
           </li>
         </ul>
       </div>
@@ -84,9 +84,9 @@ const Header: React.FC<Theme> = ({ theme, themesJSON, onThemeChange, mobileView,
             <li id="home" className={getMenuItemClassName("/")} onClick={toggleMobileMenu}>
               <Link to="/">Home</Link>
             </li>
-            {/* <li onClick={toggleMobileMenu} id="blog">
+            <li onClick={toggleMobileMenu} id="blog">
               <Link to="/blogs">Blogs</Link>
-            </li> */}
+            </li>
             <li onClick={toggleMobileMenu} id="about" className={getMenuItemClassName("/about")}>
               <Link to="/about">About</Link>
             </li>

@@ -1,34 +1,41 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Blogs.scss";
 
-function Blogs() {
-  const date = new Date();
-  return (
-    <div className="blogs-container">
-      {/* <div className="blog">
-        <div className="blog-title">First Blog I have Written WoW !!</div>
-        <div className="blog-info">
-          <div className="item">
-            <span>Date</span>
-            <p>March 15, 2023</p>
-          </div>
-          <div className="item"></div>
-        </div>
-      </div>
-      <div className="blog">
-        <div className="blog-title">This is second blog</div>
-        <div className="blog-info">
-          <div className="item">
-            <span>Date</span>
-            <p>March 15, 2023</p>
-          </div>
-          <div className="item"></div>
-        </div>
-      </div> */}
-      <div className="blog-title">No blogs yet !</div>
-    </div>
-  );
+const blogFiles = import.meta.glob("../BlogFiles/*.md", {
+  as: "raw",
+  eager: true, // Eagerly load content to access headers
+});
+
+interface BlogFile {
+  title: string;
+  fileName: string;
 }
 
-export default Blogs;
+const Blog = () => {
+  const [files, setFiles] = useState<BlogFile[]>([]);
+
+  useEffect(() => {
+    const parsedFiles = Object.entries(blogFiles).map(([filePath, fileContent]) => {
+      const fileName = filePath.split("/").pop() || "";
+      const firstLine = (fileContent as string).split("\n")[0]; // Get the first line of the content
+      const title = firstLine.startsWith("#") ? firstLine.replace("#", "").trim() : fileName.replace(".md", ""); // Extract title or fallback to filename
+      return { title, fileName };
+    });
+    setFiles(parsedFiles);
+  }, []);
+
+  return (
+    <div className="blog-list-container">
+      <ol className="file-list">
+        {files.map(({ title, fileName }) => (
+          <Link to={`/blog/${fileName.replace(".md", "")}`} className="file-link">
+            <li key={fileName}>{title}</li>
+          </Link>
+        ))}
+      </ol>
+    </div>
+  );
+};
+
+export default Blog;

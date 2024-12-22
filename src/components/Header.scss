@@ -35,14 +35,34 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 0.5rem;
+      }
+
+      @keyframes underline-grow {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
       }
 
       &.active {
+        position: relative;
+
         a {
-          background: #830808;
-          color: #fff;
-          padding: 0.5rem 1rem;
-          border-radius: 5px;
+          text-decoration: none;
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            height: 2px;
+            background-color: currentColor;
+            width: 0;
+            animation: underline-grow 0.2s ease-in-out forwards;
+          }
         }
       }
     }
@@ -88,7 +108,7 @@ header {
     position: absolute;
     right: 0;
     top: 0;
-    background: var(--background);
+    background: rgb(var(--background));
     width: 100vw;
     height: 100vh;
 
@@ -134,7 +154,7 @@ header {
       padding: 0.5rem 1rem;
 
       &:hover {
-        outline: 1px solid var(--text-color);
+        outline: 1px solid rgb(var(--text-color));
         border-radius: 50px 0 50px 0;
         text-decoration: none;
       }
@@ -152,11 +172,11 @@ header {
   }
 }
 
-.content {
+.content-header {
   position: relative;
 }
 
-.content h2 {
+.content-header h2 {
   display: inline-block;
   font-size: 3rem;
   color: #fff;
@@ -173,25 +193,25 @@ header {
   }
 }
 
-.name {
-  &.active {
-    .content h2:nth-child(1) {
-      -webkit-text-stroke: 1px #830808;
-    }
+// .name {
+//   &.active {
+//     .content-header h2:nth-child(1) {
+//       -webkit-text-stroke: 1px #830808;
+//     }
 
-    .content h2:nth-child(2) {
-      color: #830808;
-    }
-  }
-}
+//     .content-header h2:nth-child(2) {
+//       color: #830808;
+//     }
+//   }
+// }
 
-.content h2:nth-child(1) {
+.content-header h2:nth-child(1) {
   color: transparent;
-  -webkit-text-stroke: 1px var(--text-color);
+  -webkit-text-stroke: 1px rgb(var(--text-color));
 }
 
-.content h2:nth-child(2) {
-  color: var(--text-color);
+.content-header h2:nth-child(2) {
+  color: rgb(var(--text-color));
   animation: animate 4s ease-in-out infinite;
 }
 

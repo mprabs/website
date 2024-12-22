@@ -1,8 +1,8 @@
 .pa-content {
   font-family: var(--text-font);
   line-height: 1.6;
-  color: var(--text-color);
-  border-top: 2px solid var(--text-color);
+  color: rgb(var(--text-color));
+  border-top: 2px solid rgb(var(--text-color));
   padding-top: 2rem;
   // background-color: $background-color;
 
@@ -13,7 +13,7 @@
   }
 
   .pa-header {
-    color: var(--background);
+    color: rgb(var(--background));
     padding: 2rem 0;
     text-align: center;
 
@@ -27,12 +27,13 @@
   .pa-profile {
     position: relative;
     padding: 3rem 0;
-    color: var(--text-color);
+    color: rgb(var(--text-color));
     border-radius: 10px;
     backdrop-filter: blur(-5px);
     overflow: hidden;
     .pa-profile-content {
       display: flex;
+      flex-direction: row-reverse;
       align-items: center;
       gap: 2rem;
 
@@ -57,8 +58,8 @@
       }
 
       span {
-        background-color: var(--text-color);
-        color: var(--background);
+        background-color: rgb(var(--text-color));
+        color: rgb(var(--background));
         padding: 0.25rem 0.5rem;
         border-radius: 5px;
         font-size: 12px;
@@ -79,7 +80,7 @@
 
       h2 {
         font-size: 2rem;
-        color: var(--black-background);
+        color: rgb(var(--black-background));
         margin-bottom: 1rem;
       }
     }
@@ -94,15 +95,15 @@
 
       h2 {
         font-size: 2rem;
-        color: var(--black-background);
+        color: rgb(var(--black-background));
         margin-bottom: 1rem;
         font-family: var(--header-font);
       }
 
       .pa-cta-button {
         display: inline-block;
-        border: 2px solid var(--black-background);
-        color: var(--black-background);
+        border: 2px solid rgb(var(--black-background));
+        color: rgb(var(--black-background));
         padding: 0.8rem 1.5rem;
         text-decoration: none;
         border-radius: 5px;
@@ -120,13 +121,13 @@
 
       h3 {
         font-size: 1.5rem;
-        color: var(--black-background);
+        color: rgb(var(--black-background));
         margin-bottom: 1rem;
         font-family: var(--header-font);
 
         a {
           text-decoration: none;
-          color: var(--black-background);
+          color: rgb(var(--black-background));
           outline: 1px solid #1890ff;
           padding: 0.2rem 0.5rem;
           border-radius: 5px;
@@ -144,7 +145,7 @@
 
           &::before {
             content: "•";
-            color: var(--black-background);
+            color: rgb(var(--black-background));
             position: absolute;
             left: 0;
           }
@@ -169,12 +170,13 @@
       }
 
       li {
-        background-color: var(--text-color);
-        color: var(--background);
+        background-color: rgb(var(--text-color), 0.8);
+        color: rgb(var(--background));
         padding: 0.5rem 1rem;
         border-radius: 20px;
         font-size: 0.9rem;
         font-weight: 600;
+        list-style-type: none;
 
         &::before {
           content: none;

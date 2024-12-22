@@ -11,6 +11,8 @@ import About from "./views/About";
 import ErrorPage from "./ErrorPage";
 
 import Works from "./views/Works";
+import Blogs from "./views/Blogs";
+import BlogPost from "./views/BlogPost/BlogPost";
 
 function App() {
   const themesJSON = useMemo(() => {
@@ -87,7 +89,8 @@ function App() {
           <CSSTransition key={location.pathname} classNames="page" timeout={500}>
             <Routes location={location}>
               <Route path="/" element={<Content />} />
-              {/* <Route path="/blogs" element={<Blogs />} /> */}
+              <Route path="/blogs" element={<Blogs />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/about" element={<About />} />
               <Route path="/setup" element={<Setup />} />
               <Route path="/works" element={<Works />} />
