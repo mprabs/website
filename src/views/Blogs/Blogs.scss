@@ -3,6 +3,14 @@
 .blog-list-container {
   font-family: var(--text-font);
   min-height: calc(100vh - 10rem);
+  border-top: 2px solid rgb(var(--text-color));
+  padding-top: 2rem;
+
+  h3 {
+    font-size: 1.5rem;
+    font-family: var(--header-font);
+    margin-bottom: 2rem;
+  }
 
   .file-list {
     list-style: none;
@@ -18,13 +26,13 @@
     }
     li {
       padding: 1rem;
-      background: rgb(var(--alternate-background), 0.2);
+      background: rgb(var(--alternate-background), 0.1);
       border-radius: 5px;
       cursor: pointer;
       transition: all 0.2s ease-in-out;
 
       &:hover {
-        text-decoration: underline;
+        background: rgb(var(--alternate-background), 0.2);
       }
     }
   }
@@ -35,6 +43,10 @@
   color: rgb(var(--text-color));
   font-family: var(--text-font);
   line-height: 1.6;
+
+  @media screen and (max-width: 768px) {
+    padding: 0;
+  }
 
   .back-button {
     background-color: rgb(var(--alternate-background));

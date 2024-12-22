@@ -26,7 +26,7 @@
 
   .pa-profile {
     position: relative;
-    padding: 3rem 0;
+    padding: 1rem 0;
     color: rgb(var(--text-color));
     border-radius: 10px;
     backdrop-filter: blur(-5px);
@@ -98,6 +98,10 @@
         color: rgb(var(--black-background));
         margin-bottom: 1rem;
         font-family: var(--header-font);
+
+        @media screen and (max-width: 768px) {
+          font-size: 1.5rem;
+        }
       }
 
       .pa-cta-button {
@@ -109,6 +113,11 @@
         border-radius: 5px;
         font-weight: bold;
         transition: background-color 0.3s ease;
+
+        @media screen and (max-width: 768px) {
+          display: block;
+          border-radius: 10px;
+        }
 
         &:hover {
           opacity: 0.8;
@@ -142,13 +151,6 @@
           margin-bottom: 0.5rem;
           padding-left: 1rem;
           position: relative;
-
-          &::before {
-            content: "•";
-            color: rgb(var(--black-background));
-            position: absolute;
-            left: 0;
-          }
         }
       }
     }
@@ -176,12 +178,27 @@
         border-radius: 20px;
         font-size: 0.9rem;
         font-weight: 600;
-        list-style-type: none;
+
+        @media (max-width: 768px) {
+          background-color: rgb(var(--text-color), 0.5);
+          width: 100%;
+          text-align: center;
+          padding: 1rem;
+          border-radius: 50px;
+        }
 
         &::before {
           content: none;
         }
       }
+    }
+  }
+
+  .pa-highlights ul li {
+    @media screen and (max-width: 768px) {
+      padding-left: 0 !important;
+      list-style: disc !important;
+      margin-left: 1rem !important;
     }
   }
 

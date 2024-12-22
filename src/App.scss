@@ -59,12 +59,16 @@ body {
   border-bottom-left-radius: 0;
   box-shadow: 0 0 3px 3px rgb(var(--text-color));
 
+  /* Add transition for background and box shadow */
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+
   // no border and box shadow for day theme
 
   @media (max-width: $mobile) {
-    padding: 3rem;
+    padding: 2rem;
     margin: 0 auto;
     border-radius: 0;
+    backdrop-filter: blur(5px);
   }
 }
 

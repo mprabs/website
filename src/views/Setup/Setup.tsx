@@ -38,10 +38,6 @@ function Setup() {
             <h3>Fantech MH90</h3>
           </li>
           <li>
-            <span>Multi Port USB</span>
-            <h3>USB 3.0 SuperSpeed</h3>
-          </li>
-          <li>
             <span>PowerBank</span>
             <h3>Remax 50,000W</h3>
           </li>
@@ -65,7 +61,7 @@ function Setup() {
         <ul>
           <li>
             <span>Code Editor</span>
-            <h3>VS Code, Sublime</h3>
+            <h3>VS Code</h3>
           </li>
           <li>
             <span>Version Control</span>

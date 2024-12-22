@@ -27,6 +27,8 @@ const Blog = () => {
 
   return (
     <div className="blog-list-container">
+      <h3>My Blogs</h3>
+
       <ol className="file-list">
         {files.map(({ title, fileName }) => (
           <Link to={`/blog/${fileName.replace(".md", "")}`} className="file-link">

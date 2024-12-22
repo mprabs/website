@@ -24,6 +24,11 @@
       width: 100%;
       border-radius: 15px;
       margin-bottom: 2rem;
+
+      // animate image color change
+      animation: image-color-change 5s infinite;
+      animation-direction: alternate;
+      animation-timing-function: ease-in-out;
     }
 
     @media (max-width: 500px) {
@@ -73,6 +78,15 @@
         width: 3rem;
         height: 3rem;
         cursor: pointer;
+      }
+
+      @keyframes image-color-change {
+        0% {
+          filter: hue-rotate(0deg);
+        }
+        100% {
+          filter: hue-rotate(360deg);
+        }
       }
       &:nth-child(1) {
         img {

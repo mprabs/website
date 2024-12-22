@@ -25,7 +25,7 @@ const Content: React.FC = () => {
 
       <main className="pa-main">
         <div className="pa-container">
-          <section className="pa-section">
+          <section className="pa-section pa-highlights">
             <h3>Key Highlights</h3>
             <ul>
               <li>4+ years of professional React development experience</li>
