@@ -17,9 +17,15 @@ const BlogPost = () => {
 
     if (fullPath in blogFiles) {
       const fetchContent = async () => {
-        const markdownContent = await blogFiles[fullPath]();
-        const parsedContent = marked(markdownContent);
-        setHtmlContent(parsedContent);
+        try {
+          // Ensure blogFiles[fullPath] returns a Promise<string>
+          const markdownFetcher = blogFiles[fullPath] as () => Promise<string>;
+          const markdownContent = await markdownFetcher();
+          const parsedContent = marked(markdownContent);
+          setHtmlContent(parsedContent as string); // Type is now string
+        } catch (error) {
+          console.error("Error fetching or parsing content:", error);
+        }
       };
 
       fetchContent();
