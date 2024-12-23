@@ -33,8 +33,7 @@ const BlogPost = () => {
           let cleanedMarkdown = markdownContent.replace(/^title:.*\n?/m, "").replace(/^date:.*\n?/m, "");
 
           // Parse the cleaned markdown content to HTML
-          const parsedContent = marked.parse(cleanedMarkdown);
-
+          const parsedContent: string = marked.parse(cleanedMarkdown) as string;
           // Split the content into HTML and code blocks
           const regex = /<pre><code class="language-(\w+)">([\s\S]*?)<\/code><\/pre>/g;
           let match;
