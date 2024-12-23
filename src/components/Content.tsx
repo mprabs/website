@@ -22,8 +22,9 @@ const Content: React.FC = () => {
               <h2>Hello, I'm Prabin Acharya !</h2>
               <p>I'm a passionate React developer based in Nepal, with a knack for creating seamless user experiences and robust front-end solutions.</p>
               <p className="pa-tagline">
-                <span>Front-End Specialist</span>
-                <span>Hands on React Developer</span>
+                <span>
+                  <i className="fas fa-graduation-cap"></i> Bachelors of Science in Computer Science
+                </span>
               </p>
             </div>
           </div>
