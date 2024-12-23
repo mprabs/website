@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Blogs.scss";
+import Meta from "../../components/Meta";
 
 const blogFiles = import.meta.glob("../BlogFiles/*.md", {
   as: "raw",
@@ -55,6 +56,12 @@ const Blog = () => {
 
   return (
     <div className="blog-list-container">
+      <Meta
+        title="My Blogs"
+        description="This is a list of my blogs. Check them out!"
+        tags={["Blog", "Prabin Acharya", "FrontEnd Developer", "Web Development"]}
+      />
+
       <h3>My Blogs</h3>
 
       <ol className="file-list">

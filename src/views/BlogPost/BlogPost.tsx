@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { marked } from "marked";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { solarizedlight } from "react-syntax-highlighter/dist/esm/styles/prism";
+import Meta from "../../components/Meta";
 
 const blogFiles = import.meta.glob("../BlogFiles/*.md", {
   as: "raw",
@@ -13,6 +14,7 @@ const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const [content, setContent] = useState<JSX.Element[]>([]);
+  const [blogTitle, setBlogTitle] = useState<string>("");
 
   useEffect(() => {
     const fullPath = `../BlogFiles/${slug}.md`;
@@ -45,6 +47,8 @@ const BlogPost = () => {
             const doc = new DOMParser().parseFromString(str, "text/html");
             return doc.documentElement.textContent || "";
           };
+
+          setBlogTitle(title);
 
           // Add title and date in separate elements within a div
           result.push(
@@ -85,6 +89,8 @@ const BlogPost = () => {
 
   return (
     <div className="blog-post-container">
+      <Meta title={blogTitle} description={JSON.stringify(content)} tags={blogTitle.split(" ")} />
+
       <button onClick={() => navigate("/blogs")} className="back-button">
         ← Back to Blogs
       </button>

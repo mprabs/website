@@ -9,10 +9,16 @@ import linkedinLogo from "../../assets/linkedin.png";
 import Footer from "../Footer";
 
 import prabinLandscape from "../../assets/prabin_landscapee.jpg";
+import Meta from "../../components/Meta";
 
 function About() {
   return (
     <>
+      <Meta
+        title="About Me"
+        description="My name is Prabin. I work as a frontend web developer with ReactJs."
+        tags={["ReactJs", "FrontEnd Developer", "Web Development", "Prabin Acharya"]}
+      />
       <div className="about-container">
         <h3>About Me</h3>
         <div className="about-info">

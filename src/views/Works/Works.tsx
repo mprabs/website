@@ -10,10 +10,16 @@ import CanteenImage from "../../assets/canteen-management.png";
 import HotelsImage from "../../assets/hotels-app.png";
 import Footer from "../Footer";
 import WorkExperience from "./WorkExperience";
+import Meta from "../../components/Meta";
 
 function Works() {
   return (
     <>
+      <Meta
+        title="My Works"
+        description="Prabin Acharya is a skilled FrontEnd ReactJs Web Developer with expertise in modern web applications."
+        tags={["Portfolio", "Prabin Acharya", "Works", "Projects"]}
+      />
       <div className="works-container">
         <WorkExperience />
         <h2 className="experience-title works-title">Personal Projects</h2>

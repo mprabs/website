@@ -4,9 +4,16 @@ import profilePhoto from "../assets/prabin.jpg";
 
 import { Link } from "react-router-dom";
 
+import Meta from "./Meta";
+
 const Content: React.FC = () => {
   return (
     <div className="pa-content">
+      <Meta
+        title="Prabin Acharya | Front End ReactJs Web Developer"
+        description="Prabin Acharya is a skilled FrontEnd ReactJs Web Developer with expertise in modern web applications."
+        tags={["ReactJs", "FrontEnd Developer", "Web Development", "Prabin Acharya"]}
+      />
       <section className="pa-profile">
         <div className="pa-container">
           <div className="pa-profile-content">

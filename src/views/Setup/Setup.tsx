@@ -2,10 +2,41 @@ import React from "react";
 
 import "./Setup.scss";
 import Footer from "../Footer";
+import Meta from "../../components/Meta";
 
 function Setup() {
   return (
     <>
+      <Meta
+        title="My Setup"
+        description="Prabin Acharya's Setup"
+        tags={[
+          "Acer Nitro 5 (2020 Edition)",
+          "AMD Ryzen 4500H",
+          "GTX 1650",
+          'KOORUI 27" 2K 144Hz',
+          "AiTNT Mechanical Keyboard",
+          "Logitech M90",
+          "Fantech MH90",
+          "Windows 10",
+          "Visual Studio Code",
+          "Git",
+          "Chrome",
+          "Firefox",
+          "npm",
+          "yarn",
+          "Photoshop",
+          "Canva",
+          "VLC Media",
+          "Remax 50,000W",
+          "Samsung S24 Ultra",
+          "Players Unknown: Battle Grounds",
+          "PUBG Mobile",
+          "CSGO",
+          "Clash of Clans",
+          "Chess",
+        ]}
+      />
       <div className="setup-container">
         <h2 className="setup-title">Hardware</h2>
         <ul>
