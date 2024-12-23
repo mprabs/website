@@ -11,7 +11,6 @@
     font-family: var(--header-font);
     margin-bottom: 2rem;
   }
-
   .file-list {
     list-style: none;
     padding: 0;
@@ -22,18 +21,37 @@
     .file-link {
       text-decoration: none;
       color: rgb(var(--text-color));
-      font-weight: bold;
-    }
-    li {
-      padding: 1rem;
-      background: rgb(var(--alternate-background), 0.1);
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all 0.2s ease-in-out;
+      display: block;
 
-      &:hover {
-        background: rgb(var(--alternate-background), 0.2);
+      .blog-item {
+        padding: 1.5rem;
+        background: rgb(var(--alternate-background), 0.1);
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          transform: translateY(-3px);
+          background: rgb(var(--alternate-background), 0.2);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
       }
+
+      .blog-title {
+        font-weight: bold;
+        font-size: 1.1em;
+        margin-bottom: 0.5rem;
+        color: rgb(var(--primary-color));
+      }
+
+      .blog-date {
+        font-size: 0.8em;
+        color: rgb(var(--secondary-text-color));
+      }
+    }
+
+    li {
+      cursor: pointer;
     }
   }
 }
@@ -43,6 +61,26 @@
   color: rgb(var(--text-color));
   font-family: var(--text-font);
   line-height: 1.6;
+
+  hr {
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    margin: 20px 0;
+  }
+
+  pre {
+    background-color: #1e1e1e !important;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    color: #d4d4d4 !important;
+
+    code {
+      background: none !important;
+    }
+  }
 
   @media screen and (max-width: 768px) {
     padding: 0;
@@ -64,6 +102,22 @@
   }
 
   .content {
+    hr:first-child {
+      display: none;
+    }
+
+    .post-metadata {
+      .post-title {
+        margin-bottom: 0;
+      }
+
+      .post-date {
+        font-size: 14px;
+        color: rgb(var(--text-color), 0.7);
+        font-style: italic;
+      }
+    }
+
     h1,
     h2,
     h3,
