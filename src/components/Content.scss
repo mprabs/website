@@ -48,14 +48,36 @@
 
     .pa-hero-image {
       flex-shrink: 0;
+      position: relative;
+      width: 250px;
+      height: 300px;
+      padding: 3px;
+      background: linear-gradient(
+        90deg,
+        rgb(var(--text-color)) 0%,
+        rgba(var(--text-color), 0.3) 25%,
+        rgb(var(--text-color)) 50%,
+        rgba(var(--text-color), 0.3) 75%,
+        rgb(var(--text-color)) 100%
+      );
+      border-radius: 22px;
+      animation: borderMove 3s linear infinite;
 
       img {
-        width: 250px;
+        width: 100%;
         height: 100%;
         border-radius: 20px;
         object-fit: cover;
-        border: 4px solid rgb(var(--text-color), 0.1);
-        box-shadow: 0 0 5px 5px rgb(var(--text-color), 0.1);
+        background: rgb(var(--background));
+      }
+    }
+
+    @keyframes borderMove {
+      0% {
+        background-position: 0% 0;
+      }
+      100% {
+        background-position: 200% 0;
       }
     }
   }
