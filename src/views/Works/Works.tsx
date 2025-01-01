@@ -11,6 +11,8 @@ import HotelsImage from "../../assets/hotels-app.png";
 import Footer from "../Footer";
 import WorkExperience from "./WorkExperience";
 import Meta from "../../components/Meta";
+import RAndRImage from "../../assets/randr.png";
+import MoodlightImage from "../../assets/moodlight.png";
 
 function Works() {
   return (
@@ -22,6 +24,48 @@ function Works() {
       />
       <div className="works-container">
         <WorkExperience />
+        <h2 className="experience-title works-title">Professional Projects</h2>
+        <div className="works">
+          <div className="work-item">
+            <img src={RAndRImage} alt="rand-groceries-preview" />
+            <div className="work-about">
+              <div className="work-description">
+                <h3 className="work-title">R&R Groceries</h3>
+                <p>Enhanced the existing Shopify website with design improvements and feature changes.</p>
+                <ul className="tags">
+                  <li>Shopify</li>
+                  <li>Web Development</li>
+                  <li>E-Commerce</li>
+                </ul>
+              </div>
+              <div className="work-buttons">
+                <a className="visit-site" target="__blank" href="https://randrgrocery.ca/">
+                  Visit
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="work-item">
+            <img src={MoodlightImage} alt="mood-light-interiors-preview" />
+            <div className="work-about">
+              <div className="work-description">
+                <h3 className="work-title">Mood Light Interiors</h3>
+                <p>Led the development management for the website, coordinating the team and overseeing project execution.</p>
+                <ul className="tags">
+                  <li>Web Development</li>
+                  <li>Project Management</li>
+                  <li>Interior Design</li>
+                </ul>
+              </div>
+              <div className="work-buttons">
+                <a className="visit-site" target="__blank" href="https://moodlightinteriors.com">
+                  Visit
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
         <h2 className="experience-title works-title">Personal Projects</h2>
         <div className="works">
           <div className="work-item">
@@ -157,6 +201,7 @@ function Works() {
             </div>
           </div>
         </div>
+
         <div className="other-works">
           <h3 className="other-works-title">Pet Projects</h3>
           <ul>

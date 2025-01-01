@@ -25,10 +25,11 @@
       border-radius: 15px;
       margin-bottom: 2rem;
 
-      // animate image color change
-      animation: image-color-change 5s infinite;
-      animation-direction: alternate;
-      animation-timing-function: ease-in-out;
+      @media (max-width: 768px) {
+        height: 50vh;
+        object-fit: cover;
+        object-position: center center;
+      }
     }
 
     @media (max-width: 500px) {

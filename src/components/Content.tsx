@@ -16,16 +16,18 @@ const Content: React.FC = () => {
       <div className="pa-container">
         <section className="pa-hero">
           <div className="pa-hero-content">
+            <div className="pa-hero-image">
+              <img src={profilePhoto} alt="Prabin Acharya" />
+            </div>
             <div className="pa-hero-text">
-              <h1>Hello, I'm Prabin Acharya</h1>
-              <p className="pa-lead">A passionate React developer crafting seamless user experiences in Nepal</p>
+              <h1>
+                Hello, I'm <span> Prabin Acharya</span>
+              </h1>
+              <p className="pa-lead">Senior Frontend Developer currently working remotely from Nepal.</p>
               <div className="pa-badge">
                 <i className="fas fa-graduation-cap"></i>
                 <span>B.Sc. Computer Science</span>
               </div>
-            </div>
-            <div className="pa-hero-image">
-              <img src={profilePhoto} alt="Prabin Acharya" />
             </div>
           </div>
         </section>
@@ -64,9 +66,34 @@ const Content: React.FC = () => {
         <section className="pa-skills">
           <h2>Technical Expertise</h2>
           <div className="pa-skills-grid">
-            {["ReactJS", "JavaScript", "HTML5/CSS3", "REST APIs", "WebSockets", "UI/UX Design", "Performance", "WebRTC"].map((skill) => (
-              <div key={skill} className="pa-skill-tag">
-                {skill}
+            {[
+              // Your skills list
+              { name: "ReactJS", icon: "fa-brands fa-react" },
+              { name: "JavaScript", icon: "fa-brands fa-js" },
+              { name: "HTML5/CSS3", icon: "fa-brands fa-html5" },
+              { name: "REST APIs", icon: "fa-solid fa-server" },
+              { name: "WebSockets", icon: "fa-solid fa-plug" },
+              { name: "UI/UX Design", icon: "fa-solid fa-palette" },
+              { name: "Performance", icon: "fa-solid fa-gauge-high" },
+              { name: "WebRTC", icon: "fa-solid fa-video" },
+            ].map((skill) => (
+              <div key={skill.name} className="pa-skill-tag">
+                <i className={skill.icon}></i> {skill.name}
+              </div>
+            ))}
+            {/* Duplicate the skills list here for continuous animation */}
+            {[
+              { name: "ReactJS", icon: "fa-brands fa-react" },
+              { name: "JavaScript", icon: "fa-brands fa-js" },
+              { name: "HTML5/CSS3", icon: "fa-brands fa-html5" },
+              { name: "REST APIs", icon: "fa-solid fa-server" },
+              { name: "WebSockets", icon: "fa-solid fa-plug" },
+              { name: "UI/UX Design", icon: "fa-solid fa-palette" },
+              { name: "Performance", icon: "fa-solid fa-gauge-high" },
+              { name: "WebRTC", icon: "fa-solid fa-video" },
+            ].map((skill) => (
+              <div key={skill.name + "-dup"} className="pa-skill-tag">
+                <i className={skill.icon}></i> {skill.name}
               </div>
             ))}
           </div>

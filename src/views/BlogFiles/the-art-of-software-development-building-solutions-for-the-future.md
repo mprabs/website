@@ -1,6 +1,6 @@
 ---
 title: The Art of Software Development: Building Solutions for the Future
-date: 2024-11-06
+date: 2024/11/06
 ---
 
 Software development is more than just writing code; it's an art form that combines creativity, logic, and problem-solving. In this post, we’ll explore the key

@@ -69,8 +69,8 @@ const Blog = () => {
           <Link to={`/blog/${fileName.replace(".md", "")}`} className="file-link" key={fileName}>
             <li>
               <div className="blog-item">
-                <div className="blog-title">{title}</div>
                 {date && <div className="blog-date">{date}</div>} {/* Show date if available */}
+                <div className="blog-title">{title}</div>
               </div>
             </li>
           </Link>

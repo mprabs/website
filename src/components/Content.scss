@@ -8,61 +8,123 @@
     max-width: 1000px;
     margin: 0 auto;
     // padding: 0 1.5rem;
-  }
 
-  // Hero Section
-  .pa-hero {
-    padding: 4rem 1.5rem;
-
-    .pa-hero-content {
-      display: flex;
-      align-items: center;
-      gap: 3rem;
-
-      @media (max-width: 768px) {
-        flex-direction: column-reverse;
+    section {
+      h2 {
         text-align: center;
-      }
-    }
-
-    .pa-hero-text {
-      flex: 1;
-
-      h1 {
         font-family: var(--header-font);
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
         color: rgb(var(--text-color));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        width: 100%;
 
-        @media (max-width: 768px) {
-          font-size: 2rem;
+        i {
+          margin-right: 0.5rem;
+        }
+
+        &::before,
+        &::after {
+          content: "";
+          flex: 1;
+          height: 2px;
+          background-color: rgb(var(--text-color), 0.1);
+        }
+
+        span {
+          white-space: nowrap;
+          display: flex;
+          align-items: center;
         }
       }
-
-      .pa-lead {
-        font-size: 1.2rem;
-        margin-bottom: 1.5rem;
-        color: rgb(var(--text-color), 0.9);
-      }
     }
+  }
 
-    .pa-hero-image {
-      flex-shrink: 0;
-      position: relative;
-      width: 250px;
-      height: 300px;
-      padding: 3px;
-      border-radius: 22px;
-      box-shadow: 0 0 5px 5px rgb(var(--text-color), 0.2);
+  /* Hero Section */
+  .pa-hero {
+    margin-top: 2rem;
+    position: relative;
+    height: 900px;
+    display: flex;
+    align-items: flex-end; /* Align content at the bottom */
+    background: url("../assets/prabin-no-bg.png") no-repeat center center/contain; /* Replace with your image path */
+    color: rgb(var(--text-color));
+    padding: 4rem 1.5rem;
+    background-color: none;
+    border-radius: 2rem;
 
-      img {
+    margin-bottom: 200px;
+
+    @media (max-width: 768px) {
+      padding: 0;
+      height: 500px;
+      margin-bottom: 200px;
+
+      .pa-hero-content {
+        bottom: -200px;
         width: 100%;
-        height: 100%;
-        border-radius: 20px;
-        object-fit: cover;
-        filter: drop-shadow(0 0 5px rgba(var(--text-color), 0.7)) /* White shadow for border effect */;
       }
     }
+  }
+
+  .pa-hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // backdrop-filter: blur(2px); /* Blur effect */
+    z-index: 1; /* Ensure overlay is behind text */
+  }
+
+  .pa-hero-content {
+    position: absolute;
+    z-index: 2; /* Place text above the overlay */
+    width: 80%;
+    text-align: center; /* Center text */
+    bottom: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .pa-hero-text {
+    padding: 2rem;
+    border-radius: 25px; /* Round corners */
+    background: linear-gradient(45deg, rgb(var(--background)), rgb(var(--background), 0.8));
+    backdrop-filter: blur(10px);
+
+    // FOR HTML BODY DATA THEME LIGHT THEME LEESS BACKGROP
+    html[data-theme="light"] & {
+      backdrop-filter: blur(2px);
+    }
+  }
+
+  .pa-hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+
+    span {
+      color: transparent; /* Makes the inside of the text transparent */
+      -webkit-text-stroke: 1px rgb(var(--text-color)); /* Sets the outline color and thickness */
+      // add gradient to the inside of the text
+      background: linear-gradient(45deg, rgb(var(--text-color), 0.8), rgb(var(--background), 0.8));
+      backdrop-filter: blur(10px);
+      -webkit-background-clip: text;
+      white-space: nowrap;
+    }
+  }
+
+  .pa-hero-text .pa-lead {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .pa-hero-image {
+    display: none; /* If you previously had an image element, hide it */
   }
 
   .pa-badge {
@@ -73,9 +135,16 @@
     padding: 0.5rem 1rem;
     border-radius: 2rem;
     font-size: 0.9rem;
+    color: rgb(var(--text-color));
+  }
 
-    i {
-      font-size: 1rem;
+  .pa-badge i {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .pa-hero-text h1 {
+      font-size: 2rem;
     }
   }
 
@@ -166,7 +235,6 @@
     }
   }
 
-  // Skills Section
   .pa-skills {
     padding: 2rem 0;
 
@@ -174,22 +242,36 @@
       font-family: var(--header-font);
       font-size: 1.75rem;
       margin-bottom: 2rem;
-      color: rgb(var(--text-color));
+      color: rgba(var(--text-color), 0.9);
     }
 
     .pa-skills-grid {
       display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
+      flex-wrap: nowrap; // Prevents wrapping, allowing for horizontal scrolling
+      overflow-x: auto; // Enables horizontal scrolling if needed
+      width: 300%; // This will make the container wide enough to show all skills moving
+      animation: slide 20s linear infinite; // Animation for the moving effect
     }
 
     .pa-skill-tag {
-      background: rgb(var(--text-color), 0.1);
-      color: rgb(var(--text-color));
+      background: rgba(var(--text-color), 0.1);
+      color: rgba(var(--text-color), 0.9);
       padding: 0.5rem 1rem;
       border-radius: 2rem;
       font-size: 0.9rem;
       font-weight: 500;
+      flex-shrink: 0; // Ensures each tag maintains its size during scroll
+      white-space: nowrap; // Prevents text wrapping inside the tag
+      margin-right: 1rem; // Adds space between tags for better visual separation
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-33.33%); // Adjust this value based on the number of skills
+      }
     }
   }
 }

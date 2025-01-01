@@ -25,10 +25,9 @@
 
       img {
         width: 100%;
-        height: 100%;
         aspect-ratio: 16 / 9;
-        object-fit: contain;
-        object-position: center center;
+        object-fit: cover;
+        // object-position: center center;
         background: rgb(var(--background));
       }
     }
@@ -141,11 +140,6 @@
         font-size: 1.5rem;
       }
 
-      ul,
-      li {
-        all: unset;
-      }
-
       ul {
         display: flex;
         flex-direction: column;
@@ -182,11 +176,9 @@
         margin-bottom: 2rem;
         font-size: 2rem;
       }
-
       > ul > li {
         width: 100%;
         margin-bottom: 2rem;
-        list-style-type: none;
 
         .experience-item {
           display: flex;
@@ -222,6 +214,8 @@
 
         li {
           margin-bottom: 0.5rem;
+          margin-left: 2rem;
+          list-style-type: circle; /* This line adds the circle bullet points */
 
           @media (max-width: 450px) {
             text-align: justify;
