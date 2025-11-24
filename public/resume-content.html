@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prabin Acharya - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px 60px;
+            background: white;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #1e293b;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 13px;
+            color: #475569;
+            margin-top: 10px;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .contact-info a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #1e293b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .job {
+            margin-bottom: 20px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .job-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .company {
+            font-size: 14px;
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        .duration {
+            font-size: 13px;
+            color: #64748b;
+            font-style: italic;
+        }
+
+        .job-location {
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        li {
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .skill-category {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .skill-category strong {
+            color: #1e293b;
+            font-weight: 600;
+        }
+
+        .education {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .degree {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .university {
+            font-size: 14px;
+            color: #2563eb;
+        }
+
+        .project {
+            margin-bottom: 12px;
+        }
+
+        .project-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .project-link {
+            font-size: 13px;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        @media print {
+            body {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Prabin Acharya</h1>
+        <div class="contact-info">
+            <span>📍 Kathmandu, Nepal (UTC +5:45)</span>
+            <span>|</span>
+            <span>📧 <a href="mailto:acharyaprabin03@gmail.com">acharyaprabin03@gmail.com</a></span>
+            <span>|</span>
+            <span>🌐 <a href="https://prabinacharya.com">prabinacharya.com</a></span>
+        </div>
+        <div class="contact-info">
+            <span>💼 <a href="https://linkedin.com/in/paccharya">linkedin.com/in/paccharya</a></span>
+            <span>|</span>
+            <span>💻 <a href="https://github.com/mprabs">github.com/mprabs</a></span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Professional Summary</h2>
+        <p style="font-size: 14px; color: #475569; line-height: 1.6;">
+            Senior Frontend Developer with 5+ years of experience building scalable web applications and interactive
+            data visualizations.
+            Proven track record of leading product development, implementing responsive designs, and optimizing
+            performance for enterprise-level applications.
+            Expertise in React.js ecosystem, modern JavaScript, and cross-functional collaboration in agile
+            environments.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <strong>Languages:</strong> JavaScript (ES6+), TypeScript, HTML5, CSS3, C, C++, PHP
+            </div>
+            <div class="skill-category">
+                <strong>Frontend:</strong> React.js, Vue.js, Redux, SCSS/SASS, ECharts, D3.js, Responsive Design
+            </div>
+            <div class="skill-category">
+                <strong>Backend:</strong> Node.js, Express.js, MongoDB, RESTful APIs, WebSockets, MVC Architecture
+            </div>
+            <div class="skill-category">
+                <strong>Tools & DevOps:</strong> Git, AWS (CI/CD, Amplify), Bitbucket, JIRA, Figma, Unity WebGL
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Professional Experience</h2>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Senior Frontend Developer</div>
+                    <div class="company">Sharelook PTE LTD, Singapore</div>
+                </div>
+                <div class="duration">Aug 2020 - Present</div>
+            </div>
+            <div class="job-location">Remote • Full-time</div>
+            <ul>
+                <li>Architected and delivered multiple production applications (App, Marketplace, Voices) serving
+                    10,000+ users, utilizing React.js and modern JavaScript with focus on performance optimization and
+                    cross-browser compatibility</li>
+                <li>Engineered complex data visualization dashboards using D3.js and WebGL, reducing load times by 40%
+                    through code-splitting and lazy loading strategies for large datasets</li>
+                <li>Spearheaded frontend architecture decisions and design system implementation, collaborating with
+                    UI/UX teams to ensure consistent user experience across product suite</li>
+                <li>Established CI/CD pipelines using AWS services and Bitbucket, reducing deployment time by 60% while
+                    mentoring 3 junior developers on best practices and code review processes</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">React Native Developer (Freelance)</div>
+                    <div class="company">Swanned Pty Ltd, Australia</div>
+                </div>
+                <div class="duration">Jun 2020 - Aug 2020</div>
+            </div>
+            <div class="job-location">Remote • Contract</div>
+            <ul>
+                <li>Implemented local push notification system using Expo framework, improving user engagement by 35%
+                </li>
+                <li>Developed 5+ new screens with custom animations and form validations for dating application,
+                    enhancing user flow and reducing form abandonment rate</li>
+                <li>Integrated real-time chatbot with response tagging system and optimized web application performance
+                </li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Frontend Developer Intern</div>
+                    <div class="company">Aayulogic Pvt. Ltd, Nepal</div>
+                </div>
+                <div class="duration">Jan 2020 - Apr 2020</div>
+            </div>
+            <div class="job-location">On-site</div>
+            <ul>
+                <li>Developed reusable UI components for internal HR Management System using Vue.js, improving
+                    development efficiency by 25%</li>
+                <li>Collaborated with senior developers on production applications, gaining hands-on experience with
+                    modern frontend frameworks and agile methodologies</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Additional Projects</h2>
+        <div class="project">
+            <span class="project-name">Shopify Frontend Development (Looney Launch)</span> -
+            <a href="https://randrgrocery.ca/" class="project-link">randrgrocery.ca</a>
+        </div>
+        <div class="project">
+            <span class="project-name">WordPress Frontend Development</span> -
+            <a href="https://moodlightinteriors.com/" class="project-link">moodlightinteriors.com</a>
+        </div>
+        <div class="project">
+            <span class="project-name">Evolution Simulator</span> - Neuroevolution with genetic algorithm implementation
+        </div>
+        <div class="project">
+            <span class="project-name">Hotels Booking Application</span> - Full-stack Vue.js application with booking
+            system
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Education</h2>
+        <div class="education">
+            <div>
+                <div class="degree">Bachelor of Science in Computer Science</div>
+                <div class="university">Kathmandu University, Nepal</div>
+            </div>
+            <div class="duration">2016 - 2020</div>
+        </div>
+        <div style="font-size: 13px; color: #64748b; margin-top: 5px;">CGPA: 3.41/4.0</div>
+    </div>
+</body>
+
+</html>

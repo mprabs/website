@@ -1,0 +1,183 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-vscode-bg: #0d1117;
+  --color-vscode-surface: #161b22;
+  --color-vscode-border: #30363d;
+  --color-vscode-accent: #58a6ff;
+  --color-vscode-text: #c9d1d9;
+  --color-vscode-muted: #8b949e;
+  --color-vscode-keyword: #ff7b72;
+  --color-vscode-function: #d2a8ff;
+  --color-vscode-string: #a5d6ff;
+
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "Fira Code", monospace;
+  --font-display: "Outfit", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-vscode-bg text-vscode-text font-sans antialiased selection:bg-vscode-accent selection:text-vscode-bg;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-tight text-white;
+  }
+
+  code,
+  pre {
+    @apply font-mono;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-vscode-surface/80 backdrop-blur-md border border-vscode-border shadow-lg;
+  }
+
+  .code-keyword {
+    @apply text-vscode-keyword;
+  }
+
+  .code-function {
+    @apply text-vscode-function;
+  }
+
+  .code-string {
+    @apply text-vscode-string;
+  }
+
+  .nav-link {
+    @apply relative px-4 py-2 text-vscode-muted hover:text-white transition-colors duration-200;
+  }
+
+  .nav-link.active {
+    @apply text-white;
+  }
+
+  .nav-link.active::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-vscode-accent shadow-[0_0_8px_rgba(88_166_255_0.6)];
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-vscode-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-vscode-border rounded-full hover:bg-vscode-muted transition-colors;
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+}
+
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+/* Markdown Content Styles */
+.markdown-content {
+  @apply text-vscode-text;
+}
+
+.markdown-content ::selection {
+  @apply bg-vscode-accent/30 text-white;
+}
+
+/* Code block wrapper animations */
+.code-block-wrapper {
+  @apply transition-all duration-300;
+}
+
+.code-block-wrapper:hover {
+  @apply shadow-lg shadow-vscode-accent/5;
+}
+
+/* Smooth transitions for interactive elements */
+.markdown-content a,
+.markdown-content button,
+.markdown-content code {
+  @apply transition-all duration-200;
+}
+
+/* Focus styles for accessibility */
+.markdown-content a:focus,
+.markdown-content button:focus {
+  @apply outline-none ring-2 ring-vscode-accent ring-offset-2 ring-offset-vscode-bg rounded;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .markdown-content h1 {
+    @apply text-3xl;
+  }
+
+  .markdown-content h2 {
+    @apply text-2xl;
+  }
+
+  .markdown-content h3 {
+    @apply text-xl;
+  }
+}
