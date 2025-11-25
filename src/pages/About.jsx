@@ -24,6 +24,11 @@ export default function About() {
                                 src={PrabinImage}
                                 alt="Prabin Acharya"
                                 className="w-full h-full object-cover"
+                                loading='lazy'
+                                referrerPolicy='no-referrer'
+                                decoding='async'
+                                fetchpriority='high'
+                                priority='high'
                             />
                         </div>
                     </div>

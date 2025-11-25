@@ -207,12 +207,12 @@ export const projects = {
 
 export const technicalExpertise = [
     "ReactJS", "JavaScript (ES6+)", "TypeScript", "HTML5/CSS3",
-    "REST APIs", "WebSockets", "WebRTC", "Redux", "Vue.js",
-    "Tailwind CSS", "Git", "Webpack", "Jest", "CI/CD"
+    "REST APIs", "WebSockets", "NodeJs", "Redux",
+    "Tailwind CSS", "Git", "Webpack", "CI/CD"
 ];
 
 export const aboutData = {
-    bio: "I'm a passionate JavaScript developer from Nepal with 4+ years of experience in building enterprise-level applications. I specialize in React ecosystem and modern web technologies, focusing on creating performant, scalable solutions with great user experiences.",
+    bio: "I'm a passionate JavaScript developer from Nepal with 5+ years of experience in building enterprise-level applications. I specialize in React ecosystem and modern web technologies, focusing on creating performant, scalable solutions with great user experiences.",
     hobbies: [
         "⚽ Football & Cricket enthusiast",
         "🎮 Casual gaming (PUBG, Chess)",
