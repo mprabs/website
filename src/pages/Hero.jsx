@@ -4,11 +4,11 @@ import PrabinImage from '../assets/prabin-no-bg.png';
 
 export default function Hero() {
     return (
-        <section className="relative min-h-[calc(100vh-64px)] flex items-center justify-center overflow-hidden py-12 sm:py-0">
+        <section className="relative min-h-[calc(100vh-64px)] flex items-start sm:items-center justify-center overflow-hidden py-12 md:py-16 lg:py-0">
             <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
 
                 {/* Left Column: Text Content */}
-                <div className="order-2 lg:order-1 space-y-6 text-center lg:text-left">
+                <div className="order-1 lg:order-1 space-y-6 text-center lg:text-left">
                     <div className="space-y-2 animate-fade-in-up">
                         <h2 className="text-vscode-accent font-mono text-lg sm:text-xl">Hi, I am</h2>
                         <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-white">
@@ -47,7 +47,7 @@ export default function Hero() {
                 </div>
 
                 {/* Right Column: VS Code Mockup */}
-                <div className="order-1 lg:order-2 animate-fade-in-up delay-200 perspective-1000">
+                <div className="order-2 lg:order-2 animate-fade-in-up delay-200 perspective-1000">
                     <div className="relative bg-vscode-bg border border-vscode-border rounded-xl shadow-2xl overflow-hidden transform transition-transform hover:rotate-1 hover:scale-[1.02] duration-500">
                         {/* Title Bar */}
                         <div className="bg-vscode-surface px-4 py-2 flex items-center justify-between border-b border-vscode-border">

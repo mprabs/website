@@ -3,7 +3,7 @@ import ProjectCard from '../components/ProjectCard';
 
 export default function Projects() {
     return (
-        <section className="min-h-[calc(100vh-64px)] py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <section className="min-h-[calc(100vh-64px)] pt-2 pb-8 sm:py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
             <div className="animate-fade-in-up">
                 {/* Header */}
                 <div className="mb-8">

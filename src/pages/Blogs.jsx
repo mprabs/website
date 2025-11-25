@@ -22,7 +22,7 @@ export default function Blogs() {
     };
 
     return (
-        <section className="py-20 px-4 max-w-6xl mx-auto">
+        <section className="pt-2 pb-8 sm:py-12 md:py-20 px-4 max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold mb-12 flex items-center gap-2">
                 <span className="text-vscode-accent">05.</span> My Blogs
             </h2>

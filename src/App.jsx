@@ -28,6 +28,11 @@ export default function App() {
     document.title = titles[location.pathname] || 'Prabin - Portfolio';
   }, [location]);
 
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <div className="min-h-screen bg-vscode-bg text-vscode-text overflow-x-hidden selection:bg-vscode-accent selection:text-vscode-bg">
       {/* Animated background particles */}
@@ -38,7 +43,7 @@ export default function App() {
       <div className="relative z-10 flex flex-col min-h-screen">
         <Navigation />
 
-        <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-16 sm:mt-0 mb-20 sm:mb-0">
+        <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 mt-16 sm:mt-0 mb-20 sm:mb-0">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Hero />} />
             <Route path="/about" element={<About />} />

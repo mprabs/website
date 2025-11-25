@@ -3,7 +3,7 @@ import { VscGitCommit, VscGitMerge, VscGitPullRequest } from 'react-icons/vsc';
 
 export default function WorkExperience() {
     return (
-        <section className="min-h-[calc(100vh-64px)] py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <section className="min-h-[calc(100vh-64px)] pt-2 pb-8 sm:py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
             <div className="space-y-8 animate-fade-in-up">
 
                 <div className="flex items-center gap-3 mb-8 border-b border-vscode-border pb-4">

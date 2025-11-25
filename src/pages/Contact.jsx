@@ -53,7 +53,7 @@ export default function Contact() {
     };
 
     return (
-        <section className="min-h-[calc(100vh-64px)] py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+        <section className="min-h-[calc(100vh-64px)] pt-2 pb-8 sm:py-12 px-4 sm:px-6 lg:px-8 flex items-start sm:items-center justify-center">
             <div className="w-full max-w-3xl space-y-6">
                 {/* Page Header */}
                 <div className="animate-fade-in-up">

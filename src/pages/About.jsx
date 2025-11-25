@@ -4,7 +4,7 @@ import PrabinImage from '../assets/prabin-no-bg.png';
 
 export default function About() {
     return (
-        <section className="min-h-[calc(100vh-64px)] py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <section className="min-h-[calc(100vh-64px)] pt-2 pb-8 sm:py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
             <div className="bg-vscode-bg border border-vscode-border rounded-xl shadow-xl overflow-hidden animate-fade-in-up">
 
                 {/* File Header */}
@@ -15,7 +15,7 @@ export default function About() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6 md:p-10 space-y-8">
+                <div className="p-4 sm:p-6 md:p-10 space-y-6 sm:space-y-8">
 
                     {/* Profile Image - Circular Avatar */}
                     <div className="flex justify-center">
