@@ -1,5 +1,7 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import Navigation from './components/Navigation';
+import FloatingParticles from './components/FloatingParticles';
 import Hero from './pages/Hero';
 import About from './pages/About';
 import WorkExperience from './pages/WorkExperience';
@@ -11,9 +13,25 @@ import Contact from './pages/Contact';
 export default function App() {
   const location = useLocation();
 
+  // Update page title based on current route
+  useEffect(() => {
+    const titles = {
+      '/': 'Prabin - Portfolio',
+      '/about': 'About - Prabin',
+      '/experience': 'Experience - Prabin',
+      '/projects': 'Projects - Prabin',
+      '/setup': 'Setup - Prabin',
+      '/blogs': 'Blogs - Prabin',
+      '/contact': 'Contact - Prabin',
+    };
+
+    document.title = titles[location.pathname] || 'Prabin - Portfolio';
+  }, [location]);
+
   return (
     <div className="min-h-screen bg-vscode-bg text-vscode-text overflow-x-hidden selection:bg-vscode-accent selection:text-vscode-bg">
-      {/* Background decoration - subtle grid or noise could go here */}
+      {/* Animated background particles */}
+      <FloatingParticles />
       <div className="fixed inset-0 z-0 pointer-events-none bg-[radial-gradient(circle_at_50%_50%,rgba(22,27,34,0.5),rgba(13,17,23,1))]"></div>
 
       {/* Content Container */}
@@ -33,7 +51,7 @@ export default function App() {
         </main>
 
         <footer className="py-6 text-center text-vscode-muted text-sm">
-          <p>© {new Date().getFullYear()} Prabin. Built with React & Tailwind.</p>
+          <p>© {new Date().getFullYear()} Prabin.</p>
         </footer>
       </div>
     </div>

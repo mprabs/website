@@ -1,5 +1,6 @@
 import { FiGithub, FiLinkedin, FiMail, FiBook, FiCpu, FiCode, FiDatabase, FiLayout } from 'react-icons/fi';
 import { aboutData, socialLinks, technicalExpertise } from '../data/data';
+import PrabinImage from '../assets/prabin-no-bg.png';
 
 export default function About() {
     return (
@@ -16,19 +17,30 @@ export default function About() {
                 {/* Content */}
                 <div className="p-6 md:p-10 space-y-8">
 
+                    {/* Profile Image - Circular Avatar */}
+                    <div className="flex justify-center">
+                        <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-vscode-accent/50 shadow-lg">
+                            <img
+                                src={PrabinImage}
+                                alt="Prabin Acharya"
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    </div>
+
                     {/* Header */}
-                    <div className="border-b border-vscode-border pb-6">
-                        <h1 className="text-3xl md:text-4xl font-bold mb-4 flex items-center gap-2">
+                    <div className="border-b border-vscode-border pb-6 text-center">
+                        <h1 className="text-3xl md:text-4xl font-bold mb-4">
                             <span className="text-vscode-accent">01.</span> Hi, I'm Prabin Acharya 👋
                         </h1>
-                        <p className="text-lg text-vscode-text leading-relaxed">
+                        <p className="text-lg text-vscode-text leading-relaxed max-w-3xl mx-auto">
                             {aboutData.bio}
                         </p>
                     </div>
 
                     {/* Tech Stack Grid */}
                     <div>
-                        <h2 className="text-2xl font-semibold text-white mb-6 flex items-center gap-2">
+                        <h2 className="text-2xl font-semibold text-white mb-6 flex items-center justify-center gap-2">
                             <FiCpu className="text-vscode-keyword" />
                             Tech Stack
                         </h2>
@@ -47,11 +59,11 @@ export default function About() {
 
                     {/* Hobbies */}
                     <div>
-                        <h2 className="text-2xl font-semibold text-white mb-6 flex items-center gap-2">
+                        <h2 className="text-2xl font-semibold text-white mb-6 flex items-center justify-center gap-2">
                             <FiLayout className="text-vscode-string" />
                             Interests
                         </h2>
-                        <div className="flex flex-wrap gap-3">
+                        <div className="flex flex-wrap gap-3 justify-center">
                             {aboutData.hobbies.map((hobby, index) => (
                                 <span
                                     key={index}
@@ -65,8 +77,8 @@ export default function About() {
 
                     {/* Connect */}
                     <div className="pt-6 border-t border-vscode-border">
-                        <h2 className="text-2xl font-semibold text-white mb-6">Connect</h2>
-                        <div className="flex gap-4">
+                        <h2 className="text-2xl font-semibold text-white mb-6 text-center">Connect</h2>
+                        <div className="flex gap-4 justify-center">
                             {socialLinks.map((link, index) => (
                                 <a
                                     key={index}
