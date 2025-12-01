@@ -214,10 +214,10 @@ export const technicalExpertise = [
 export const aboutData = {
     bio: "I'm a passionate JavaScript developer from Nepal with 5+ years of experience in building enterprise-level applications. I specialize in React ecosystem and modern web technologies, focusing on creating performant, scalable solutions with great user experiences.",
     hobbies: [
-        "⚽ Football & Cricket enthusiast",
-        "🎮 Casual gaming (PUBG, Chess)",
-        "✈️ Weekend travels & photography",
-        "📚 Learning new technologies"
+        "Football & Cricket enthusiast",
+        "Casual gaming (PUBG, Chess)",
+        "Weekend travels & photography",
+        "Learning new technologies"
     ]
 };
 
