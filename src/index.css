@@ -63,7 +63,7 @@
   }
 
   .nav-link.active::after {
-    content: '';
+    content: "";
     @apply absolute bottom-0 left-0 w-full h-0.5 bg-vscode-accent shadow-[0_0_8px_rgba(88_166_255_0.6)];
   }
 }
@@ -117,7 +117,6 @@
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0px);
@@ -140,16 +139,30 @@
   animation: float 6s ease-in-out infinite;
 }
 
-.delay-100 {
-  animation-delay: 100ms;
+@keyframes wave {
+  0%,
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(-15%) translateY(2%);
+  }
 }
 
-.delay-200 {
-  animation-delay: 200ms;
+.animate-wave {
+  animation: wave 18s ease-in-out infinite;
 }
 
-.delay-300 {
-  animation-delay: 300ms;
+.animate-wave-slow {
+  animation: wave 28s ease-in-out infinite;
+}
+
+.animate-wave-fast {
+  animation: wave 12s ease-in-out infinite;
+}
+
+.animate-wave-reverse {
+  animation: wave 22s ease-in-out infinite reverse;
 }
 
 /* Markdown Content Styles */

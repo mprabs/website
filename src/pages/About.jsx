@@ -14,6 +14,7 @@ import {
   FiCpu as FiCpuIcon,
   FiSettings,
 } from "react-icons/fi";
+import WindowFrame from "../components/WindowFrame";
 import {
   aboutData,
   socialLinks,
@@ -24,26 +25,18 @@ import PrabinImage from "../assets/prabin-no-bg.png";
 
 export default function About() {
   return (
-    <section className="min-h-[calc(100vh-64px)] pt-2 pb-8 sm:py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto relative">
+    <section className="min-h-[calc(100vh-64px)] pt-2 pb-8 sm:py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto relative pointer-events-auto">
       <div className="flex items-center gap-3 mb-8 border-b border-vscode-border pb-4">
-        <FiBook className="text-3xl text-vscode-function" />
         <h2 className="text-3xl font-bold flex items-center gap-2">
           <span className="text-vscode-accent">01.</span> About Me
         </h2>
       </div>
 
-      <div className="bg-vscode-bg border border-vscode-border rounded-xl shadow-xl overflow-hidden animate-fade-in-up">
-        {/* File Header */}
-        <div className="bg-vscode-surface px-4 py-2 border-b border-vscode-border flex items-center gap-2">
-          <FiBook className="text-vscode-accent" />
-          <span className="text-sm text-vscode-text font-mono">README.md</span>
-          <div className="flex gap-1 ml-4">
-            <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-            <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-            <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
-          </div>
-        </div>
-
+      <WindowFrame
+        title="README.md"
+        icon={FiBook}
+        containerClassName="animate-fade-in-up"
+      >
         {/* Content */}
         <div className="p-4 sm:p-6 md:p-10 space-y-16">
           {/* Hero Section */}
@@ -118,9 +111,9 @@ export default function About() {
               {technicalExpertise.map((skill, index) => (
                 <div
                   key={index}
-                  className="bg-vscode-surface border border-vscode-border p-3 rounded-lg flex flex-col items-center justify-center gap-2 hover:border-vscode-accent transition-colors group text-center"
+                  className="bg-vscode-surface border border-vscode-border p-3 rounded-lg flex items-center justify-center gap-2 hover:border-vscode-accent transition-colors group text-center"
                 >
-                  <div className="w-1.5 h-1.5 rounded-full bg-vscode-accent/50 group-hover:bg-vscode-accent"></div>
+                  {/* <div className="w-1.5 h-1.5 rounded-full bg-vscode-accent/50 group-hover:bg-vscode-accent"></div> */}
                   <span className="text-vscode-muted font-mono text-xs group-hover:text-vscode-text transition-colors">
                     {skill}
                   </span>
@@ -203,11 +196,6 @@ export default function About() {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Get In Touch
               </h2>
-              <p className="max-w-md mx-auto text-vscode-muted">
-                I'm currently looking for new opportunities. Whether you have a
-                question or just want to say hi, I'll try my best to get back to
-                you!
-              </p>
             </div>
 
             <div className="flex gap-4 justify-center">
@@ -235,7 +223,7 @@ export default function About() {
             </div>
           </div>
         </div>
-      </div>
+      </WindowFrame>
     </section>
   );
 }

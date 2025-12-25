@@ -22,7 +22,7 @@ export default function Navigation() {
   ];
 
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-md px-4">
+    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-md px-4 pointer-events-auto">
       <nav className="glass-panel rounded-2xl px-2 py-2 flex items-center justify-between shadow-2xl shadow-black/50">
         {navItems.map((item) => {
           const isActive = location.pathname === item.path;

@@ -1,7 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navigation from "./components/Navigation";
-import FloatingParticles from "./components/FloatingParticles";
+import SeaWaves from "./components/SeaWaves";
 import Hero from "./pages/Hero";
 import About from "./pages/About";
 import WorkExperience from "./pages/WorkExperience";
@@ -33,12 +33,11 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-vscode-bg text-vscode-text overflow-x-hidden selection:bg-vscode-accent selection:text-vscode-bg">
-      {/* Animated background particles */}
-      <FloatingParticles />
-      <div className="fixed inset-0 z-0 pointer-events-none bg-[radial-gradient(circle_at_50%_50%,rgba(22,27,34,0.5),rgba(13,17,23,1))]"></div>
+      {/* Animated sea wave background */}
+      <SeaWaves />
 
-      {/* Content Container */}
-      <div className="relative z-10 flex flex-col min-h-screen">
+      {/* Content Container - Set pointer-events-none to allow clicking through to sun behind */}
+      <div className="relative z-10 flex flex-col min-h-screen pointer-events-none">
         <Navigation />
 
         <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 mt-16 sm:mt-0 mb-20 sm:mb-0">
