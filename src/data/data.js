@@ -13,31 +13,35 @@ export const workExperiences = [
         company: "Sharelook PTE. LTD",
         duration: "October 2020 - Present",
         role: "Senior Frontend Developer",
+        stack: ["React", "Next.js", "TypeScript", "Redux", "WebRTC", "AWS Chime", "Agora"],
         points: [
-            "Architected and delivered multiple production applications (App, Marketplace, Voices) serving 10,000+ users, utilizing React.js and modern JavaScript with focus on performance optimization and cross-browser compatibility",
-            "Developed patented features including interactive Maze navigation and in-app Video Conferencing using AWS Chime & Agora SDK, implementing WebRTC and WebSockets for real-time communication",
-            "Engineered complex data visualization dashboards using D3.js and WebGL, reducing load times by 40% through code-splitting, lazy loading, and performance optimization strategies for large datasets",
-            "Established CI/CD pipelines using AWS services and Bitbucket, reducing deployment time by 60% while mentoring 3 junior developers on best practices, code reviews, and agile methodologies"
+            "Led frontend delivery for key Sharelook products, taking features from planning and technical discussion through implementation, QA support, and production release.",
+            "Collaborated closely with product owners, designers, QA, and other developers to break down requirements, align scope, and keep delivery moving across multiple parallel workstreams.",
+            "Worked on real-time product features including video conferencing flows with AWS Chime and Agora, improving reliability and reducing common UX friction during live collaboration sessions.",
+            "Improved component reuse and frontend structure across the codebase, cutting repeated UI implementation work by roughly 20% for similar feature screens while supporting cleaner long-term maintenance.",
+            "Contributed to release workflow and CI/CD practices, helping streamline handoff, testing, and deployment across a growing frontend codebase."
         ]
     },
     {
         company: "Swanned Pty. Ltd",
         duration: "June 2020 - August 2020",
         role: "React Native Developer (Freelance)",
+        stack: ["React Native", "Expo", "JavaScript", "Mobile UI", "API Integration"],
         points: [
-            "Implemented local push notification system using Expo framework, improving user engagement by 35% through timely and personalized notifications",
-            "Developed 5+ new screens with custom animations and form validations for dating application, enhancing user flow and reducing form abandonment rate",
-            "Integrated real-time chatbot with response tagging system and optimized web application performance, improving response time and user experience"
+            "Delivered new mobile screens and interaction flows for a dating application using React Native and Expo, helping make onboarding and core user actions noticeably smoother.",
+            "Integrated local notifications, form handling, and conversational features, reducing rough edges in the user flow and improving overall feature completeness for launch-ready builds.",
+            "Handled freelance implementation work end to end, shipping features quickly while keeping the UI consistent and reducing rework during feedback cycles."
         ]
     },
     {
         company: "Aayulogic Pvt Ltd",
         duration: "January 2020 - April 2020",
         role: "Frontend Developer (Internship)",
+        stack: ["Vue.js", "Vuex", "Vuetify", "JavaScript", "REST APIs"],
         points: [
-            "Developed reusable UI components for internal HR Management System using Vue.js and Vuex, improving development efficiency by 25%",
-            "Implemented state management patterns and conducted code reviews, gaining hands-on experience with modern frontend frameworks and agile development practices",
-            "Collaborated with senior developers on production applications, contributing to bug fixes and feature enhancements while learning industry best practices"
+            "Worked on internal product interfaces during my internship, building reusable Vue components that made similar screens faster to assemble and easier to maintain.",
+            "Used Vuex and shared UI patterns to keep features consistent across form-heavy and dashboard-style screens, helping reduce UI mismatch and repetitive fixes.",
+            "Supported senior developers with feature work, bug fixing, and day-to-day frontend tasks while building a solid foundation in professional product development."
         ]
     }
 ];
@@ -206,7 +210,7 @@ export const projects = {
 };
 
 export const technicalExpertise = [
-    "ReactJS", "JavaScript (ES6+)", "TypeScript", "HTML5/CSS3",
+    "ReactJS", "Next.js", "JavaScript (ES6+)", "TypeScript", "HTML5/CSS3",
     "REST APIs", "WebSockets", "NodeJs", "Redux",
     "Tailwind CSS", "Git", "Webpack", "CI/CD"
 ];

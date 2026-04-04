@@ -118,8 +118,8 @@ export default function Hero() {
   }, [userCode]);
 
   return (
-    <section className="relative min-h-[calc(100vh-64px)] flex items-start sm:items-center justify-center overflow-hidden py-12 md:py-16 lg:py-0">
-      <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-8 md:gap-12 items-center max-w-full">
+    <section className="relative flex items-start sm:items-center justify-center overflow-x-hidden pt-8 pb-28 sm:py-12 md:py-16 lg:py-0 sm:min-h-[calc(100vh-64px)]">
+      <div className="w-full grid lg:grid-cols-2 gap-8 md:gap-12 items-center max-w-full">
         {/* Left Column: Text Content */}
         <div className="order-1 lg:order-1 space-y-6 text-center lg:text-left pointer-events-auto">
           <div className="space-y-4 animate-fade-in-up">
@@ -181,15 +181,15 @@ export default function Hero() {
 
         {/* Right Column: VS Code Mockup */}
         <div
-          className="order-2 lg:order-2 animate-fade-in-up delay-200 w-full max-w-full overflow-visible pointer-events-auto"
+          className="order-2 lg:order-2 animate-fade-in-up delay-200 w-full max-w-full min-w-0 overflow-visible pointer-events-auto"
           style={{ perspective: "1000px" }}
         >
           <WindowFrame
             title="prabin.tsx — portfolio"
             icon={VscCode}
-            containerClassName="transform transition-all duration-500 hover:shadow-2xl hover:shadow-vscode-accent/20 active:scale-[0.98] hover:[transform:rotateY(-5deg)_rotateX(2deg)_scale(1.02)]"
+            containerClassName="w-full max-w-full transition-all duration-500 active:scale-[0.98] md:hover:shadow-2xl md:hover:shadow-vscode-accent/20 md:hover:[transform:rotateY(-5deg)_rotateX(2deg)_scale(1.02)]"
           >
-            <div className="flex flex-1 min-h-[280px] sm:min-h-[350px] md:min-h-[400px]">
+            <div className="flex flex-1 min-h-[240px] sm:min-h-[350px] md:min-h-[400px]">
               {/* Activity Bar - hidden on very small screens */}
               <div className="hidden sm:flex w-12 bg-vscode-surface border-r border-vscode-border flex-col items-center py-4 gap-6 text-vscode-muted">
                 <VscExtensions className="text-2xl hover:text-white cursor-pointer" />
@@ -200,7 +200,7 @@ export default function Hero() {
 
               {/* Editor Area */}
               <div
-                className="flex-1 p-3 sm:p-4 md:p-6 font-mono text-[12px] sm:text-[12px] md:text-[13px] overflow-hidden flex cursor-text leading-6"
+                className="min-w-0 flex-1 p-3 sm:p-4 md:p-6 font-mono text-[12px] sm:text-[12px] md:text-[13px] overflow-hidden flex cursor-text leading-6"
                 onClick={() => editableRef.current?.focus()}
               >
                 <div className="text-vscode-muted select-none pr-2 sm:pr-4 text-right border-r border-vscode-border/30 mr-4 flex-shrink-0">
@@ -210,7 +210,7 @@ export default function Hero() {
                     </div>
                   ))}
                 </div>
-                <div className="flex-1 overflow-x-auto outline-none">
+                <div className="min-w-0 flex-1 overflow-x-auto outline-none">
                   {/* Static Code */}
                   <div className="opacity-90 pointer-events-none select-none">
                     {lines.map((line, i) => (

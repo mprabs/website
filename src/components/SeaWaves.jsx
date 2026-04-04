@@ -15,9 +15,10 @@ const SeaWaves = () => {
   const [sunPos, setSunPos] = useState(() => {
     if (typeof window === "undefined") return { x: 100, y: 100 };
     const isMobile = window.innerWidth < 768;
+    const mobileTopRowY = Math.max(64, window.innerHeight * 0.1);
     return {
-      x: isMobile ? window.innerWidth * 0.9 : window.innerWidth * 0.1,
-      y: (window.innerHeight - 14) * 0.1,
+      x: isMobile ? window.innerWidth * 0.12 : window.innerWidth * 0.1,
+      y: isMobile ? mobileTopRowY : (window.innerHeight - 14) * 0.1,
     };
   });
   const sunDragRef = useRef({ active: false, offsetX: 0, offsetY: 0 });
