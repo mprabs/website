@@ -209,6 +209,26 @@ export const projects = {
     ]
 };
 
+export const featuredLaunches = [
+    {
+        name: "Nexus Canvas",
+        description:
+            "Currently building a desktop-first, local-first canvas for scenario modeling and decision support, designed to help teams reason over complex decisions in one visual workspace.",
+        tags: ["Next.js App Router", "TypeScript", "Tailwind CSS", "Local-first"],
+        highlights: [
+            "Actively implementing feature boundaries across canvas, nodes, edges, inspector, compute, unfurl, persistence, and sync domains.",
+            "Building around an in-memory transaction boundary for atomic graph mutations and grouped history semantics.",
+            "Current MVP-in-progress includes workspace shell, typed interactive canvas, scenarios, operation journal, and export/import recovery tooling."
+        ],
+        links: {
+            visit: "https://nexus.acharyaprabin.com.np/",
+            source: null
+        },
+        image: null,
+        isNewLaunch: true
+    }
+];
+
 export const technicalExpertise = [
     "ReactJS", "Next.js", "JavaScript (ES6+)", "TypeScript", "HTML5/CSS3",
     "REST APIs", "WebSockets", "NodeJs", "Redux",
