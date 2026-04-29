@@ -1,17 +1,17 @@
 import { workExperiences } from "../data/data";
 import { VscGitPullRequest } from "react-icons/vsc";
 import WindowFrame from "../components/WindowFrame";
+import ImmersiveRouteShell from "../components/ImmersiveRouteShell";
 
 export default function WorkExperience() {
   return (
-    <section className="min-h-[calc(100vh-64px)] pt-2 pb-8 sm:py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto pointer-events-auto">
+    <ImmersiveRouteShell
+      eyebrow="Career Tunnel"
+      title="A detailed route through product teams, freelance delivery, and frontend ownership."
+      description="The immersive homepage gives the highlight reel. This route keeps the specifics easy to scan like a premium interactive resume."
+      className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
+    >
       <div className="space-y-8 animate-fade-in-up">
-        <div className="flex items-center gap-3 mb-8 border-b border-vscode-border pb-4">
-          <h2 className="text-3xl font-bold flex items-center gap-2">
-            <span className="text-vscode-accent">02.</span> Work Experience
-          </h2>
-        </div>
-
         <WindowFrame
           title="experience.git — log"
           icon={VscGitPullRequest}
@@ -100,6 +100,6 @@ export default function WorkExperience() {
           </div>
         </WindowFrame>
       </div>
-    </section>
+    </ImmersiveRouteShell>
   );
 }

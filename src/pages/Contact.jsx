@@ -2,6 +2,7 @@ import { useState } from "react";
 import { VscTerminal } from "react-icons/vsc";
 import { FiMail } from "react-icons/fi";
 import WindowFrame from "../components/WindowFrame";
+import ImmersiveRouteShell from "../components/ImmersiveRouteShell";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -56,17 +57,13 @@ export default function Contact() {
   };
 
   return (
-    <section className="min-h-[calc(100vh-64px)] pt-2 pb-8 sm:py-12 px-4 sm:px-6 lg:px-8 flex items-start sm:items-center justify-center pointer-events-auto">
+    <ImmersiveRouteShell
+      eyebrow="Signal Room"
+      title="The direct line for collaborations, frontend roles, and product conversations."
+      description="A more focused contact route that still feels part of the cinematic system instead of a separate utility page."
+      className="px-4 sm:px-6 lg:px-8 flex items-start sm:items-center justify-center"
+    >
       <div className="w-full max-w-3xl space-y-6">
-        {/* Page Header */}
-        <div className="flex items-center gap-3 mb-8 border-b border-vscode-border pb-4">
-          <div className="flex-grow">
-            <h1 className="text-3xl md:text-4xl font-bold flex items-center gap-2">
-              <span className="text-vscode-accent">05.</span> Contact Me
-            </h1>
-          </div>
-        </div>
-
         <WindowFrame
           title="contact-form.sh"
           icon={VscTerminal}
@@ -192,6 +189,6 @@ export default function Contact() {
           </div>
         </WindowFrame>
       </div>
-    </section>
+    </ImmersiveRouteShell>
   );
 }

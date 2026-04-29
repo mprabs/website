@@ -10,6 +10,7 @@ import {
   FiSettings,
 } from "react-icons/fi";
 import WindowFrame from "../components/WindowFrame";
+import ImmersiveRouteShell from "../components/ImmersiveRouteShell";
 import {
   aboutData,
   socialLinks,
@@ -33,13 +34,12 @@ function getSetupIcon(category) {
 
 export default function About() {
   return (
-    <section className="min-h-[calc(100vh-64px)] pt-2 pb-8 sm:py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto relative pointer-events-auto">
-      <div className="flex items-center gap-3 mb-8 border-b border-vscode-border pb-4">
-        <h2 className="text-3xl font-bold flex items-center gap-2">
-          <span className="text-vscode-accent">01.</span> About Me
-        </h2>
-      </div>
-
+    <ImmersiveRouteShell
+      eyebrow="Profile Deck"
+      title="The person behind the workspace."
+      description="A cleaner, calmer route for the full background: skills, setup, interests, and the context behind the cinematic homepage."
+      className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+    >
       <WindowFrame
         title="about.md"
         icon={FiBook}
@@ -207,6 +207,6 @@ export default function About() {
           </div>
         </div>
       </WindowFrame>
-    </section>
+    </ImmersiveRouteShell>
   );
 }

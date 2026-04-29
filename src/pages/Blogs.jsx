@@ -3,6 +3,7 @@ import { blogPosts } from "../data/data";
 import MarkdownRenderer from "../components/MarkdownRenderer";
 import { FiBook } from "react-icons/fi";
 import WindowFrame from "../components/WindowFrame";
+import ImmersiveRouteShell from "../components/ImmersiveRouteShell";
 
 export default function Blogs() {
   const [selectedPost, setSelectedPost] = useState(null);
@@ -24,13 +25,12 @@ export default function Blogs() {
   };
 
   return (
-    <section className="pt-2 pb-8 sm:py-12 md:py-20 px-4 max-w-6xl mx-auto pointer-events-auto">
-      <div className="flex items-center gap-3 mb-12 border-b border-vscode-border pb-4">
-        <h2 className="text-3xl font-bold flex items-center gap-2">
-          <span className="text-vscode-accent">04.</span> My Blogs
-        </h2>
-      </div>
-
+    <ImmersiveRouteShell
+      eyebrow="Reading Chamber"
+      title="Writing that stays readable inside the new world."
+      description="This route slows the visual intensity down on purpose, so blog posts feel editorial and comfortable instead of overloaded."
+      className="max-w-6xl mx-auto px-4"
+    >
       {selectedPost ? (
         <WindowFrame
           title={`${selectedPost.title.toLowerCase().replace(/\s+/g, "_")}.md`}
@@ -86,6 +86,6 @@ export default function Blogs() {
           ))}
         </div>
       )}
-    </section>
+    </ImmersiveRouteShell>
   );
 }

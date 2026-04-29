@@ -16,7 +16,7 @@ export default function MarkdownRenderer({ content }) {
 
     const components = {
         // Code blocks with syntax highlighting
-        code({ node, inline, className, children, ...props }) {
+        code({ inline, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || '');
             const codeString = String(children).replace(/\n$/, '');
             const codeIndex = `${codeString.substring(0, 20)}-${Math.random()}`;

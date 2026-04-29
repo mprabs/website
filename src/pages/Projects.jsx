@@ -1,19 +1,17 @@
 import { featuredLaunches, projects } from "../data/data";
 import ProjectCard from "../components/ProjectCard";
 import { FiStar, FiZap } from "react-icons/fi";
+import ImmersiveRouteShell from "../components/ImmersiveRouteShell";
 
 export default function Projects() {
   return (
-    <section className="min-h-[calc(100vh-64px)] pt-2 pb-8 sm:py-8 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto pointer-events-auto">
+    <ImmersiveRouteShell
+      eyebrow="Launch Archive"
+      title="A full project bay beyond the homepage highlights."
+      description="Everything from enterprise product work to personal experiments, kept readable but wrapped in the same premium visual system."
+      className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8"
+    >
       <div className="animate-fade-in-up">
-        {/* Header */}
-        <div className="flex items-center gap-3 mb-6 sm:mb-8 border-b border-vscode-border pb-4">
-          <h1 className="text-3xl font-bold flex items-center gap-2">
-            <span className="text-vscode-accent">03.</span> Projects
-          </h1>
-        </div>
-
-        {/* Projects Grid */}
         <div className="space-y-10 sm:space-y-12">
           {!!featuredLaunches.length && (
             <div className="relative overflow-hidden rounded-2xl border border-vscode-accent/40 bg-vscode-accent/5 p-4 sm:p-6">
@@ -55,6 +53,6 @@ export default function Projects() {
           ))}
         </div>
       </div>
-    </section>
+    </ImmersiveRouteShell>
   );
 }

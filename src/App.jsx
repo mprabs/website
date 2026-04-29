@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 
 export default function App() {
   const location = useLocation();
+  const isHome = location.pathname === "/";
 
   // Update page title based on current route
   useEffect(() => {
@@ -33,14 +34,22 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-vscode-bg text-vscode-text overflow-x-hidden selection:bg-vscode-accent selection:text-vscode-bg">
-      {/* Animated sea wave background */}
-      <SeaWaves />
+      {!isHome && <SeaWaves />}
 
-      {/* Content Container - Set pointer-events-none to allow clicking through to sun behind */}
-      <div className="relative z-10 flex flex-col min-h-screen pointer-events-none">
-        <Navigation />
+      <div
+        className={`relative z-10 flex flex-col min-h-screen ${
+          isHome ? "" : "pointer-events-none"
+        }`}
+      >
+        {!isHome && <Navigation />}
 
-        <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 mt-16 sm:mt-0 mb-20 sm:mb-0">
+        <main
+          className={`flex-grow ${
+            isHome
+              ? "w-full"
+              : "container mx-auto px-4 sm:px-6 lg:px-8 mt-16 sm:mt-0 mb-20 sm:mb-0"
+          }`}
+        >
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Hero />} />
             <Route path="/about" element={<About />} />
@@ -51,9 +60,11 @@ export default function App() {
           </Routes>
         </main>
 
-        <footer className="py-6 text-center text-vscode-muted text-sm">
-          <p>© {new Date().getFullYear()} Prabin.</p>
-        </footer>
+        {!isHome && (
+          <footer className="py-6 text-center text-vscode-muted text-sm">
+            <p>© {new Date().getFullYear()} Prabin.</p>
+          </footer>
+        )}
       </div>
     </div>
   );
