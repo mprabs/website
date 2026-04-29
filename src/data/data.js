@@ -209,23 +209,96 @@ export const projects = {
     ]
 };
 
-export const featuredLaunches = [
+export const topProjects = [
+    {
+        name: "Pixel Kit",
+        description:
+            "A personal toolkit project I designed and built myself to speed up frontend workflows with reusable UI patterns, cleaner structure, and faster idea-to-implementation cycles.",
+        tags: ["Next.js", "TypeScript", "Design Systems", "Productivity"],
+        highlights: [
+            "Designed and implemented reusable UI blocks and starter patterns to reduce repeated setup work.",
+            "Built the project structure and tooling flow myself to move from concept to working UI faster.",
+            "Refined usability through multiple personal iterations so the toolkit stays practical for daily use."
+        ],
+        links: {
+            visit: "https://pixelkit.acharyaprabin.com",
+            source: null
+        },
+        image: "/assets/projects/pixelkit-wordmark.svg",
+        imageFit: "contain",
+        imageContainerClass: "bg-slate-100",
+        showFullDescription: true,
+        maxHighlights: 3,
+        isNewLaunch: true
+    },
     {
         name: "Nexus Canvas",
         description:
-            "Currently building a desktop-first, local-first canvas for scenario modeling and decision support, designed to help teams reason over complex decisions in one visual workspace.",
+            "A personal desktop-first, local-first canvas project I am building for scenario modeling and decision support in one visual workspace.",
         tags: ["Next.js App Router", "TypeScript", "Tailwind CSS", "Local-first"],
         highlights: [
-            "Actively implementing feature boundaries across canvas, nodes, edges, inspector, compute, unfurl, persistence, and sync domains.",
-            "Building around an in-memory transaction boundary for atomic graph mutations and grouped history semantics.",
-            "Current MVP-in-progress includes workspace shell, typed interactive canvas, scenarios, operation journal, and export/import recovery tooling."
+            "Implemented core feature boundaries across canvas, nodes, edges, inspector, compute, unfurl, persistence, and sync domains.",
+            "Designed an in-memory transaction boundary for atomic graph mutations and grouped history semantics.",
+            "Built the MVP foundation with workspace shell, typed interactive canvas, scenarios, operation journal, and export/import recovery."
         ],
         links: {
             visit: "https://nexus.acharyaprabin.com.np/",
             source: null
         },
-        image: null,
+        image: "/assets/projects/nexus-logo.svg",
+        imageFit: "contain",
+        showFullDescription: true,
+        maxHighlights: 3,
         isNewLaunch: true
+    },
+    {
+        name: "Zigsaw Puzzle App",
+        description:
+            "A personal mobile jigsaw puzzle app I built with Flutter, focused on smooth gameplay, progressive difficulty, and rewarding progression through score, timer, and unlock systems.",
+        tags: ["Flutter", "Riverpod", "Hive", "AdMob"],
+        highlights: [
+            "Implemented the puzzle engine myself with image splitting, drag-and-drop placement, universal snapping, and tray return interactions.",
+            "Built progression systems including timer, move tracking, scoring, and local best-score persistence with Hive.",
+            "Integrated token rewards, rewarded ads, and sound/haptic feedback to polish the gameplay loop."
+        ],
+        links: {
+            visit: null,
+            source: null
+        },
+        actions: [
+            {
+                label: "Download APK",
+                href: "https://drive.google.com/file/d/1Hx8i19ygIRD-z7N8ti9Sm5rWgNe4KnhO/view?usp=sharing",
+                variant: "primary",
+                type: "download"
+            }
+        ],
+        image: "/assets/projects/zigsaw-main-icon.png",
+        imageFit: "cover",
+        showFullDescription: true,
+        maxHighlights: 3,
+        isNewLaunch: true
+    },
+    {
+        name: "Tiny Home Hub",
+        description:
+            "A personal platform project I started and partially implemented, including backend setup and core product structure, but it is still in-progress and not fully completed yet.",
+        tags: ["React", "Vite", "Supabase", "In Progress"],
+        highlights: [
+            "Built the initial split between public website routes and authenticated app routes to support long-term scaling.",
+            "Implemented core app sections such as dashboard, forum, marketplace, profile flows, and foundational shared auth structure.",
+            "Set up backend-connected groundwork and project architecture, with remaining features and polish planned for completion."
+        ],
+        links: {
+            visit: "https://tiny-home-hub.netlify.app/",
+            source: null
+        },
+        image: "/assets/projects/tiny-home-logo-only-icon.png",
+        imageFit: "contain",
+        imageContainerClass: "bg-slate-100",
+        showFullDescription: true,
+        maxHighlights: 3,
+        isNewLaunch: false
     }
 ];
 
