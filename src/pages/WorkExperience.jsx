@@ -4,7 +4,7 @@ import WindowFrame from "../components/WindowFrame";
 
 export default function WorkExperience() {
   return (
-    <section className="min-h-[calc(100vh-64px)] pt-2 pb-8 sm:py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto pointer-events-auto">
+    <section className="min-h-[calc(100vh-64px)] pt-2 pb-8 sm:py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto pointer-events-auto">
       <div className="space-y-8 animate-fade-in-up">
         <div className="flex items-center gap-3 mb-8 border-b border-vscode-border pb-4">
           <h2 className="text-3xl font-bold flex items-center gap-2">
@@ -17,64 +17,64 @@ export default function WorkExperience() {
           icon={VscGitPullRequest}
           containerClassName="animate-fade-in-up"
         >
-          <div className="p-6 sm:p-10">
+          <div className="p-5 sm:p-7 md:p-9">
             <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <p className="text-sm font-mono text-vscode-accent">
-                  Career timeline
+                  Career Journey
                 </p>
                 <p className="mt-1 max-w-2xl text-sm text-vscode-muted leading-relaxed">
-                  Rewritten to read closer to a real resume: specific product work,
-                  clearer frontend ownership, and the React ecosystem tools I
-                  actually work around.
+                  A concise timeline of companies, roles, and real product
+                  impact across frontend-focused teams.
                 </p>
               </div>
             </div>
 
-            <div className="relative space-y-10">
-              <div className="pointer-events-none absolute left-[7px] top-2 bottom-4 w-px bg-gradient-to-b from-vscode-border via-vscode-border to-vscode-function/70" />
+            <div className="relative">
+              <div className="pointer-events-none hidden md:block absolute left-[11px] top-2 bottom-10 w-px bg-gradient-to-b from-vscode-border via-vscode-border to-vscode-accent/80" />
               {workExperiences.map((exp, index) => (
-                <div key={index} className="relative group pl-8 sm:pl-10">
-                  {/* Timeline Node */}
-                  <div className="absolute left-[7px] top-5 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-vscode-muted bg-vscode-bg group-hover:border-vscode-accent group-hover:scale-110 transition-all duration-300 z-10 flex items-center justify-center shadow-[0_0_0_4px_rgba(13,17,23,0.9)]">
-                    <div className="w-1.5 h-1.5 rounded-full bg-vscode-muted group-hover:bg-vscode-accent transition-colors"></div>
+                <article
+                  key={index}
+                  className="group relative border-b border-vscode-border/80 last:border-b-0 py-6 md:py-7 md:pl-12 transition-colors duration-200 hover:bg-vscode-surface/20"
+                >
+                  <div className="hidden md:flex absolute left-[11px] top-10 -translate-x-1/2 h-5 w-5 items-center justify-center rounded-full border-2 border-vscode-border bg-vscode-bg group-hover:border-vscode-accent transition-colors">
+                    <span className="h-1.5 w-1.5 rounded-full bg-vscode-muted group-hover:bg-vscode-accent transition-colors" />
                   </div>
 
-                  {/* Content Card */}
-                  <div className="bg-vscode-surface/50 border border-vscode-border rounded-xl p-6 hover:border-vscode-accent hover:bg-vscode-surface transition-all duration-300 shadow-lg group-hover:shadow-vscode-accent/5">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-                      <div>
-                        <p className="text-xs uppercase tracking-[0.24em] text-vscode-muted font-mono mb-2">
+                  <div className="space-y-4">
+                    <div className="flex flex-col gap-3 md:grid md:grid-cols-[1fr_auto] md:items-start">
+                      <div className="space-y-2">
+                        <p className="text-[11px] uppercase tracking-[0.14em] text-vscode-muted font-mono">
                           {exp.company}
                         </p>
-                        <h3 className="text-xl font-bold text-vscode-accent">
+                        <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-vscode-accent transition-colors leading-tight">
                           {exp.role}
                         </h3>
                       </div>
-                      <div className="flex items-center gap-2 text-xs font-mono text-vscode-muted bg-vscode-bg border border-vscode-border px-2 py-1 rounded">
-                        <span>•</span>
+                      <div className="inline-flex items-center gap-2 rounded-md border border-vscode-border bg-vscode-bg/60 px-3 py-1.5 text-xs font-mono text-vscode-muted w-fit">
+                        <span className="h-1.5 w-1.5 rounded-full bg-vscode-accent/80" />
                         <span>{exp.duration}</span>
                       </div>
                     </div>
 
-                    <div className="mb-5 flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2">
                       {exp.stack.map((item) => (
                         <span
                           key={item}
-                          className="rounded-full border border-vscode-border bg-vscode-bg px-2.5 py-1 text-[11px] font-mono text-vscode-text/85"
+                          className="rounded-full border border-vscode-border bg-vscode-surface/60 px-2.5 py-1 text-[11px] font-mono text-vscode-text/85"
                         >
                           {item}
                         </span>
                       ))}
                     </div>
 
-                    <ul className="space-y-3">
+                    <ul className="space-y-2.5">
                       {exp.points.map((point, i) => (
                         <li
                           key={i}
-                          className="flex items-start gap-3 text-vscode-text/90 group/item"
+                          className="flex items-start gap-3 text-vscode-text/90"
                         >
-                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-vscode-border group-hover/item:bg-vscode-string transition-colors flex-shrink-0"></span>
+                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-vscode-border group-hover:bg-vscode-accent/80 transition-colors flex-shrink-0" />
                           <span className="text-sm leading-relaxed">
                             {point}
                           </span>
@@ -82,19 +82,13 @@ export default function WorkExperience() {
                       ))}
                     </ul>
                   </div>
-                </div>
+                </article>
               ))}
 
-              {/* Initial Commit */}
-              <div className="relative group pl-8 sm:pl-10">
-                <div className="absolute left-[7px] top-1 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-vscode-function bg-vscode-bg z-10 flex items-center justify-center shadow-[0_0_0_4px_rgba(13,17,23,0.9)]">
-                  <div className="w-1.5 h-1.5 rounded-full bg-vscode-function"></div>
-                </div>
-                <div className="pt-0.5">
-                  <span className="text-vscode-muted font-mono text-sm">
-                    Initial commit: Started Career
-                  </span>
-                </div>
+              <div className="pt-6 md:pl-12">
+                <p className="text-vscode-muted font-mono text-xs sm:text-sm">
+                  Initial commit: Started professional frontend journey
+                </p>
               </div>
             </div>
           </div>

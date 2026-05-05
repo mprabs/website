@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { VscTerminal } from "react-icons/vsc";
 import { FiMail } from "react-icons/fi";
 import WindowFrame from "../components/WindowFrame";
 
@@ -68,122 +67,119 @@ export default function Contact() {
         </div>
 
         <WindowFrame
-          title="contact-form.sh"
-          icon={VscTerminal}
+          title="contact.md"
+          icon={FiMail}
           containerClassName="animate-fade-in-up"
         >
-          {/* Terminal Body */}
-          <div className="p-6 sm:p-8 font-mono text-sm sm:text-base bg-[#0d1117] text-[#c9d1d9]">
-            <div className="mb-8 text-vscode-muted/80">
-              <p>Last login: {new Date().toDateString()} on ttys000</p>
-              <p>Type your message below to execute send_mail.sh</p>
+          <div className="p-6 sm:p-8 md:p-10 bg-vscode-bg/90">
+            <div className="mb-8 max-w-2xl">
+              <p className="text-vscode-accent font-mono text-xs sm:text-sm uppercase tracking-[0.12em]">
+                Get In Touch
+              </p>
+              <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-white">
+                Send me a message
+              </h2>
+              <p className="mt-3 text-vscode-text/80 text-sm sm:text-base leading-relaxed">
+                If you want to contact me for work, collaboration, or anything
+                else, send a message and I will get back to you soon.
+              </p>
             </div>
 
-            {/* Status Messages */}
             {status.message && (
               <div
-                className={`mb-6 p-4 rounded-lg border transition-all duration-300 ${
+                className={`mb-6 p-4 rounded-lg border text-sm sm:text-base transition-all duration-300 ${
                   status.type === "success"
-                    ? "bg-green-900/10 border-green-500/30 text-green-400 shadow-[0_0_15px_rgba(34,197,94,0.1)]"
-                    : "bg-red-900/10 border-red-500/30 text-red-400 shadow-[0_0_15px_rgba(239,68,68,0.1)]"
+                    ? "bg-green-900/10 border-green-500/30 text-green-300"
+                    : "bg-red-900/10 border-red-500/30 text-red-300"
                 }`}
               >
                 {status.message}
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name Input */}
-              <div className="group space-y-2">
-                <div className="flex items-center gap-2 text-[#27c93f]">
-                  <span>➜</span>
-                  <span className="text-vscode-accent">~</span>
-                  <span className="text-vscode-muted group-focus-within:text-vscode-accent transition-colors">
-                    enter_name:
-                  </span>
-                </div>
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div className="space-y-2">
+                <label
+                  htmlFor="contact-name"
+                  className="block text-sm font-medium text-vscode-text"
+                >
+                  Name
+                </label>
                 <input
+                  id="contact-name"
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
-                  className="w-full bg-vscode-surface/30 border border-transparent focus:border-vscode-border hover:bg-vscode-surface/50 p-3 rounded-lg focus:ring-0 text-white focus:outline-none caret-vscode-accent transition-all pl-6"
-                  placeholder="John Doe"
+                  className="w-full rounded-lg border border-vscode-border bg-vscode-surface/40 px-4 py-3 text-white placeholder:text-vscode-muted/70 focus:outline-none focus:border-vscode-accent/70 focus:bg-vscode-surface/60 transition-colors"
+                  placeholder="Your name"
                   required
                   disabled={isSubmitting}
                 />
               </div>
 
-              {/* Email Input */}
-              <div className="group space-y-2">
-                <div className="flex items-center gap-2 text-[#27c93f]">
-                  <span>➜</span>
-                  <span className="text-vscode-accent">~</span>
-                  <span className="text-vscode-muted group-focus-within:text-vscode-accent transition-colors">
-                    enter_email:
-                  </span>
-                </div>
+              <div className="space-y-2">
+                <label
+                  htmlFor="contact-email"
+                  className="block text-sm font-medium text-vscode-text"
+                >
+                  Email
+                </label>
                 <input
+                  id="contact-email"
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="w-full bg-vscode-surface/30 border border-transparent focus:border-vscode-border hover:bg-vscode-surface/50 p-3 rounded-lg focus:ring-0 text-white focus:outline-none caret-vscode-accent transition-all pl-6"
-                  placeholder="john@example.com"
+                  className="w-full rounded-lg border border-vscode-border bg-vscode-surface/40 px-4 py-3 text-white placeholder:text-vscode-muted/70 focus:outline-none focus:border-vscode-accent/70 focus:bg-vscode-surface/60 transition-colors"
+                  placeholder="Your email"
                   required
                   disabled={isSubmitting}
                 />
               </div>
 
-              {/* Message Input */}
-              <div className="group space-y-2">
-                <div className="flex items-center gap-2 text-[#27c93f]">
-                  <span>➜</span>
-                  <span className="text-vscode-accent">~</span>
-                  <span className="text-vscode-muted group-focus-within:text-vscode-accent transition-colors">
-                    enter_message:
-                  </span>
-                </div>
+              <div className="space-y-2">
+                <label
+                  htmlFor="contact-message"
+                  className="block text-sm font-medium text-vscode-text"
+                >
+                  Message
+                </label>
                 <textarea
+                  id="contact-message"
                   name="message"
                   value={formData.message}
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
-                  className="w-full bg-vscode-surface/30 border border-transparent focus:border-vscode-border hover:bg-vscode-surface/50 p-3 rounded-lg focus:ring-0 text-white focus:outline-none caret-vscode-accent resize-none h-32 transition-all pl-6"
-                  placeholder="Type your message here..."
+                  className="w-full rounded-lg border border-vscode-border bg-vscode-surface/40 px-4 py-3 text-white placeholder:text-vscode-muted/70 focus:outline-none focus:border-vscode-accent/70 focus:bg-vscode-surface/60 transition-colors resize-none h-36"
+                  placeholder="Write your message here..."
                   required
                   disabled={isSubmitting}
                 />
               </div>
 
-              {/* Submit Button */}
-              <div className="pt-4">
+              <div className="pt-2">
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex items-center gap-2 px-6 py-2.5 bg-vscode-surface border border-vscode-border hover:border-vscode-accent text-vscode-accent hover:text-white transition-all rounded-lg group disabled:opacity-50 shadow-lg hover:shadow-vscode-accent/5 active:scale-95"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-vscode-accent/50 bg-vscode-accent/10 text-vscode-accent hover:bg-vscode-accent hover:text-vscode-bg transition-all disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 font-medium"
                 >
-                  <span className="text-[#27c93f]">$</span>
-                  <span>
-                    {isSubmitting ? "Sending..." : "./send_message.sh"}
-                  </span>
-                  {!isSubmitting && <span className="animate-pulse">_</span>}
+                  {isSubmitting ? "Sending message..." : "Send Message"}
                 </button>
               </div>
             </form>
 
-            {/* Alternative Contact */}
-            <div className="mt-6 pt-6 border-t border-vscode-border text-vscode-muted text-xs">
+            <div className="mt-7 pt-6 border-t border-vscode-border text-vscode-muted text-sm">
               <p>
-                Or email me directly at:{" "}
+                Prefer email? Reach me at{" "}
                 <a
                   href="mailto:acharyaprabin03@gmail.com"
-                  className="text-vscode-accent hover:underline"
+                  className="text-vscode-accent hover:text-white transition-colors"
                 >
                   acharyaprabin03@gmail.com
                 </a>
