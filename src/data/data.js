@@ -369,24 +369,31 @@ export const setupDetails = {
 
 export const blogPosts = [
     {
+        title: "Building Prabsy",
+        date: "5 May 2026",
+        excerpt: "How I started Prabsy as a practical frontend toolkit and what I learned building image-focused tools like Image Markup Studio and AI or Not.",
+        url: "/posts/building-prabsy.md",
+        isMarkdown: true
+    },
+    {
         title: "Day 1 of Blender",
         date: "November 2025",
         excerpt: "My first experience diving into Blender - from creating a monkey with a hat to making a donut, until a thunderstorm interrupted my journey.",
         url: "/posts/day-1-of-blender.md",
         isMarkdown: true
     },
-    // {
-    //     title: "My Coding Journey",
-    //     date: "November 2019",
-    //     excerpt: "So i started coding like 2 years ago... it was hard at first i didnt know what a variable was lol.",
-    //     url: "/posts/my-coding-journey.md",
-    //     isMarkdown: true
-    // },
-    // {
-    //     title: "React is Hard",
-    //     date: "November 2020",
-    //     excerpt: "React is so confusing sometimes... hooks are weird why do i need useEffect for everything??",
-    //     url: "/posts/react-is-hard.md",
-    //     isMarkdown: true
-    // }
+    {
+        title: "React is Hard",
+        date: "November 2020",
+        excerpt: "React is so confusing sometimes... hooks are weird why do i need useEffect for everything??",
+        url: "/posts/react-is-hard.md",
+        isMarkdown: true
+    },
+    {
+        title: "My Coding Journey",
+        date: "November 2019",
+        excerpt: "So i started coding like 2 years ago... it was hard at first i didnt know what a variable was lol.",
+        url: "/posts/my-coding-journey.md",
+        isMarkdown: true
+    },
 ];
