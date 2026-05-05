@@ -211,7 +211,7 @@ export const projects = {
 
 export const topProjects = [
     {
-        name: "Pixel Kit",
+        name: "Prabsy Toolkit",
         description:
             "A personal toolkit project I designed and built myself to speed up frontend workflows with reusable UI patterns, cleaner structure, and faster idea-to-implementation cycles.",
         tags: ["Next.js", "TypeScript", "Design Systems", "Productivity"],
@@ -221,10 +221,10 @@ export const topProjects = [
             "Refined usability through multiple personal iterations so the toolkit stays practical for daily use."
         ],
         links: {
-            visit: "https://pixelkit.acharyaprabin.com",
+            visit: "https://prabsy.acharyaprabin.com",
             source: null
         },
-        image: "/assets/projects/pixelkit-wordmark.svg",
+        image: "/assets/projects/prabsy-mark.png",
         imageFit: "contain",
         imageContainerClass: "bg-slate-100",
         showFullDescription: true,
