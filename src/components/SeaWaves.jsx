@@ -328,21 +328,21 @@ const SeaWaves = () => {
 
         vec3 reflected = getSkyColor(reflect(-e, n));
         
-        vec3 base = vec3(0.051, 0.067, 0.090);
-        vec3 waterTint = vec3(0.188, 0.212, 0.239);
+        vec3 base = vec3(0.012, 0.034, 0.072);
+        vec3 waterTint = vec3(0.020, 0.120, 0.250);
 
         float atten = max(1.0 - dist * dist * 0.001, 0.0);
         vec3 refracted = base * 0.7;
         
-        vec3 mutedColor = vec3(0.545, 0.580, 0.620);
-        refracted += mutedColor * diffuse(n, l, 120.0) * 0.02;
+        vec3 mutedColor = vec3(0.260, 0.390, 0.560);
+        refracted += mutedColor * diffuse(n, l, 120.0) * 0.014;
         
-        vec3 surfaceColor = vec3(0.086, 0.106, 0.133);
-        refracted = mix(refracted, surfaceColor * 0.6, 0.4);
+        vec3 surfaceColor = vec3(0.030, 0.070, 0.145);
+        refracted = mix(refracted, surfaceColor * 0.72, 0.52);
 
         vec3 color = mix(refracted, reflected, fresnel);
         
-        color += waterTint * (p.y + SEA_HEIGHT) * 0.015 * atten;
+        color += waterTint * (p.y + SEA_HEIGHT) * 0.02 * atten;
         
         // Balanced specular highlight 
         float s = specular(n, l, e, 30.0); 
@@ -358,12 +358,12 @@ const SeaWaves = () => {
         float horizonBoost = 1.0 + smoothstep(0.7, 0.1, u_sunPos.y) * 1.5; 
         
         // Apply boost to specular
-        color += mix(mutedColor, accentColor, 0.6) * s * 1.1 * horizonBoost;
+        color += mix(mutedColor, accentColor, 0.35) * s * 0.95 * horizonBoost;
         
         // Subtle ambient glow with boost
         float glow = max(dot(reflect(-l, n), e), 0.0);
         glow = pow(glow, 6.0); 
-        color += accentColor * glow * 0.15 * horizonBoost;
+        color += accentColor * glow * 0.08 * horizonBoost;
 
         return color;
       }

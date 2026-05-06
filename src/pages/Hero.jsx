@@ -126,15 +126,15 @@ export default function Hero() {
             <h2 className="text-vscode-accent font-mono text-base sm:text-lg tracking-wider">
               Hi, I am
             </h2>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1] [text-shadow:0_3px_18px_rgba(7,14,24,0.38)]">
               Prabin <span className="text-vscode-keyword">Acharya</span>
             </h1>
-            <h3 className="text-2xl sm:text-3xl text-vscode-muted font-display font-medium">
+            <h3 className="text-2xl sm:text-3xl text-vscode-text/95 font-display font-medium [text-shadow:0_2px_14px_rgba(9,16,29,0.3)]">
               Frontend <span className="text-vscode-string">Engineer</span>
             </h3>
           </div>
 
-          <p className="text-vscode-text/90 text-lg sm:text-xl max-w-xl mx-auto lg:mx-0 animate-fade-in-up delay-100 leading-relaxed font-sans">
+          <p className="text-vscode-text text-lg sm:text-xl max-w-xl mx-auto lg:mx-0 animate-fade-in-up delay-100 leading-relaxed font-sans [text-shadow:0_2px_12px_rgba(7,14,24,0.25)]">
             I craft high-performance, accessible, and visually stunning web
             experiences. Turning complex problems into elegant code is my
             passion.

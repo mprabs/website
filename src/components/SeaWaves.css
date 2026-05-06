@@ -101,11 +101,6 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(
-      to bottom,
-      rgba(13, 17, 23, 0.4),
-      rgba(13, 17, 23, 0) 25%
-    ),
-    linear-gradient(to top, rgba(13, 17, 23, 0.5), rgba(13, 17, 23, 0) 35%);
-  mix-blend-mode: multiply;
+  background: transparent;
+  opacity: 0;
 }

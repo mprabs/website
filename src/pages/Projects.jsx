@@ -1,6 +1,6 @@
 import { topProjects, projects } from "../data/data";
 import ProjectCard from "../components/ProjectCard";
-import { FiStar, FiZap } from "react-icons/fi";
+import { FiStar, FiZap, FiGithub, FiArrowRight } from "react-icons/fi";
 
 export default function Projects() {
   const topProjectsGridClass = "grid grid-cols-1 gap-4 sm:gap-5";
@@ -27,11 +27,10 @@ export default function Projects() {
                   <FiStar className="text-vscode-accent" />
                   Top Projects
                 </h2>
-                <div className="h-px flex-1 bg-vscode-border" />
               </div>
               <div className={topProjectsGridClass}>
                 {topProjects.map((project, index) => (
-                  <ProjectCard key={`top-${index}`} project={project} emphasis />
+                  <ProjectCard key={`top-${index}`} project={project} />
                 ))}
               </div>
             </div>
@@ -44,20 +43,43 @@ export default function Projects() {
                   <FiZap className="text-vscode-accent" />
                   {categoryTitles[category]}
                 </h2>
-                <div className="h-px flex-1 bg-vscode-border"></div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                 {projects[category].map((project, index) => (
-                  <ProjectCard
-                    key={index}
-                    project={project}
-                    emphasis={category === "professional"}
-                  />
+                  <ProjectCard key={index} project={project} />
                 ))}
               </div>
             </div>
           ))}
+
+          <div className="rounded-xl border border-vscode-border bg-vscode-surface p-5 sm:p-6 md:p-7">
+            <div className="flex flex-col gap-4 sm:gap-5 sm:flex-row sm:items-center sm:justify-between">
+              <div className="space-y-1.5">
+                <p className="text-[11px] uppercase tracking-[0.14em] font-mono text-vscode-muted">
+                  Open Source
+                </p>
+                <h3 className="text-lg sm:text-xl font-bold text-white">
+                  More projects on GitHub
+                </h3>
+                <p className="text-sm sm:text-[15px] text-vscode-text leading-relaxed">
+                  Explore additional experiments, archived builds, and ongoing
+                  work in my public repositories.
+                </p>
+              </div>
+
+              <a
+                href="https://github.com/mprabs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 bg-vscode-accent/10 border border-vscode-accent/50 text-vscode-accent rounded-lg font-mono text-sm transition-colors hover:bg-vscode-accent/20 w-full sm:w-auto"
+              >
+                <FiGithub />
+                <span>More on GitHub</span>
+                <FiArrowRight className="transition-transform group-hover:translate-x-0.5" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
