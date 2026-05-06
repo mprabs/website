@@ -589,27 +589,35 @@ const SeaWaves = () => {
 
     let startTime = performance.now();
 
-    const handleClick = (e) => {
-      const x = e.clientX / window.innerWidth;
-      const y = 1.0 - e.clientY / window.innerHeight;
+    const addRippleAtClientPoint = (clientX, clientY) => {
+      const x = Math.max(0, Math.min(1, clientX / window.innerWidth));
+      const y = Math.max(0, Math.min(1, 1.0 - clientY / window.innerHeight));
       const time = (performance.now() - startTime) * 0.001;
 
-      // Write to next slot in circular buffer
       const slot = nextSlotRef.current;
       ripplesRef.current[slot] = { x, y, time, active: true };
       nextSlotRef.current = (slot + 1) % MAX_RIPPLES;
-
-      console.log("Click splash at slot:", slot, {
-        x: x.toFixed(2),
-        y: y.toFixed(2),
-        time: time.toFixed(2),
-      });
     };
 
-    // Attach to document for full-page tracking
+    const handleClick = (e) => {
+      addRippleAtClientPoint(e.clientX, e.clientY);
+    };
+
+    const handleDropletImpact = (e) => {
+      const detail = e.detail || {};
+      const clientX = Number.isFinite(detail.x) ? detail.x : window.innerWidth * 0.5;
+      const clientY = Number.isFinite(detail.y)
+        ? detail.y
+        : window.innerHeight * (window.innerWidth <= 768 ? 0.78 : 0.72);
+
+      addRippleAtClientPoint(clientX, clientY);
+    };
+
+    // Attach to document/window for full-page tracking and title droplet impacts
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseleave", handleMouseLeave);
     document.addEventListener("click", handleClick);
+    window.addEventListener("portfolio-droplet-impact", handleDropletImpact);
 
     function render() {
       resize();
@@ -655,6 +663,7 @@ const SeaWaves = () => {
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseleave", handleMouseLeave);
       document.removeEventListener("click", handleClick);
+      window.removeEventListener("portfolio-droplet-impact", handleDropletImpact);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }

@@ -19,8 +19,8 @@
 .sea-sun-container {
   position: fixed;
   inset: 0;
-  z-index: 5; /* Behind main content (z-10) but above ocean (z-0) */
-  pointer-events: none; /* Let clicks pass through empty space */
+  z-index: 5;
+  pointer-events: none;
 }
 
 .sea-sun {
@@ -32,7 +32,7 @@
   box-shadow: 0 0 40px #ff8c00, 0 0 80px rgba(255, 140, 0, 0.4);
   cursor: grab;
   z-index: 10;
-  pointer-events: auto; /* Enable interaction */
+  pointer-events: auto;
   transform: translate(-50%, -50%);
   transition: transform 0.1s ease-out;
 }
@@ -44,7 +44,6 @@
 
 .sun-hint {
   position: absolute;
-  /* left/top set via inline style */
   transform: translate(-50%, calc(-100% - 40px));
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
@@ -76,27 +75,25 @@
 }
 
 @keyframes hintFloat {
-  0%,
-  100% {
-    transform: translateY(-50%) translateX(0);
+  0%, 100% {
+    transform: translate(-50%, calc(-100% - 40px));
   }
   50% {
-    transform: translateY(-50%) translateX(5px);
+    transform: translate(calc(-50% + 5px), calc(-100% - 40px));
   }
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-50%) translateX(-10px);
+    transform: translate(calc(-50% - 10px), calc(-100% - 40px));
   }
   to {
     opacity: 1;
-    transform: translateY(-50%) translateX(0);
+    transform: translate(-50%, calc(-100% - 40px));
   }
 }
 
-/* Edge fades for blending with content */
 .sea-fades {
   position: absolute;
   inset: 0;

@@ -12,7 +12,6 @@ import Contact from "./pages/Contact";
 export default function App() {
   const location = useLocation();
 
-  // Update page title based on current route
   useEffect(() => {
     const titles = {
       "/": "Prabin - Portfolio",
@@ -26,17 +25,14 @@ export default function App() {
     document.title = titles[location.pathname] || "Prabin - Portfolio";
   }, [location]);
 
-  // Scroll to top on route change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-vscode-bg text-vscode-text overflow-x-hidden selection:bg-vscode-accent selection:text-vscode-bg">
-      {/* Animated sea wave background */}
       <SeaWaves />
 
-      {/* Content Container - Set pointer-events-none to allow clicking through to sun behind */}
       <div className="relative z-10 flex flex-col min-h-screen pointer-events-none">
         <Navigation />
 
