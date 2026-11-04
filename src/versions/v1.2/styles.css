@@ -1,0 +1,400 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@400..700&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+/* v1.2 "Book": a developer's sketchbook on a sunlit table. Plain CSS: the 3D
+   book needs precise control, so this version doesn't use Tailwind.
+   Three hand-lettered faces, each in several weights:
+     Caveat            headings, numerals, annotations (400-700)
+     Shantell Sans     body text (300-600, italic for asides)
+     Architects Daughter  labels, meta, controls */
+
+:root {
+  --table: #e4dac8;
+  --paper: #fbf8f1;
+  --ink: #29313c;
+  --ink-soft: #545c67;
+  --ink-faint: #8a8f96;
+  --rule: rgba(41, 49, 60, 0.14);
+  --rule-strong: rgba(41, 49, 60, 0.32);
+  --grid: rgba(47, 93, 158, 0.14);
+
+  --terracotta: #c65d3b;
+  --pen: #2f5d9e;
+  --sage: #6f8f62;
+  --mustard: #d9a53b;
+  --highlight: rgba(255, 214, 92, 0.55);
+  --sticky-yellow: #fbe7a1;
+  --sticky-pink: #f8cdbf;
+  --sticky-blue: #cfe0f0;
+
+  /* Cover: slate-blue bookcloth with charcoal and copper details. */
+  --cloth: #6d808f;
+  --cloth-light: #8396a4;
+  --cloth-dark: #526473;
+  --cloth-ink: #2a323b;
+  --copper: #b07d57;
+  --rust: var(--terracotta);
+
+  --font-display: "Caveat", "Segoe Print", cursive;
+  --font-body: "Shantell Sans", "Trebuchet MS", sans-serif;
+  --font-label: "Architects Daughter", "Segoe Print", cursive;
+
+  --ease-cinema: cubic-bezier(0.65, 0, 0.25, 1);
+  --ease-page: cubic-bezier(0.55, 0.05, 0.3, 1);
+  --ease-pop: cubic-bezier(0.2, 1.5, 0.4, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  background: var(--table);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 350;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--highlight);
+}
+
+button {
+  font: inherit;
+}
+
+/* ---------- stage ---------- */
+
+/* clip, not hidden: a hidden box can still be scrolled by focus or
+   scrollIntoView, which would slide the whole scene sideways on phones. */
+.stage {
+  position: fixed;
+  inset: 0;
+  overflow: clip;
+  touch-action: pan-y;
+}
+
+.stage__book {
+  position: absolute;
+  inset: var(--band) 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: clip;
+  perspective: 2400px;
+  perspective-origin: 50% 40%;
+}
+
+/* Fade up from black, like the first shot of a film. */
+.veil {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background: #17120d;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 2200ms var(--ease-cinema);
+}
+
+.veil[data-on="true"] {
+  opacity: 1;
+  transition: none;
+}
+
+/* ---------- reading HUD ---------- */
+
+.hud {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 700ms ease;
+}
+
+.hud[data-visible="true"] {
+  opacity: 1;
+}
+
+.hud__top,
+.hud__bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 max(1rem, env(safe-area-inset-right));
+  pointer-events: auto;
+  font-family: var(--font-label);
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.hud__top {
+  top: 0;
+  height: var(--hud-band, 4.5rem);
+  justify-content: flex-end;
+}
+
+.hud__bottom {
+  bottom: 0;
+  height: var(--hud-band, 4.5rem);
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.hud__button,
+.hud__arrow {
+  border: 1.5px solid var(--rule-strong);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  background: rgba(251, 248, 241, 0.72);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: border-color 200ms ease, background 200ms ease, transform 200ms ease;
+}
+
+.hud__button {
+  padding: 0.4rem 1rem;
+}
+
+.hud__arrow {
+  width: 2.8rem;
+  height: 2.6rem;
+  font-size: 1.1rem;
+}
+
+.hud__button:hover,
+.hud__arrow:hover:not(:disabled) {
+  border-color: var(--ink);
+  background: var(--paper);
+  transform: rotate(-2deg);
+}
+
+.hud__arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.hud__folio {
+  min-width: 5.5em;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.hud button:focus-visible {
+  outline: 2px solid var(--pen);
+  outline-offset: 3px;
+}
+
+@media (max-width: 899px) {
+  .hud {
+    --hud-band: 3.75rem;
+  }
+}
+
+/* ---------- manuscript (blog post reader) ---------- */
+
+.manuscript {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.manuscript__backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(60, 45, 30, 0.35);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: fade-in 400ms ease both;
+  cursor: pointer;
+}
+
+.manuscript__sheet {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(44rem, 100%);
+  height: min(92vh, 100%);
+  margin: 0 auto;
+  border-radius: 4px 4px 0 0;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(90deg, transparent 2.6rem, rgba(198, 93, 59, 0.35) 2.6rem, rgba(198, 93, 59, 0.35) calc(2.6rem + 1px), transparent calc(2.6rem + 1px)),
+    repeating-linear-gradient(transparent 0 calc(1.85rem - 1px), rgba(47, 93, 158, 0.14) calc(1.85rem - 1px) 1.85rem);
+  background-attachment: local;
+  box-shadow: 0 -10px 50px rgba(60, 40, 20, 0.3);
+  animation: sheet-up 700ms var(--ease-cinema) both;
+}
+
+.manuscript__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem 1rem 3.4rem;
+  font-family: var(--font-label);
+  color: var(--ink-faint);
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+
+.manuscript__close {
+  padding: 0.35rem 0.9rem;
+  border: 1.5px solid var(--rule-strong);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+.manuscript__close:hover {
+  border-color: var(--terracotta);
+  color: var(--terracotta);
+}
+
+.manuscript__body {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 1.6rem 1.5rem 4rem 3.4rem;
+  font-size: 1.02rem;
+  line-height: 1.85rem;
+  background-image: inherit;
+  background-attachment: local;
+}
+
+.manuscript__body > * {
+  max-width: 34rem;
+}
+
+.manuscript__body h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2.8rem;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  color: var(--terracotta);
+}
+
+.manuscript__body h2,
+.manuscript__body h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.9rem;
+  line-height: 1.85rem;
+  margin: 1.85rem 0 0.4rem;
+  color: var(--pen);
+}
+
+.manuscript__body p,
+.manuscript__body ul,
+.manuscript__body ol,
+.manuscript__body pre,
+.manuscript__body blockquote {
+  margin-bottom: 1.85rem;
+}
+
+.manuscript__body ul {
+  list-style: disc;
+  padding-left: 1.4rem;
+}
+
+.manuscript__body ol {
+  list-style: decimal;
+  padding-left: 1.4rem;
+}
+
+.manuscript__body strong {
+  font-weight: 600;
+}
+
+.manuscript__body a {
+  color: var(--pen);
+}
+
+.manuscript__body code {
+  font-size: 0.9em;
+  padding: 0.05em 0.35em;
+  border-radius: 3px;
+  background: rgba(41, 49, 60, 0.07);
+}
+
+.manuscript__body pre {
+  overflow-x: auto;
+  padding: 1rem;
+  border-radius: 4px;
+  line-height: 1.5;
+  background: #29313c;
+  color: #f3efe6;
+}
+
+.manuscript__body pre code {
+  padding: 0;
+  background: none;
+}
+
+.manuscript__body blockquote {
+  padding-left: 1rem;
+  border-left: 3px solid var(--mustard);
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.manuscript__body img {
+  max-width: 100%;
+  height: auto;
+}
+
+.manuscript__note {
+  font-style: italic;
+  color: var(--ink-faint);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes sheet-up {
+  from {
+    transform: translateY(100%) rotate(1deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .manuscript__sheet,
+  .manuscript__backdrop {
+    animation-duration: 1ms;
+  }
+  .veil {
+    transition-duration: 1ms;
+  }
+}

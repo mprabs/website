@@ -8,6 +8,14 @@ import {
   VscSearch,
 } from "react-icons/vsc";
 import WindowFrame from "../components/WindowFrame";
+import { profile, social } from "../../../content";
+import { copy } from "../copy";
+
+const socialIcons = {
+  github: <FiGithub />,
+  linkedin: <FiLinkedin />,
+  email: <FiMail />,
+};
 
 export default function Hero() {
   const [userCode, setUserCode] = useState("");
@@ -22,16 +30,21 @@ export default function Hero() {
       <span className="text-vscode-accent">Person</span>({"{"}
     </>,
     <>
-      {"  "}name: <span className="text-vscode-string">'Prabin Acharya'</span>,
+      {"  "}name: <span className="text-vscode-string">'{profile.name.full}'</span>,
     </>,
     <>
       {"  "}role:{" "}
-      <span className="text-vscode-string">'Frontend Engineer'</span>,
+      <span className="text-vscode-string">'{profile.role}'</span>,
     </>,
     <>
-      {"  "}skills: [<span className="text-vscode-string">'React'</span>,{" "}
-      <span className="text-vscode-string">'Tailwind'</span>,{" "}
-      <span className="text-vscode-string">'Node.js'</span>],
+      {"  "}skills: [
+      {copy.hero.codeSkills.map((skill, i) => (
+        <React.Fragment key={skill}>
+          {i > 0 && ", "}
+          <span className="text-vscode-string">'{skill}'</span>
+        </React.Fragment>
+      ))}
+      ],
     </>,
     <>
       {"  "}hardWorker: <span className="text-vscode-keyword">true</span>,
@@ -81,7 +94,7 @@ export default function Hero() {
         <div className="order-1 lg:order-1 space-y-6 text-center lg:text-left pointer-events-auto">
           <div className="space-y-4 animate-fade-in-up">
             <h2 className="text-vscode-accent font-mono text-base sm:text-lg tracking-wider">
-              Hi, I am
+              {copy.hero.greeting}
             </h2>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1] [text-shadow:0_3px_18px_rgba(7,14,24,0.38)]">
@@ -89,14 +102,13 @@ export default function Hero() {
             </h1>
 
             <h3 className="text-2xl sm:text-3xl text-vscode-text/95 font-display font-medium [text-shadow:0_2px_14px_rgba(9,16,29,0.3)]">
-              Frontend <span className="text-vscode-string">Engineer</span>
+              {copy.hero.roleLead}{" "}
+              <span className="text-vscode-string">{copy.hero.roleAccent}</span>
             </h3>
           </div>
 
           <p className="text-vscode-text text-lg sm:text-xl max-w-xl mx-auto lg:mx-0 animate-fade-in-up delay-100 leading-relaxed font-sans [text-shadow:0_2px_12px_rgba(7,14,24,0.25)]">
-            I craft high-performance, accessible, and visually stunning web
-            experiences. Turning complex problems into elegant code is my
-            passion.
+            {copy.hero.tagline}
           </p>
 
           <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 animate-fade-in-up delay-200">
@@ -104,38 +116,31 @@ export default function Hero() {
               href="/projects"
               className="px-5 sm:px-8 py-3 sm:py-3.5 bg-vscode-accent/10 hover:bg-vscode-accent/20 text-vscode-accent border border-vscode-accent/50 rounded-xl font-mono text-sm sm:text-base transition-all duration-300 flex items-center gap-2 group shadow-lg hover:shadow-vscode-accent/10"
             >
-              <span>View Projects</span>
+              <span>{copy.hero.projectsCta}</span>
               <span className="group-hover:translate-x-1 transition-transform">
                 &rarr;
               </span>
             </a>
 
             <a
-              href="/resume.pdf"
-              download="Prabin_Acharya_Resume.pdf"
+              href={profile.resume.url}
+              download={profile.resume.fileName}
               className="px-5 sm:px-8 py-3 sm:py-3.5 bg-vscode-surface hover:bg-vscode-border border border-vscode-border text-white rounded-xl font-mono text-sm sm:text-base transition-all duration-300 flex items-center gap-2 shadow-lg"
             >
               <FiDownload />
-              <span>Resume</span>
+              <span>{copy.hero.resumeCta}</span>
             </a>
           </div>
 
           <div className="flex items-center justify-center lg:justify-start gap-6 pt-6 animate-fade-in-up delay-300">
-            <SocialLink
-              href="https://github.com/mprabs"
-              icon={<FiGithub />}
-              label="GitHub"
-            />
-            <SocialLink
-              href="https://linkedin.com/in/paccharya"
-              icon={<FiLinkedin />}
-              label="LinkedIn"
-            />
-            <SocialLink
-              href="mailto:acharyaprabin03@gmail.com"
-              icon={<FiMail />}
-              label="Email"
-            />
+            {social.map((link) => (
+              <SocialLink
+                key={link.id}
+                href={link.url}
+                icon={socialIcons[link.id]}
+                label={link.name}
+              />
+            ))}
           </div>
         </div>
 
@@ -211,8 +216,8 @@ export default function Hero() {
 }
 
 function LiquidName() {
-  const firstName = "Prabin";
-  const lastName = "Acharya";
+  const firstName = profile.name.first;
+  const lastName = profile.name.last;
 
   const firstNameDrops = {
     P: { delay: "0.9s", x: "58%", fall: "118px" },
@@ -233,7 +238,7 @@ function LiquidName() {
   };
 
   return (
-    <span className="liquid-name" aria-label="Prabin Acharya">
+    <span className="liquid-name" aria-label={profile.name.full}>
       <span className="liquid-word">
         {firstName.split("").map((char, index) => {
           const drop = firstNameDrops[char] || {

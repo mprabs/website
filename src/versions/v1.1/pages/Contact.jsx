@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { FiMail } from "react-icons/fi";
 import WindowFrame from "../components/WindowFrame";
+import { profile } from "../../../content";
+import { copy } from "../copy";
+
+const text = copy.contact;
+const { email, formEndpoint } = profile.contact;
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -16,12 +21,8 @@ export default function Contact() {
     setIsSubmitting(true);
     setStatus({ type: "", message: "" });
 
-    // Formspree endpoint - Replace with your form ID from formspree.io
-    // Get it by signing up at https://formspree.io and creating a form
-    const FORMSPREE_ENDPOINT = "https://formspree.io/f/xbledplr";
-
     try {
-      const response = await fetch(FORMSPREE_ENDPOINT, {
+      const response = await fetch(formEndpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -36,7 +37,7 @@ export default function Contact() {
       if (response.ok) {
         setStatus({
           type: "success",
-          message: "✓ Message sent successfully! I'll get back to you soon.",
+          message: text.success,
         });
         setFormData({ name: "", email: "", message: "" });
       } else {
@@ -46,8 +47,7 @@ export default function Contact() {
       console.error("Formspree Error:", error);
       setStatus({
         type: "error",
-        message:
-          "✗ Failed to send message. Please try emailing me directly at acharyaprabin03@gmail.com",
+        message: text.error(email),
       });
     } finally {
       setIsSubmitting(false);
@@ -61,7 +61,7 @@ export default function Contact() {
         <div className="flex items-center gap-3 mb-8 border-b border-vscode-border pb-4">
           <div className="flex-grow">
             <h1 className="text-3xl md:text-4xl font-bold flex items-center gap-2">
-              <span className="text-vscode-accent">05.</span> Contact Me
+              <span className="text-vscode-accent">05.</span> {text.heading}
             </h1>
           </div>
         </div>
@@ -74,14 +74,13 @@ export default function Contact() {
           <div className="p-6 sm:p-8 md:p-10 bg-vscode-bg/90">
             <div className="mb-8 max-w-2xl">
               <p className="text-vscode-accent font-mono text-xs sm:text-sm uppercase tracking-[0.12em]">
-                Get In Touch
+                {text.eyebrow}
               </p>
               <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-white">
-                Send me a message
+                {text.title}
               </h2>
               <p className="mt-3 text-vscode-text/80 text-sm sm:text-base leading-relaxed">
-                If you want to contact me for work, collaboration, or anything
-                else, send a message and I will get back to you soon.
+                {text.intro}
               </p>
             </div>
 
@@ -103,7 +102,7 @@ export default function Contact() {
                   htmlFor="contact-name"
                   className="block text-sm font-medium text-vscode-text"
                 >
-                  Name
+                  {text.fields.name.label}
                 </label>
                 <input
                   id="contact-name"
@@ -114,7 +113,7 @@ export default function Contact() {
                     setFormData({ ...formData, name: e.target.value })
                   }
                   className="w-full rounded-lg border border-vscode-border bg-vscode-surface/40 px-4 py-3 text-white placeholder:text-vscode-muted/70 focus:outline-none focus:border-vscode-accent/70 focus:bg-vscode-surface/60 transition-colors"
-                  placeholder="Your name"
+                  placeholder={text.fields.name.placeholder}
                   required
                   disabled={isSubmitting}
                 />
@@ -125,7 +124,7 @@ export default function Contact() {
                   htmlFor="contact-email"
                   className="block text-sm font-medium text-vscode-text"
                 >
-                  Email
+                  {text.fields.email.label}
                 </label>
                 <input
                   id="contact-email"
@@ -136,7 +135,7 @@ export default function Contact() {
                     setFormData({ ...formData, email: e.target.value })
                   }
                   className="w-full rounded-lg border border-vscode-border bg-vscode-surface/40 px-4 py-3 text-white placeholder:text-vscode-muted/70 focus:outline-none focus:border-vscode-accent/70 focus:bg-vscode-surface/60 transition-colors"
-                  placeholder="Your email"
+                  placeholder={text.fields.email.placeholder}
                   required
                   disabled={isSubmitting}
                 />
@@ -147,7 +146,7 @@ export default function Contact() {
                   htmlFor="contact-message"
                   className="block text-sm font-medium text-vscode-text"
                 >
-                  Message
+                  {text.fields.message.label}
                 </label>
                 <textarea
                   id="contact-message"
@@ -157,7 +156,7 @@ export default function Contact() {
                     setFormData({ ...formData, message: e.target.value })
                   }
                   className="w-full rounded-lg border border-vscode-border bg-vscode-surface/40 px-4 py-3 text-white placeholder:text-vscode-muted/70 focus:outline-none focus:border-vscode-accent/70 focus:bg-vscode-surface/60 transition-colors resize-none h-36"
-                  placeholder="Write your message here..."
+                  placeholder={text.fields.message.placeholder}
                   required
                   disabled={isSubmitting}
                 />
@@ -169,19 +168,19 @@ export default function Contact() {
                   disabled={isSubmitting}
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-vscode-accent/50 bg-vscode-accent/10 text-vscode-accent hover:bg-vscode-accent hover:text-vscode-bg transition-all disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 font-medium"
                 >
-                  {isSubmitting ? "Sending message..." : "Send Message"}
+                  {isSubmitting ? text.submitting : text.submit}
                 </button>
               </div>
             </form>
 
             <div className="mt-7 pt-6 border-t border-vscode-border text-vscode-muted text-sm">
               <p>
-                Prefer email? Reach me at{" "}
+                {text.emailPrompt}{" "}
                 <a
-                  href="mailto:acharyaprabin03@gmail.com"
+                  href={`mailto:${email}`}
                   className="text-vscode-accent hover:text-white transition-colors"
                 >
-                  acharyaprabin03@gmail.com
+                  {email}
                 </a>
               </p>
             </div>

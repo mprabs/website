@@ -10,19 +10,21 @@ import {
   FiSettings,
 } from "react-icons/fi";
 import WindowFrame from "../components/WindowFrame";
-import {
-  aboutData,
-  socialLinks,
-  technicalExpertise,
-  setupDetails,
-} from "../data/data";
-import PrabinImage from "../assets/prabin-no-bg.png";
+import { profile, skills, social } from "../../../content";
+import { copy } from "../copy";
 
-const socialIconMap = {
-  FiGithub,
-  FiLinkedin,
-  FiMail,
+const socialIcons = {
+  github: FiGithub,
+  linkedin: FiLinkedin,
+  email: FiMail,
 };
+
+// Stat accent colours, in the order the stats are listed in content.
+const statColors = [
+  "text-vscode-accent",
+  "text-vscode-function",
+  "text-vscode-keyword",
+];
 
 function getSetupIcon(category) {
   if (category === "hardware") return FiCpu;
@@ -36,7 +38,7 @@ export default function About() {
     <section className="min-h-[calc(100vh-64px)] pt-2 pb-8 sm:py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto relative pointer-events-auto">
       <div className="flex items-center gap-3 mb-8 border-b border-vscode-border pb-4">
         <h2 className="text-3xl font-bold flex items-center gap-2">
-          <span className="text-vscode-accent">01.</span> About Me
+          <span className="text-vscode-accent">01.</span> {copy.about.heading}
         </h2>
       </div>
 
@@ -49,8 +51,8 @@ export default function About() {
           <div className="grid lg:grid-cols-[240px_1fr] gap-6 md:gap-8 items-start">
             <div className="mx-auto lg:mx-0 w-48 h-48 sm:w-56 sm:h-56 rounded-xl border border-vscode-border bg-vscode-surface overflow-hidden">
               <img
-                src={PrabinImage}
-                alt="Prabin Acharya"
+                src={profile.portrait}
+                alt={profile.name.full}
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -59,42 +61,33 @@ export default function About() {
             <div className="space-y-5">
               <div>
                 <p className="text-vscode-accent font-mono text-sm">
-                  Frontend Engineer
+                  {profile.role}
                 </p>
                 <h1 className="text-3xl sm:text-4xl font-bold text-white mt-1">
-                  Prabin Acharya
+                  {profile.name.full}
                 </h1>
               </div>
 
               <p className="text-vscode-text/95 leading-relaxed text-base sm:text-lg">
-                {aboutData.bio}
+                {profile.bio}
               </p>
 
               <div className="flex flex-wrap gap-3">
-                <div className="bg-vscode-surface border border-vscode-border rounded-lg px-4 py-2">
-                  <div className="text-vscode-accent font-bold text-xl leading-none">
-                    5+
+                {profile.stats.map((stat, i) => (
+                  <div
+                    key={stat.label}
+                    className="bg-vscode-surface border border-vscode-border rounded-lg px-4 py-2"
+                  >
+                    <div
+                      className={`${statColors[i % statColors.length]} font-bold text-xl leading-none`}
+                    >
+                      {stat.value}
+                    </div>
+                    <div className="text-vscode-muted text-xs font-mono mt-1">
+                      {stat.label}
+                    </div>
                   </div>
-                  <div className="text-vscode-muted text-xs font-mono mt-1">
-                    Years Experience
-                  </div>
-                </div>
-                <div className="bg-vscode-surface border border-vscode-border rounded-lg px-4 py-2">
-                  <div className="text-vscode-function font-bold text-xl leading-none">
-                    20+
-                  </div>
-                  <div className="text-vscode-muted text-xs font-mono mt-1">
-                    Projects Delivered
-                  </div>
-                </div>
-                <div className="bg-vscode-surface border border-vscode-border rounded-lg px-4 py-2">
-                  <div className="text-vscode-keyword font-bold text-xl leading-none">
-                    React
-                  </div>
-                  <div className="text-vscode-muted text-xs font-mono mt-1">
-                    Core Expertise
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -103,12 +96,12 @@ export default function About() {
             <div className="flex items-center gap-3">
               <h3 className="text-xl font-bold text-white flex items-center gap-2">
                 <FiCode className="text-vscode-accent" />
-                Technical Skills
+                {copy.about.skillsHeading}
               </h3>
               <div className="h-px flex-1 bg-vscode-border" />
             </div>
             <div className="flex flex-wrap gap-2">
-              {technicalExpertise.map((skill) => (
+              {skills.expertise.map((skill) => (
                 <span
                   key={skill}
                   className="rounded-full border border-vscode-border bg-vscode-surface px-3 py-1.5 text-xs font-mono text-vscode-text/90 hover:border-vscode-accent transition-colors"
@@ -123,12 +116,12 @@ export default function About() {
             <div className="flex items-center gap-3">
               <h3 className="text-xl font-bold text-white flex items-center gap-2">
                 <FiMonitor className="text-vscode-accent" />
-                Setup
+                {copy.about.setupHeading}
               </h3>
               <div className="h-px flex-1 bg-vscode-border" />
             </div>
             <div className="grid md:grid-cols-2 gap-4">
-              {Object.entries(setupDetails).map(([category, items]) => {
+              {Object.entries(skills.setup).map(([category, items]) => {
                 const Icon = getSetupIcon(category);
                 return (
                   <div
@@ -160,11 +153,13 @@ export default function About() {
 
           <div className="space-y-5">
             <div className="flex items-center gap-3">
-              <h3 className="text-xl font-bold text-white">Interests</h3>
+              <h3 className="text-xl font-bold text-white">
+                {copy.about.interestsHeading}
+              </h3>
               <div className="h-px flex-1 bg-vscode-border" />
             </div>
             <div className="flex flex-wrap gap-2.5">
-              {aboutData.hobbies.map((hobby) => (
+              {profile.interests.map((hobby) => (
                 <span
                   key={hobby}
                   className="px-3 py-1.5 bg-vscode-surface border border-vscode-border rounded-full text-sm text-vscode-muted hover:text-vscode-text hover:border-vscode-accent transition-colors"
@@ -179,18 +174,18 @@ export default function About() {
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div>
                 <p className="text-vscode-accent font-mono text-sm">
-                  Let&apos;s connect
+                  {copy.about.connectLabel}
                 </p>
                 <p className="text-vscode-muted text-sm mt-1">
-                  Open to frontend roles and collaborative product work.
+                  {profile.availability}
                 </p>
               </div>
               <div className="flex items-center gap-3">
-                {socialLinks.map((link) => {
-                  const Icon = socialIconMap[link.icon] || FiMail;
+                {social.map((link) => {
+                  const Icon = socialIcons[link.id] || FiMail;
                   return (
                     <a
-                      key={link.name}
+                      key={link.id}
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"

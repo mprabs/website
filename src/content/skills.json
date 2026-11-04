@@ -1,0 +1,47 @@
+{
+  "deskPhoto": null,
+  "expertise": [
+    "ReactJS",
+    "Next.js",
+    "JavaScript (ES6+)",
+    "TypeScript",
+    "HTML5/CSS3",
+    "REST APIs",
+    "WebSockets",
+    "NodeJs",
+    "Redux",
+    "Tailwind CSS",
+    "Git",
+    "Webpack",
+    "CI/CD"
+  ],
+  "setup": {
+    "hardware": {
+      "Laptop": "MacBook Pro M3 Pro",
+      "Secondary": "Acer Nitro (Ryzen 4500H, GTX 1650)",
+      "Display": "KOORUI 27\" 2K 144Hz",
+      "Keyboard": "AULA F75",
+      "Mouse": "Prolink PMB8502",
+      "Audio": "Anker Soundcore Q45"
+    },
+    "software": {
+      "Operating System": "macOS, Windows 11",
+      "Code Editor": "Visual Studio Code",
+      "Design": "Figma, Adobe Photoshop",
+      "Browser": "Brave, Chrome"
+    },
+    "development": {
+      "Version Control": "Git, GitHub",
+      "Package Managers": "npm, yarn",
+      "Build Tools": "Webpack, Vite, Babel",
+      "Testing": "Jest, React Testing Library",
+      "Deployment": "Vercel, Netlify"
+    },
+    "tools": {
+      "3D Modeling": "Blender",
+      "Terminal": "Terminal, Windows Terminal",
+      "API Testing": "Postman",
+      "Database": "MongoDB Compass"
+    }
+  }
+}

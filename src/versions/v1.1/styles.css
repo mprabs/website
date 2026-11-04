@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap");
+/* Only scan this version's files, so other versions' classes never end up here. */
+@import "tailwindcss" source("./");
 @plugin "@tailwindcss/typography";
 
 @theme {

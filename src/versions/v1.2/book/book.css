@@ -1,0 +1,253 @@
+/* The physical book. Everything from .book down to .leaf is one preserve-3d
+   chain: never put opacity < 1, filter or overflow on those elements, or the
+   browser flattens the book. */
+
+.book {
+  position: relative;
+  flex: none;
+  width: calc(var(--page-w) * 2);
+  height: var(--page-h);
+  font-size: var(--page-font);
+  transform-style: preserve-3d;
+}
+
+.book[data-arriving="true"] {
+  animation: book-arrive 1800ms var(--ease-cinema) both;
+}
+
+.book__rig,
+.book__float {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+
+/* Keep the same function list in both poses so the camera move interpolates
+   each rotation smoothly instead of via matrix decomposition. */
+.book__rig {
+  transform-origin: 75% 50%;
+  transform: translate3d(var(--shift), 0, 0) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  transition: transform 1400ms var(--ease-cinema);
+}
+
+.book[data-pose="intro"] .book__rig {
+  transform: translate3d(var(--shift), 0, 0) scale(var(--intro-scale)) rotateX(20deg)
+    rotateY(-26deg) rotateZ(4deg);
+}
+
+.book[data-pose="intro"] {
+  cursor: pointer;
+}
+
+.book[data-pose="intro"] .book__float {
+  animation: book-float 7s ease-in-out infinite;
+}
+
+/* ---------- leaves ---------- */
+
+.leaf {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform-origin: left center;
+  transition: transform var(--flip-ms) var(--ease-page);
+}
+
+.leaf__face {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 0 4px 4px 0;
+}
+
+.leaf__face--back {
+  transform: rotateY(180deg);
+  border-radius: 4px 0 0 4px;
+}
+
+.leaf--cover .leaf__face--front {
+  border-radius: 0 6px 6px 0;
+}
+
+/* Shadow that sweeps across a leaf while it turns. */
+.leaf__face::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(to left, rgba(50, 35, 20, 0.3), rgba(50, 35, 20, 0.06) 55%, transparent);
+}
+
+.leaf__face--back::after {
+  background: linear-gradient(to right, rgba(50, 35, 20, 0.3), rgba(50, 35, 20, 0.06) 55%, transparent);
+}
+
+.leaf[data-turn] .leaf__face::after {
+  animation: turn-shade var(--flip-ms) var(--ease-page) var(--delay) both;
+}
+
+@keyframes turn-shade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ---------- thickness ---------- */
+
+.book__block {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+}
+
+.book__edge {
+  position: absolute;
+  background:
+    linear-gradient(to var(--edge-dir, right), transparent calc(100% - 3px), var(--cloth-dark) 0),
+    repeating-linear-gradient(to var(--edge-dir, right), #fbf8f1 0 1px, #ddd4c4 1px 2px);
+}
+
+.book__edge--fore {
+  top: 0;
+  left: 100%;
+  width: var(--depth);
+  height: 100%;
+  transform-origin: left center;
+  transform: rotateY(90deg);
+}
+
+.book__edge--top,
+.book__edge--bottom {
+  --edge-dir: bottom;
+  left: 50%;
+  width: 50%;
+  height: var(--depth);
+  transform-origin: top center;
+  transform: rotateX(-90deg);
+}
+
+.book__edge--top {
+  top: 0;
+}
+
+.book__edge--bottom {
+  top: 100%;
+}
+
+/* ---------- shadows ---------- */
+
+.book__shadow {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  border-radius: 6px;
+  transform: translateZ(calc(var(--depth) * -1 - 2px));
+  box-shadow:
+    0 2px 3px rgba(60, 40, 20, 0.18),
+    0 18px 30px -8px rgba(60, 40, 20, 0.28),
+    0 50px 90px -24px rgba(60, 40, 20, 0.35);
+  transition: box-shadow var(--flip-ms) var(--ease-page);
+}
+
+.book__shadow--right {
+  left: 50%;
+}
+
+.book__shadow--left {
+  left: 0;
+}
+
+.book__shadow--left[data-on="false"] {
+  box-shadow: 0 0 0 transparent;
+}
+
+/* ---------- page-turn hotspots ---------- */
+
+.book__turn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: min(72px, 12%);
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  transform: translateZ(2px);
+  transition: background 300ms ease;
+}
+
+.book__turn--next {
+  right: 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.book__turn--prev {
+  left: var(--prev-left);
+  border-radius: 4px 0 0 4px;
+}
+
+.book__turn--next:hover {
+  background: linear-gradient(to left, rgba(60, 40, 20, 0.1), transparent);
+}
+
+.book__turn--prev:hover {
+  background: linear-gradient(to right, rgba(60, 40, 20, 0.1), transparent);
+}
+
+.book__turn:focus-visible {
+  outline: 2px solid var(--rust);
+  outline-offset: -4px;
+}
+
+@media (hover: none) {
+  .book__turn {
+    display: none;
+  }
+}
+
+@keyframes book-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotateZ(0deg);
+  }
+  50% {
+    transform: translate3d(0, -18px, 0) rotateZ(-1.2deg);
+  }
+}
+
+/* The book is set down on the table: it settles from above as the scene fades in. */
+@keyframes book-arrive {
+  from {
+    transform: translate3d(0, -14vh, 0) scale(1.12);
+  }
+  to {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .book__rig,
+  .leaf,
+  .book__shadow {
+    transition-duration: 1ms !important;
+    transition-delay: 0ms !important;
+  }
+  .book[data-arriving="true"],
+  .book[data-pose="intro"] .book__float,
+  .leaf[data-turn] .leaf__face::after {
+    animation: none;
+  }
+}

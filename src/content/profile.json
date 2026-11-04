@@ -1,0 +1,35 @@
+{
+  "name": {
+    "first": "Prabin",
+    "last": "Acharya",
+    "full": "Prabin Acharya",
+    "short": "Prabin"
+  },
+  "role": "Frontend Engineer",
+  "location": "Nepal",
+  "website": "https://acharyaprabin.com.np",
+  "portrait": "prabin-no-bg.png",
+  "candid": "prabin-front.jpeg",
+  "interestsPhoto": null,
+  "bio": "I'm a passionate JavaScript developer from Nepal with 5+ years of experience in building enterprise-level applications. I specialize in React ecosystem and modern web technologies, focusing on creating performant, scalable solutions with great user experiences.",
+  "availability": "Currently a Senior Frontend Developer at Sharelook.",
+  "stats": [
+    { "value": "5+", "label": "Years Experience" },
+    { "value": "20+", "label": "Projects Delivered" },
+    { "value": "React", "label": "Core Expertise" }
+  ],
+  "interests": [
+    "Football & Cricket enthusiast",
+    "Casual gaming (PUBG, Chess)",
+    "Weekend travels & photography",
+    "Learning new technologies"
+  ],
+  "resume": {
+    "url": "/resume.pdf",
+    "fileName": "Prabin_Acharya_Resume.pdf"
+  },
+  "contact": {
+    "email": "acharyaprabin03@gmail.com",
+    "formEndpoint": "https://formspree.io/f/xbledplr"
+  }
+}

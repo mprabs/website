@@ -1,4 +1,5 @@
-import { workExperiences } from "../data/data";
+import { experience, formatPeriod } from "../../../content";
+import { copy } from "../copy";
 import { VscGitPullRequest } from "react-icons/vsc";
 import WindowFrame from "../components/WindowFrame";
 
@@ -8,7 +9,8 @@ export default function WorkExperience() {
       <div className="space-y-8 animate-fade-in-up">
         <div className="flex items-center gap-3 mb-8 border-b border-vscode-border pb-4">
           <h2 className="text-3xl font-bold flex items-center gap-2">
-            <span className="text-vscode-accent">02.</span> Work Experience
+            <span className="text-vscode-accent">02.</span>{" "}
+            {copy.experience.heading}
           </h2>
         </div>
 
@@ -21,20 +23,19 @@ export default function WorkExperience() {
             <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <p className="text-sm font-mono text-vscode-accent">
-                  Career Journey
+                  {copy.experience.eyebrow}
                 </p>
                 <p className="mt-1 max-w-2xl text-sm text-vscode-muted leading-relaxed">
-                  A concise timeline of companies, roles, and real product
-                  impact across frontend-focused teams.
+                  {copy.experience.intro}
                 </p>
               </div>
             </div>
 
             <div className="relative">
               <div className="pointer-events-none hidden md:block absolute left-[11px] top-2 bottom-10 w-px bg-gradient-to-b from-vscode-border via-vscode-border to-vscode-accent/80" />
-              {workExperiences.map((exp, index) => (
+              {experience.map((exp) => (
                 <article
-                  key={index}
+                  key={exp.id}
                   className="group relative border-b border-vscode-border/80 last:border-b-0 py-6 md:py-7 md:pl-12 transition-colors duration-200 hover:bg-vscode-surface/20"
                 >
                   <div className="hidden md:flex absolute left-[11px] top-10 -translate-x-1/2 h-5 w-5 items-center justify-center rounded-full border-2 border-vscode-border bg-vscode-bg group-hover:border-vscode-accent transition-colors">
@@ -53,7 +54,7 @@ export default function WorkExperience() {
                       </div>
                       <div className="inline-flex items-center gap-2 rounded-md border border-vscode-border bg-vscode-bg/60 px-3 py-1.5 text-xs font-mono text-vscode-muted w-fit">
                         <span className="h-1.5 w-1.5 rounded-full bg-vscode-accent/80" />
-                        <span>{exp.duration}</span>
+                        <span>{formatPeriod(exp)}</span>
                       </div>
                     </div>
 
@@ -87,7 +88,7 @@ export default function WorkExperience() {
 
               <div className="pt-6 md:pl-12">
                 <p className="text-vscode-muted font-mono text-xs sm:text-sm">
-                  Initial commit: Started professional frontend journey
+                  {copy.experience.initialCommit}
                 </p>
               </div>
             </div>

@@ -1,0 +1,5 @@
+[
+  { "id": "github", "name": "GitHub", "url": "https://github.com/mprabs", "handle": "mprabs" },
+  { "id": "linkedin", "name": "LinkedIn", "url": "https://linkedin.com/in/paccharya", "handle": "paccharya" },
+  { "id": "email", "name": "Email", "url": "mailto:acharyaprabin03@gmail.com", "handle": "acharyaprabin03@gmail.com" }
+]

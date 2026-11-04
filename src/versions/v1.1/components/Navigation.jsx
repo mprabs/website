@@ -10,18 +10,19 @@ import {
 } from "react-icons/fi";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { copy } from "../copy";
 
 export default function Navigation() {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { path: "/", icon: <FiCode />, label: "Home" },
-    { path: "/about", icon: <FiUser />, label: "About" },
-    { path: "/experience", icon: <FiBriefcase />, label: "Experience" },
-    { path: "/projects", icon: <FiBox />, label: "Projects" },
-    { path: "/blogs", icon: <FiBook />, label: "Blogs" },
-    { path: "/contact", icon: <FiMail />, label: "Contact" },
+    { path: "/", icon: <FiCode />, label: copy.nav.home },
+    { path: "/about", icon: <FiUser />, label: copy.nav.about },
+    { path: "/experience", icon: <FiBriefcase />, label: copy.nav.experience },
+    { path: "/projects", icon: <FiBox />, label: copy.nav.projects },
+    { path: "/blogs", icon: <FiBook />, label: copy.nav.blogs },
+    { path: "/contact", icon: <FiMail />, label: copy.nav.contact },
   ];
 
   useEffect(() => {

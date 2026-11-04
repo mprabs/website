@@ -1,0 +1,216 @@
+{
+  "featured": [
+    {
+      "id": "prabsy",
+      "name": "Prabsy Toolkit",
+      "description": "A personal toolkit project I designed and built myself to speed up frontend workflows with reusable UI patterns, cleaner structure, and faster idea-to-implementation cycles.",
+      "tags": ["Next.js", "TypeScript", "Design Systems", "Productivity"],
+      "highlights": [
+        "Designed and implemented reusable UI blocks and starter patterns to reduce repeated setup work.",
+        "Built the project structure and tooling flow myself to move from concept to working UI faster.",
+        "Refined usability through multiple personal iterations so the toolkit stays practical for daily use."
+      ],
+      "links": { "visit": "https://prabsy.acharyaprabin.com", "source": null },
+      "image": "/assets/projects/prabsy-mark.png",
+      "imageFit": "contain",
+      "imageBackground": "light",
+      "isNew": true
+    },
+    {
+      "id": "nexus-canvas",
+      "name": "Nexus Canvas",
+      "description": "A personal desktop-first, local-first canvas project I am building for scenario modeling and decision support in one visual workspace.",
+      "tags": ["Next.js App Router", "TypeScript", "Tailwind CSS", "Local-first"],
+      "highlights": [
+        "Implemented core feature boundaries across canvas, nodes, edges, inspector, compute, unfurl, persistence, and sync domains.",
+        "Designed an in-memory transaction boundary for atomic graph mutations and grouped history semantics.",
+        "Built the MVP foundation with workspace shell, typed interactive canvas, scenarios, operation journal, and export/import recovery."
+      ],
+      "links": { "visit": "https://nexus.acharyaprabin.com.np/", "source": null },
+      "image": "/assets/projects/nexus-logo.svg",
+      "imageFit": "contain",
+      "isNew": true
+    },
+    {
+      "id": "zigsaw",
+      "name": "Zigsaw Puzzle App",
+      "description": "A personal mobile jigsaw puzzle app I built with Flutter, focused on smooth gameplay, progressive difficulty, and rewarding progression through score, timer, and unlock systems.",
+      "tags": ["Flutter", "Riverpod", "Hive", "AdMob"],
+      "highlights": [
+        "Implemented the puzzle engine myself with image splitting, drag-and-drop placement, universal snapping, and tray return interactions.",
+        "Built progression systems including timer, move tracking, scoring, and local best-score persistence with Hive.",
+        "Integrated token rewards, rewarded ads, and sound/haptic feedback to polish the gameplay loop."
+      ],
+      "links": { "visit": null, "source": null },
+      "actions": [
+        {
+          "label": "Download APK",
+          "href": "https://drive.google.com/file/d/1Hx8i19ygIRD-z7N8ti9Sm5rWgNe4KnhO/view?usp=sharing",
+          "variant": "primary",
+          "type": "download"
+        }
+      ],
+      "image": "/assets/projects/zigsaw-main-icon.png",
+      "imageFit": "cover",
+      "isNew": true
+    },
+    {
+      "id": "tiny-home-hub",
+      "name": "Tiny Home Hub",
+      "description": "A personal platform project I started and partially implemented, including backend setup and core product structure, but it is still in-progress and not fully completed yet.",
+      "tags": ["React", "Vite", "Supabase", "In Progress"],
+      "highlights": [
+        "Built the initial split between public website routes and authenticated app routes to support long-term scaling.",
+        "Implemented core app sections such as dashboard, forum, marketplace, profile flows, and foundational shared auth structure.",
+        "Set up backend-connected groundwork and project architecture, with remaining features and polish planned for completion."
+      ],
+      "links": { "visit": "https://tiny-home-hub.netlify.app/", "source": null },
+      "image": "/assets/projects/tiny-home-logo-only-icon.png",
+      "imageFit": "contain",
+      "imageBackground": "light",
+      "isNew": false
+    }
+  ],
+  "groups": [
+    {
+      "id": "sharelook",
+      "title": "Sharelook Projects",
+      "items": [
+        {
+          "id": "sharelook-app",
+          "name": "Sharelook App",
+          "description": "Enterprise-level learning management platform with real-time collaboration, video conferencing, and interactive features.",
+          "tags": ["ReactJS", "WebRTC", "WebSockets", "AWS Chime", "Redux"],
+          "links": { "visit": "https://app.sharelookapp.com", "source": null },
+          "image": "sharelook.jpeg"
+        },
+        {
+          "id": "sharelook-website",
+          "name": "Sharelook Website",
+          "description": "Marketing and landing website for the Sharelook platform showcasing features and onboarding new users.",
+          "tags": ["ReactJS", "SEO", "Responsive Design"],
+          "links": { "visit": "https://sharelookapp.com", "source": null },
+          "image": "sharelook.jpeg"
+        },
+        {
+          "id": "sharelook-marketplace",
+          "name": "Sharelook Marketplace",
+          "description": "Content marketplace for educational resources, courses, and learning materials with integrated payment systems.",
+          "tags": ["ReactJS", "E-Commerce", "Payment Integration"],
+          "links": { "visit": "https://marketplace.sharelookapp.com", "source": null },
+          "image": "sharelook.jpeg"
+        },
+        {
+          "id": "sharelook-voices",
+          "name": "Sharelook Voices",
+          "description": "Audio-focused learning platform for podcasts, voice notes, and audio-based educational content.",
+          "tags": ["ReactJS", "Audio Processing", "Media Streaming"],
+          "links": { "visit": "https://sharelookvoices.com", "source": null },
+          "image": "sharelook.jpeg"
+        },
+        {
+          "id": "sgi",
+          "name": "Strategic Global Intelligence (SGI)",
+          "description": "Intelligence platform providing timely research and insights through podcasts and case studies to help organizations make informed decisions.",
+          "tags": ["ReactJS", "Content Platform", "Research"],
+          "links": { "visit": "https://sgi.academy", "source": null },
+          "image": "sharelook.jpeg"
+        }
+      ]
+    },
+    {
+      "id": "professional",
+      "title": "Professional Projects",
+      "items": [
+        {
+          "id": "randr-groceries",
+          "name": "R&R Groceries",
+          "description": "Enhanced the existing Shopify website with design improvements and feature changes.",
+          "tags": ["Shopify", "Web Development", "E-Commerce"],
+          "links": { "visit": "https://randrgrocery.ca/", "source": null },
+          "image": "randr.png"
+        },
+        {
+          "id": "moodlight",
+          "name": "Mood Light Interiors",
+          "description": "Led the development management for the website, coordinating the team and overseeing project execution.",
+          "tags": ["Web Development", "Project Management", "Interior Design"],
+          "links": { "visit": "https://moodlightinteriors.com", "source": null },
+          "image": "moodlight.png"
+        }
+      ]
+    },
+    {
+      "id": "personal",
+      "title": "Personal Projects",
+      "items": [
+        {
+          "id": "evolution-simulator",
+          "name": "Evolution Simulator",
+          "description": "Simulation of human-like walking utilizing Box2DJs, TensorFlow, genetic algorithms, and neuroevolution techniques.",
+          "tags": ["Box2DJs", "TensorFlow", "Genetic Algorithm", "NeuroEvolution"],
+          "links": {
+            "visit": "https://mprabs.github.io/Evolution-Simulator/",
+            "source": "https://github.com/mprabs/Evolution-Simulator"
+          },
+          "image": "evolution.png"
+        },
+        {
+          "id": "hotels-app",
+          "name": "Hotels Application",
+          "description": "Application designed for users to check in between hotels.",
+          "tags": ["VueJs", "NodeJs", "Express", "MongoDB"],
+          "links": { "visit": null, "source": "https://github.com/mprabs/Hotels-App" },
+          "image": "hotels-app.png"
+        },
+        {
+          "id": "codewriter",
+          "name": "CodeWriter",
+          "description": "A simple interface for writing and editing code, similar to CodePen.",
+          "tags": ["ReactJs", "CodeMirror"],
+          "links": {
+            "visit": "https://mprabs.github.io/Codepen-clone/",
+            "source": "https://github.com/mprabs/Codepen-clone"
+          },
+          "image": "codewriter.png"
+        },
+        {
+          "id": "ip-tracker",
+          "name": "IP Tracker",
+          "description": "Track location through IP Address in a map view.",
+          "tags": ["LeafletJs", "IPify"],
+          "links": {
+            "visit": "https://mprabs.github.io/IP-Tracker/",
+            "source": "https://github.com/mprabs/IP-Tracker"
+          },
+          "image": "iptracket.png"
+        },
+        {
+          "id": "tetris",
+          "name": "Tetris",
+          "description": "A simple game of tetris on the web.",
+          "tags": ["VanillaJs", "HTML5", "CSS3"],
+          "links": {
+            "visit": "https://mprabs.github.io/Tetris/",
+            "source": "https://github.com/mprabs/Tetris"
+          },
+          "image": "tetris.png"
+        },
+        {
+          "id": "canteen-management",
+          "name": "Canteen Management System",
+          "description": "Application for managing canteen operations and workflows.",
+          "tags": ["VueJs", "Vuex", "Vuetify"],
+          "links": { "visit": null, "source": "https://github.com/mprabs/Canteen-Management" },
+          "image": "canteen-management.png"
+        }
+      ]
+    }
+  ],
+  "archive": [
+    { "id": "reddit-clone", "name": "Reddit Clone", "tech": "VueJs", "link": "https://github.com/mprabs/Reddit-Clone" },
+    { "id": "todos-app", "name": "Todos App", "tech": "ReactJs", "link": "https://github.com/mprabs/Todos-App" },
+    { "id": "pokemon-app", "name": "PokemonApp", "tech": "ReactJs", "link": "https://github.com/mprabs/Pokemon" },
+    { "id": "reqres-users-app", "name": "Reqres Users App", "tech": "React Native", "link": "https://github.com/mprabs/Reqres-Users-App" }
+  ]
+}

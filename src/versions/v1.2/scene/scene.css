@@ -1,0 +1,119 @@
+/* A linen-covered table in late-morning daylight: window light falls across
+   it from the top left, with a plant's shadow at the edge of the frame. */
+
+.scene {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: var(--table);
+}
+
+.scene__table {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(120, 100, 70, 0.035) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgba(120, 100, 70, 0.03) 0 1px, transparent 1px 4px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='l'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.38 0 0 0 0 0.28 0 0 0 0.12 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23l)'/%3E%3C/svg%3E"),
+    radial-gradient(120% 90% at 30% 10%, #f7f1e6 0%, transparent 60%);
+}
+
+/* Four soft panes of sunlight, skewed as if cast from a high window. */
+.scene__window {
+  position: absolute;
+  top: -30%;
+  left: -18%;
+  width: 95%;
+  height: 120%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5%;
+  transform: rotate(-24deg) skewX(18deg);
+  filter: blur(28px);
+  mix-blend-mode: soft-light;
+  opacity: 0.95;
+  animation: sunlight 40s ease-in-out infinite alternate;
+}
+
+.scene__window span {
+  background: linear-gradient(160deg, rgba(255, 250, 235, 0.95), rgba(255, 236, 200, 0.55));
+}
+
+.scene[data-pose="open"] .scene__window {
+  opacity: 0.7;
+}
+
+.scene__plant {
+  position: absolute;
+  right: -6%;
+  bottom: -10%;
+  width: min(48vw, 520px);
+  color: rgba(70, 60, 40, 0.16);
+  filter: blur(10px);
+  transform-origin: 50% 100%;
+  animation: sway 9s ease-in-out infinite alternate;
+}
+
+.scene__dust {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1600ms ease;
+}
+
+.scene[data-pose="open"] .scene__dust {
+  opacity: 0.5;
+}
+
+.scene__vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 45% 40%, transparent 55%, rgba(90, 70, 45, 0.22) 100%);
+}
+
+.scene__grain {
+  position: absolute;
+  inset: -50%;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1.2s steps(6) infinite;
+}
+
+@keyframes sunlight {
+  from {
+    transform: rotate(-24deg) skewX(18deg) translate3d(0, 0, 0);
+  }
+  to {
+    transform: rotate(-22deg) skewX(16deg) translate3d(4%, 2%, 0);
+  }
+}
+
+@keyframes sway {
+  from {
+    transform: rotate(-1.5deg);
+  }
+  to {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes grain {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-3%, 2%); }
+  40% { transform: translate(2%, -4%); }
+  60% { transform: translate(-4%, -1%); }
+  80% { transform: translate(3%, 3%); }
+  100% { transform: translate(0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene__window,
+  .scene__plant,
+  .scene__grain {
+    animation: none;
+  }
+}

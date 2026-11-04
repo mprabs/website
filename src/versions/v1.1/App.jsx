@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navigation from "./components/Navigation";
 import SeaWaves from "./components/SeaWaves";
@@ -8,21 +8,15 @@ import WorkExperience from "./pages/WorkExperience";
 import Projects from "./pages/Projects";
 import Blogs from "./pages/Blogs";
 import Contact from "./pages/Contact";
+import { profile } from "../../content";
+import { copy } from "./copy";
+import "./styles.css";
 
 export default function App() {
   const location = useLocation();
 
   useEffect(() => {
-    const titles = {
-      "/": "Prabin - Portfolio",
-      "/about": "About - Prabin",
-      "/experience": "Experience - Prabin",
-      "/projects": "Projects - Prabin",
-      "/blogs": "Blogs - Prabin",
-      "/contact": "Contact - Prabin",
-    };
-
-    document.title = titles[location.pathname] || "Prabin - Portfolio";
+    document.title = copy.titles[location.pathname] || copy.titles["/"];
   }, [location]);
 
   useEffect(() => {
@@ -44,11 +38,12 @@ export default function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
 
         <footer className="py-6 text-center text-vscode-muted text-sm">
-          <p>© {new Date().getFullYear()} Prabin.</p>
+          <p>© {new Date().getFullYear()} {profile.name.short}.</p>
         </footer>
       </div>
     </div>

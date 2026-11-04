@@ -3,6 +3,7 @@ import {
   VscGithubInverted,
   VscGlobe
 } from "react-icons/vsc";
+import { copy } from "../copy";
 
 export default function ProjectCard({ project }) {
   const hasVisitLink =
@@ -49,9 +50,9 @@ export default function ProjectCard({ project }) {
             <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-vscode-accent transition-colors leading-tight">
               {project.name}
             </h3>
-            {project.isNewLaunch && (
+            {project.isNew && (
               <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-vscode-accent border border-vscode-accent/50 bg-vscode-accent/10 px-2 py-0.5 rounded-full">
-                New
+                {copy.projects.newBadge}
               </span>
             )}
           </div>
@@ -107,7 +108,7 @@ export default function ProjectCard({ project }) {
               className="min-h-10 px-3 sm:px-4 py-2 sm:py-1.5 bg-vscode-accent/10 border border-vscode-accent/50 text-vscode-accent text-xs font-semibold rounded-lg hover:bg-vscode-accent/20 transition-all flex items-center justify-center gap-2 group/btn flex-1 sm:flex-initial"
             >
               <VscGlobe className="group-hover/btn:rotate-12 transition-transform" />{" "}
-              <span>Visit Live</span>
+              <span>{copy.projects.visitLabel}</span>
             </a>
           )}
 
@@ -118,7 +119,7 @@ export default function ProjectCard({ project }) {
               rel="noopener noreferrer"
               className="min-h-10 px-3 sm:px-4 py-2 sm:py-1.5 bg-vscode-surface border border-vscode-border text-vscode-muted hover:text-white hover:border-vscode-muted transition-all text-xs font-semibold rounded-lg flex items-center justify-center gap-2 flex-1 sm:flex-initial"
             >
-              <VscGithubInverted /> <span>Source</span>
+              <VscGithubInverted /> <span>{copy.projects.sourceLabel}</span>
             </a>
           )}
         </div>

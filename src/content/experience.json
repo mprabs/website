@@ -1,0 +1,46 @@
+[
+  {
+    "id": "sharelook",
+    "company": "Sharelook PTE. LTD",
+    "role": "Senior Frontend Developer",
+    "logo": "sharelook.jpeg",
+    "start": "2020-10",
+    "end": null,
+    "stack": ["React", "Next.js", "TypeScript", "Redux", "WebRTC", "AWS Chime", "Agora"],
+    "points": [
+      "Led frontend delivery for key Sharelook products, taking features from planning and technical discussion through implementation, QA support, and production release.",
+      "Collaborated closely with product owners, designers, QA, and other developers to break down requirements, align scope, and keep delivery moving across multiple parallel workstreams.",
+      "Built complex AI-powered video-generation functionality alongside real-time video conferencing flows with AWS Chime and Agora, delivering reliable, user-friendly experiences for live collaboration and video creation.",
+      "Improved component reuse and frontend structure across the codebase, cutting repeated UI implementation work by roughly 20% for similar feature screens while supporting cleaner long-term maintenance.",
+      "Contributed to release workflow and CI/CD practices, helping streamline handoff, testing, and deployment across a growing frontend codebase."
+    ]
+  },
+  {
+    "id": "swanned",
+    "company": "Swanned Pty. Ltd",
+    "role": "React Native Developer (Freelance)",
+    "logo": null,
+    "start": "2020-06",
+    "end": "2020-08",
+    "stack": ["React Native", "Expo", "JavaScript", "Mobile UI", "API Integration"],
+    "points": [
+      "Delivered new mobile screens and interaction flows for a dating application using React Native and Expo, helping make onboarding and core user actions noticeably smoother.",
+      "Integrated local notifications, form handling, and conversational features, reducing rough edges in the user flow and improving overall feature completeness for launch-ready builds.",
+      "Handled freelance implementation work end to end, shipping features quickly while keeping the UI consistent and reducing rework during feedback cycles."
+    ]
+  },
+  {
+    "id": "aayulogic",
+    "company": "Aayulogic Pvt Ltd",
+    "role": "Frontend Developer (Internship)",
+    "logo": null,
+    "start": "2020-01",
+    "end": "2020-04",
+    "stack": ["Vue.js", "Vuex", "Vuetify", "JavaScript", "REST APIs"],
+    "points": [
+      "Worked on internal product interfaces during my internship, building reusable Vue components that made similar screens faster to assemble and easier to maintain.",
+      "Used Vuex and shared UI patterns to keep features consistent across form-heavy and dashboard-style screens, helping reduce UI mismatch and repetitive fixes.",
+      "Supported senior developers with feature work, bug fixing, and day-to-day frontend tasks while building a solid foundation in professional product development."
+    ]
+  }
+]
